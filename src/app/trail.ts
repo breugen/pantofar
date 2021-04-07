@@ -1,4 +1,4 @@
-export interface Hero {
+export interface Trail {
   id: number;
   name: string;
 }

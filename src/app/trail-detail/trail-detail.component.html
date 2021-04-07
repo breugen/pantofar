@@ -1,0 +1,10 @@
+<div *ngIf="trail">
+  <h2>{{trail.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{trail.id}}</div>
+  <div>
+    <label for="trail-name">Trail name: </label>
+    <input id="trail-name" [(ngModel)]="trail.name" placeholder="Trail name"/>
+  </div>
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</div>

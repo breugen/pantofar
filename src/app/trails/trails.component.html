@@ -1,0 +1,21 @@
+<h2>My Trails</h2>
+
+<div>
+  <label id="new-trail">Trail name: </label>
+  <input for="new-trail" #trailName />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button class="add-button" (click)="add(trailName.value); trailName.value=''">
+    Add trail
+  </button>
+</div>
+
+<ul class="trails">
+  <li *ngFor="let trail of trails">
+    <a routerLink="/detail/{{trail.id}}">
+      <span class="badge">{{trail.id}}</span> {{trail.name}}
+    </a>
+    <button class="delete" title="delete trail"
+      (click)="delete(trail)">x</button>
+  </li>
+</ul>

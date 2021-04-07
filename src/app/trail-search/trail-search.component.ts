@@ -6,19 +6,19 @@ import {
    debounceTime, distinctUntilChanged, switchMap
  } from 'rxjs/operators';
 
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
+import { Trail } from '../trail';
+import { TrailService } from '../trail.service';
 
 @Component({
-  selector: 'app-hero-search',
-  templateUrl: './hero-search.component.html',
-  styleUrls: [ './hero-search.component.css' ]
+  selector: 'app-trail-search',
+  templateUrl: './trail-search.component.html',
+  styleUrls: [ './trail-search.component.css' ]
 })
-export class HeroSearchComponent implements OnInit {
-  heroes$: Observable<Hero[]>;
+export class TrailSearchComponent implements OnInit {
+  trails$: Observable<Trail[]>;
   private searchTerms = new Subject<string>();
 
-  constructor(private heroService: HeroService) {}
+  constructor(private trailService: TrailService) {}
 
   // Push a search term into the observable stream.
   search(term: string): void {
@@ -26,7 +26,7 @@ export class HeroSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.heroes$ = this.searchTerms.pipe(
+    this.trails$ = this.searchTerms.pipe(
       // wait 300ms after each keystroke before considering the term
       debounceTime(300),
 
@@ -34,7 +34,7 @@ export class HeroSearchComponent implements OnInit {
       distinctUntilChanged(),
 
       // switch to new search observable each time the term changes
-      switchMap((term: string) => this.heroService.searchHeroes(term)),
+      switchMap((term: string) => this.trailService.searchTrails(term)),
     );
   }
 }

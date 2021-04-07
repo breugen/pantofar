@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
+import { Trail } from '../trail';
+import { TrailService } from '../trail.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,16 +8,16 @@ import { HeroService } from '../hero.service';
   styleUrls: [ './dashboard.component.css' ]
 })
 export class DashboardComponent implements OnInit {
-  heroes: Hero[] = [];
+  trails: Trail[] = [];
 
-  constructor(private heroService: HeroService) { }
+  constructor(private trailService: TrailService) { }
 
   ngOnInit() {
-    this.getHeroes();
+    this.getTrails();
   }
 
-  getHeroes(): void {
-    this.heroService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes.slice(1, 5));
+  getTrails(): void {
+    this.trailService.getTrails()
+      .subscribe(trails => this.trails = trails.slice(1, 5));
   }
 }

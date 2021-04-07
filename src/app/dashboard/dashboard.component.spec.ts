@@ -2,26 +2,26 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { of } from 'rxjs';
 
-import { HeroSearchComponent } from '../hero-search/hero-search.component';
-import { HeroService } from '../hero.service';
-import { HEROES } from '../mock-heroes';
+import { TrailSearchComponent } from '../trail-search/trail-search.component';
+import { TrailService } from '../trail.service';
+import { HEROES } from '../mock-trails';
 
 import { DashboardComponent } from './dashboard.component';
 
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
-  let heroService;
-  let getHeroesSpy;
+  let trailService;
+  let getTrailsSpy;
 
   beforeEach(waitForAsync(() => {
-    heroService = jasmine.createSpyObj('HeroService', ['getHeroes']);
-    getHeroesSpy = heroService.getHeroes.and.returnValue(of(HEROES));
+    trailService = jasmine.createSpyObj('TrailService', ['getTrails']);
+    getTrailsSpy = trailService.getTrails.and.returnValue(of(HEROES));
     TestBed
         .configureTestingModule({
-          declarations: [DashboardComponent, HeroSearchComponent],
+          declarations: [DashboardComponent, TrailSearchComponent],
           imports: [RouterTestingModule.withRoutes([])],
-          providers: [{provide: HeroService, useValue: heroService}]
+          providers: [{provide: TrailService, useValue: trailService}]
         })
         .compileComponents();
   }));
@@ -36,12 +36,12 @@ describe('DashboardComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should display "Top Heroes" as headline', () => {
-    expect(fixture.nativeElement.querySelector('h2').textContent).toEqual('Top Heroes');
+  it('should display "Top Trails" as headline', () => {
+    expect(fixture.nativeElement.querySelector('h2').textContent).toEqual('Top Trails');
   });
 
-  it('should call heroService', waitForAsync(() => {
-       expect(getHeroesSpy.calls.any()).toBe(true);
+  it('should call trailService', waitForAsync(() => {
+       expect(getTrailsSpy.calls.any()).toBe(true);
      }));
 
   it('should display 4 links', waitForAsync(() => {
