@@ -28,7 +28,7 @@ a {
   padding: 1rem;
   font-size: 1.2rem;
   text-decoration: none;
-  display: inline-block;
+  display: flex;
   color: #fff;
   text-align: center;
   min-width: 70px;
@@ -36,6 +36,14 @@ a {
   box-sizing: border-box;
   /* flexbox */
   flex: 45%;
+}
+
+a > div:first-child {
+  width: 70%;
+}
+
+a .details {
+  width: 30%;
 }
 
 .caption {
