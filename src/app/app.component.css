@@ -1,7 +1,23 @@
 /* AppComponent's private CSS styles */
-h1 {
-  margin-bottom: 0;
+.app-header {
+  position: sticky;
+  top: 0px;
+  background: white;
+  padding-top: .8rem;
+  padding-bottom: .2rem;
+  margin-left: 1rem;
 }
+
+.app-title {
+  margin-top: 0;
+  margin-bottom: .1rem;
+}
+
+.app-subtitle {
+  margin-top: 0;
+  margin-bottom: .1rem;
+}
+
 nav a {
   padding: 1rem;
   text-decoration: none;

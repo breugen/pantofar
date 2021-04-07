@@ -1,7 +1,13 @@
-<h1>{{title}}</h1>
+<div class='app-header'>
+  <h1 class='app-title'>
+    <i class="fas fa-map-signs fa-lg"></i>
+    {{title}}
+  </h1>
+  <h4 class='app-subtitle'>{{subtitle}}</h4>
+</div>
 <nav>
-  <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/trails">Trails</a>
+  <!-- <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/trails">Trails</a> -->
 </nav>
 <router-outlet></router-outlet>
-<app-messages></app-messages>
+<!-- <app-messages></app-messages> -->
