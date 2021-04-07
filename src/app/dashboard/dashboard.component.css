@@ -38,6 +38,10 @@ a {
   flex: 45%;
 }
 
+.caption {
+  margin-bottom: 0.5rem;
+}
+
 @media (max-width: 800px) {
   a {
     flex: 100%;
