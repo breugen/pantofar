@@ -5,17 +5,18 @@
   background: white;
   padding-top: .8rem;
   padding-bottom: .2rem;
-  margin-left: 1rem;
 }
 
 .app-title {
   margin-top: 0;
   margin-bottom: .1rem;
+  margin-left: 1rem;
 }
 
 .app-subtitle {
   margin-top: 0;
   margin-bottom: .1rem;
+  margin-left: 1rem;
 }
 
 nav a {
