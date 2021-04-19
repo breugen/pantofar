@@ -22,7 +22,7 @@ export class TrailService {
     private messageService: MessageService) { }
 
   /** GET trails from the server */
-  getTrails(): Observable<Trail[]> {
+  getTrails(active: String, direction: String, pageIndex: Number): Observable<Trail[]> {
     return this.http.get<Trail[]>(this.trailsUrl)
       .pipe(
         tap(_ => this.log('fetched trails')),

@@ -1,21 +1,31 @@
 <h2>My Trails</h2>
 
-<div>
-  <label id="new-trail">Trail name: </label>
-  <input for="new-trail" #trailName />
+<div class="example-container mat-elevation-z8">
+  <div class="example-loading-shade" *ngIf="isLoadingResults">
+    <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+  </div>
 
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button class="add-button" (click)="add(trailName.value); trailName.value=''">
-    Add trail
-  </button>
+  <div class="example-table-container">
+
+    <table mat-table [dataSource]="filteredAndPagedIssues" class="example-table" matSort
+           matSortActive="created" matSortDisableClear matSortDirection="desc"
+           (matSortChange)="resetPaging()">
+      <!-- Number Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>#</th>
+        <td mat-cell *matCellDef="let row">{{row.id}}</td>
+      </ng-container>
+
+      <!-- Title Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+        <td mat-cell *matCellDef="let row">{{row.name}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+  <mat-paginator [length]="resultsLength" [pageSize]="5"></mat-paginator>
 </div>
-
-<ul class="trails">
-  <li *ngFor="let trail of trails">
-    <a routerLink="/detail/{{trail.id}}">
-      <span class="badge">{{trail.id}}</span> {{trail.name}}
-    </a>
-    <button class="delete" title="delete trail"
-      (click)="delete(trail)">x</button>
-  </li>
-</ul>

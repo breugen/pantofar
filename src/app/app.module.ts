@@ -14,6 +14,11 @@ import { TrailDetailComponent } from './trail-detail/trail-detail.component';
 import { TrailsComponent } from './trails/trails.component';
 import { TrailSearchComponent } from './trail-search/trail-search.component';
 import { MessagesComponent } from './messages/messages.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   imports: [
@@ -27,7 +32,13 @@ import { MessagesComponent } from './messages/messages.component';
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    )
+    ),
+
+    BrowserAnimationsModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatProgressSpinnerModule,
+    MatTableModule
   ],
   declarations: [
     AppComponent,

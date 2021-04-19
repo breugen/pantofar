@@ -1,39 +1,59 @@
-import { Component, OnInit } from '@angular/core';
-
+import {Component, ViewChild, AfterViewInit, AfterContentInit} from '@angular/core';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
+import {fromEventPattern, merge, Observable, of as observableOf} from 'rxjs';
+import {catchError, map, startWith, switchMap} from 'rxjs/operators';
 import { Trail } from '../trail';
 import { TrailService } from '../trail.service';
 
+/**
+ * @title Table retrieving data through HTTP
+ */
 @Component({
-  selector: 'app-trails',
-  templateUrl: './trails.component.html',
-  styleUrls: ['./trails.component.css']
+  selector: 'trails',
+  styleUrls: ['trails.component.css'],
+  templateUrl: 'trails.component.html',
 })
-export class TrailsComponent implements OnInit {
-  trails: Trail[];
+export class TrailsComponent implements AfterViewInit  {
+  displayedColumns: string[] = ['id', 'name'];
+  filteredAndPagedIssues: Observable<Trail[]>;
 
-  constructor(private trailService: TrailService) { }
+  resultsLength = 0;
+  isLoadingResults = true;
+
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
+  constructor(
+    private trailService: TrailService
+  ) {}
 
   ngOnInit() {
-    this.getTrails();
+    this.filteredAndPagedIssues = observableOf([]);
   }
 
-  getTrails(): void {
-    this.trailService.getTrails()
-    .subscribe(trails => this.trails = trails);
+  ngAfterViewInit() {
+    this.filteredAndPagedIssues = merge(this.sort.sortChange, this.paginator.page)
+      .pipe(
+        startWith({}),
+        switchMap(() => {
+          this.isLoadingResults = true;
+          return this.trailService.getTrails(this.sort.active, this.sort.direction, this.paginator.pageIndex);
+        }),
+        map(data => {
+          // Flip flag to show that loading has finished.
+          this.isLoadingResults = false;
+          this.resultsLength = data.length;
+          return data;
+        }),
+        catchError(() => {
+          this.isLoadingResults = false;
+          return observableOf([]);
+        })
+      );
   }
 
-  add(name: string): void {
-    name = name.trim();
-    if (!name) { return; }
-    this.trailService.addTrail({ name } as Trail)
-      .subscribe(trail => {
-        this.trails.push(trail);
-      });
+  resetPaging(): void {
+    this.paginator.pageIndex = 0;
   }
-
-  delete(trail: Trail): void {
-    this.trails = this.trails.filter(h => h !== trail);
-    this.trailService.deleteTrail(trail.id).subscribe();
-  }
-
 }
