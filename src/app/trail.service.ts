@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, map, tap, filter } from 'rxjs/operators';
 
 import { Trail } from './trail';
 import { MessageService } from './message.service';
@@ -22,17 +22,18 @@ export class TrailService {
     private messageService: MessageService) { }
 
   /** GET trails from the server */
-  getTrails(active: string, direction: string): Observable<Trail[]> {
+  getTrails(type: number, active: string, direction: string): Observable<Trail[]> {
     return this.http.get<Trail[]>(this.trailsUrl)
       .pipe(
         map(data => {
-          return data.sort((trailA: Object, trailB: Object) => {
-            if (direction === 'asc') {
-              return trailA[active] < trailB[active] ? -1 : 1;
-            } else {
-              return trailA[active] > trailB[active] ? -1 : 1;
-            }
-          });
+          return data.filter(trail => trail.type === type)
+            .sort((trailA: Object, trailB: Object) => {
+              if (direction === 'asc') {
+                return trailA[active] < trailB[active] ? -1 : 1;
+              } else {
+                return trailA[active] > trailB[active] ? -1 : 1;
+              }
+            });
         }),
         tap(_ => this.log('fetched trails')),
         catchError(this.handleError<Trail[]>('getTrails', []))

@@ -1,4 +1,5 @@
 import {Component, ViewChild, AfterViewInit, AfterContentInit} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {fromEventPattern, merge, Observable, of as observableOf} from 'rxjs';
@@ -17,7 +18,7 @@ import { TrailService } from '../trail.service';
 export class TrailsComponent implements AfterViewInit  {
 
   // if you change page size you also need to update the template, Or pass it!
-  readonly pageSize: number = 5;
+  static readonly pageSize: number = 5;
   displayedColumns: string[] = ['id', 'name'];
   filteredAndPagedIssues: Observable<Trail[]>;
 
@@ -28,10 +29,11 @@ export class TrailsComponent implements AfterViewInit  {
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(
+    private route: ActivatedRoute,
     private trailService: TrailService
   ) {}
 
-  pageSlice(data: Trail[], pageIndex: number) {
+  static pageSlice(data: Trail[], pageIndex: number) {
     return data.slice(pageIndex * this.pageSize, (pageIndex + 1) * this.pageSize);
   }
 
@@ -44,14 +46,15 @@ export class TrailsComponent implements AfterViewInit  {
       .pipe(
         startWith({}),
         switchMap(() => {
+          const type = +this.route.snapshot.paramMap.get('type');
           this.isLoadingResults = true;
-          return this.trailService.getTrails(this.sort.active, this.sort.direction);
+          return this.trailService.getTrails(type, this.sort.active, this.sort.direction);
         }),
         map(data => {
           // Flip flag to show that loading has finished.
           this.isLoadingResults = false;
           this.resultsLength = data.length;
-          return this.pageSlice(data, this.paginator.pageIndex);
+          return TrailsComponent.pageSlice(data, this.paginator.pageIndex);
         }),
         catchError(() => {
           this.isLoadingResults = false;
