@@ -8,7 +8,7 @@
   <div class="example-table-container">
 
     <table mat-table [dataSource]="filteredAndPagedIssues" class="example-table" matSort
-           matSortActive="created" matSortDisableClear matSortDirection="desc"
+           matSortActive="name" matSortDisableClear matSortDirection="desc"
            (matSortChange)="resetPaging()">
       <!-- Number Column -->
       <ng-container matColumnDef="id">

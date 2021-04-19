@@ -22,9 +22,18 @@ export class TrailService {
     private messageService: MessageService) { }
 
   /** GET trails from the server */
-  getTrails(active: String, direction: String, pageIndex: Number): Observable<Trail[]> {
+  getTrails(active: string, direction: string): Observable<Trail[]> {
     return this.http.get<Trail[]>(this.trailsUrl)
       .pipe(
+        map(data => {
+          return data.sort((trailA: Object, trailB: Object) => {
+            if (direction === 'asc') {
+              return trailA[active] < trailB[active] ? -1 : 1;
+            } else {
+              return trailA[active] > trailB[active] ? -1 : 1;
+            }
+          });
+        }),
         tap(_ => this.log('fetched trails')),
         catchError(this.handleError<Trail[]>('getTrails', []))
       );

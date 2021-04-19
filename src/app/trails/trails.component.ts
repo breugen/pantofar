@@ -15,6 +15,9 @@ import { TrailService } from '../trail.service';
   templateUrl: 'trails.component.html',
 })
 export class TrailsComponent implements AfterViewInit  {
+
+  // if you change page size you also need to update the template, Or pass it!
+  readonly pageSize: number = 5;
   displayedColumns: string[] = ['id', 'name'];
   filteredAndPagedIssues: Observable<Trail[]>;
 
@@ -28,6 +31,10 @@ export class TrailsComponent implements AfterViewInit  {
     private trailService: TrailService
   ) {}
 
+  pageSlice(data: Trail[], pageIndex: number) {
+    return data.slice(pageIndex * this.pageSize, (pageIndex + 1) * this.pageSize);
+  }
+
   ngOnInit() {
     this.filteredAndPagedIssues = observableOf([]);
   }
@@ -38,13 +45,13 @@ export class TrailsComponent implements AfterViewInit  {
         startWith({}),
         switchMap(() => {
           this.isLoadingResults = true;
-          return this.trailService.getTrails(this.sort.active, this.sort.direction, this.paginator.pageIndex);
+          return this.trailService.getTrails(this.sort.active, this.sort.direction);
         }),
         map(data => {
           // Flip flag to show that loading has finished.
           this.isLoadingResults = false;
           this.resultsLength = data.length;
-          return data;
+          return this.pageSlice(data, this.paginator.pageIndex);
         }),
         catchError(() => {
           this.isLoadingResults = false;
