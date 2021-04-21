@@ -32,9 +32,4 @@ export class TrailDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
-
-  save(): void {
-    this.trailService.updateTrail(this.trail)
-      .subscribe(() => this.goBack());
-  }
 }
