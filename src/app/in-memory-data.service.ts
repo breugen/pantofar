@@ -1,24 +1,16 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Trail } from './trail';
+import { Database } from './database/database';
 
 @Injectable({
   providedIn: 'root',
 })
 export class InMemoryDataService implements InMemoryDbService {
+
   createDb() {
-    const trails = [
-      { id: 11, name: 'Dr Nice', type: 1 },
-      { id: 12, name: 'Narco', type: 2 },
-      { id: 13, name: 'Bombasto', type: 1 },
-      { id: 14, name: 'Celeritas', type: 2 },
-      { id: 15, name: 'Magneta', type: 1 },
-      { id: 16, name: 'RubberMan', type: 1 },
-      { id: 17, name: 'Dynama', type: 1 },
-      { id: 18, name: 'Dr IQ', type: 1 },
-      { id: 19, name: 'Magma', type: 1 },
-      { id: 20, name: 'Tornado', type: 1 }
-    ];
+    const database = new Database();
+    const trails = database.getTrails();
     return {trails};
   }
 

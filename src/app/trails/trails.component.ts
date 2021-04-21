@@ -19,7 +19,7 @@ export class TrailsComponent implements AfterViewInit  {
 
   // if you change page size you also need to update the template, Or pass it!
   static readonly pageSize: number = 5;
-  displayedColumns: string[] = ['id', 'name'];
+  displayedColumns: string[] = ['name', 'massif'];
   filteredAndPagedIssues: Observable<Trail[]>;
 
   resultsLength = 0;
