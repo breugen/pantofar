@@ -8,6 +8,7 @@ import { InMemoryDataService } from './in-memory-data.service';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { DurationPipe } from './common/pipes/duration.pipe';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TrailDetailComponent } from './trail-detail/trail-detail.component';
@@ -46,7 +47,8 @@ import { MatTableModule } from '@angular/material/table';
     TrailsComponent,
     TrailDetailComponent,
     MessagesComponent,
-    TrailSearchComponent
+    TrailSearchComponent,
+    DurationPipe
   ],
   bootstrap: [ AppComponent ]
 })

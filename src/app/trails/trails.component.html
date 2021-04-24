@@ -21,6 +21,11 @@
         <td mat-cell *matCellDef="let row">{{row.massif}}</td>
       </ng-container>
 
+      <ng-container matColumnDef="time">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Time</th>
+        <td mat-cell *matCellDef="let row">{{row.time | duration}}</td>
+      </ng-container>
+
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr routerLink="/detail/{{row.id}}" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
