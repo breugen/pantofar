@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap, filter } from 'rxjs/operators';
+import { plainToClass } from 'class-transformer'
 
 import { Trail } from './trail';
 import { MessageService } from './message.service';
@@ -26,7 +27,12 @@ export class TrailService {
     return this.http.get<Trail[]>(this.trailsUrl)
       .pipe(
         map(data => {
-          return data.filter(trail => trail.type === type)
+          const trails = data.map(element => {
+            const trail = plainToClass(Trail, element);
+            trail.mergeSegments();
+            return trail;
+          });
+          return trails.filter(trail => trail.type === type)
             .sort((trailA: Object, trailB: Object) => {
               if (direction === 'asc') {
                 return trailA[active] < trailB[active] ? -1 : 1;

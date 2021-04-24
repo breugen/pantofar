@@ -27,7 +27,7 @@ interface TrailDetail {
 // A lof of optional properties, since we can use this interface to define
 // a segment of a trail as well, but also a full trail, so we keep things
 // very flexible.
-export interface Trail {
+export class Trail {
   id: number;
   type?: number;
   name?: string;
@@ -35,11 +35,61 @@ export interface Trail {
   blaze?: Blaze;
   pointShortList?: string[];
   pointLongList?: string[];
-  segments: Trail[],
+  segments: Trail[];
   // in minutes
-  time?: number,
-  reverseTime?: number,
-  details: TrailDetail
+  time?: number;
+  reverseTime?: number;
+  details: TrailDetail;
+  
+  constructor() {
+  }
+
+  get title(): string {
+    return this.name ? this.name : this.pointShortList.join(' - ');
+  }
+
+  mergeSegments(): void {
+    if (Array.isArray(this.segments) && this.segments.length) {
+      // this trails is defined with segments -> calculate the totals
+      // Usually there should not be more then 2-3 segments, we can loop
+      // multiple times over this list without any penalty.
+      if (!Array.isArray(this.pointShortList) || !this.pointShortList.length) {
+        this.pointShortList = [];
+        this.segments.forEach((segment, index) => {
+          if (Array.isArray(segment.pointShortList) && segment.pointShortList.length) {
+            // segment N starts with the last point of segment N-1 -> ignore it
+            this.pointShortList = 
+              this.pointShortList.concat(segment.pointShortList.slice(index ? 1 : 0));
+          }
+        });
+      }
+
+      if (!Array.isArray(this.pointShortList) || !this.pointShortList.length) {
+        this.pointLongList = [];
+        this.segments.forEach((segment, index) => {
+          if (Array.isArray(segment.pointLongList) && segment.pointLongList.length) {
+            // segment N starts with the last point of segment N-1 -> ignore it
+            this.pointShortList = 
+              this.pointLongList.concat(segment.pointLongList.slice(index ? 1 : 0));
+          }
+        });
+      }
+
+      if (!this.time && this.segments[0].time) {
+        this.time = 0;
+        this.segments.forEach((segment) => {
+          this.time += segment.time;
+        });
+      }
+
+      if (!this.reverseTime && this.segments[0].reverseTime) {
+        this.reverseTime = 0;
+        this.segments.forEach((segment) => {
+          this.reverseTime += segment.reverseTime;
+        });
+      }
+    }
+  }
 }
 
 
