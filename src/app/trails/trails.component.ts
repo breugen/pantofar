@@ -7,6 +7,7 @@ import {catchError, map, startWith, switchMap} from 'rxjs/operators';
 import { Trail, City } from '../trail';
 import { TrailService } from '../trail.service';
 import { MatSelect } from '@angular/material/select';
+import { MatCheckbox } from '@angular/material/checkbox';
 
 /**
  * @title Table retrieving data through HTTP
@@ -27,10 +28,12 @@ export class TrailsComponent implements AfterViewInit  {
   resultsLength = 0;
   isLoadingResults = true;
   selectedCity = 'IS';
+  isRoundTrip = true;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatSelect) select: MatSelect;
+  @ViewChild(MatCheckbox) checkbox: MatCheckbox;
 
   constructor(
     private route: ActivatedRoute,
@@ -50,14 +53,16 @@ export class TrailsComponent implements AfterViewInit  {
     this.filteredAndPagedIssues = merge(
       this.sort.sortChange,
       this.paginator.page,
-      this.select.selectionChange)
+      this.select.selectionChange,
+      this.checkbox.change)
       .pipe(
         startWith({}),
         switchMap(() => {
           const type = +this.route.snapshot.paramMap.get('type');
           this.isLoadingResults = true;
           return this.trailService.getTrails(type, this.sort.active,
-            this.sort.direction, this.selectedCity ? this.selectedCity : 'IS');
+            this.sort.direction, this.selectedCity ? this.selectedCity : 'IS',
+            this.isRoundTrip);
         }),
         map(data => {
           // Flip flag to show that loading has finished.

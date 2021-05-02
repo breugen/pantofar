@@ -58,6 +58,15 @@ export class Trail {
     return this.name ? this.name : this.pointShortList.join(' - ');
   }
 
+  isRoundTrip(): boolean {
+    if (!Array.isArray(this.pointShortList) || !this.pointShortList.length) {
+      return false;
+    } else {
+      return this.pointShortList[0] ===
+        this.pointShortList[this.pointShortList.length - 1];
+    }
+  }
+
   mergeSegments(): void {
     if (Array.isArray(this.segments) && this.segments.length) {
       // this trails is defined with segments -> calculate the totals

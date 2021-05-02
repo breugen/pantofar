@@ -16,6 +16,8 @@
       </mat-select>
     </mat-form-field>
 
+    <mat-checkbox [(ngModel)]="isRoundTrip">Doar Circuit</mat-checkbox>
+
     <table mat-table [dataSource]="filteredAndPagedIssues" class="example-table" matSort
            matSortActive="massif" matSortDisableClear matSortDirection="desc"
            (matSortChange)="resetPaging()">
