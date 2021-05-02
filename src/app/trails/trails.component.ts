@@ -6,6 +6,7 @@ import {fromEventPattern, merge, Observable, of as observableOf} from 'rxjs';
 import {catchError, map, startWith, switchMap} from 'rxjs/operators';
 import { Trail, City } from '../trail';
 import { TrailService } from '../trail.service';
+import { MatSelect } from '@angular/material/select';
 
 /**
  * @title Table retrieving data through HTTP
@@ -25,9 +26,11 @@ export class TrailsComponent implements AfterViewInit  {
 
   resultsLength = 0;
   isLoadingResults = true;
+  selectedCity = 'IS';
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatSelect) select: MatSelect;
 
   constructor(
     private route: ActivatedRoute,
@@ -44,13 +47,17 @@ export class TrailsComponent implements AfterViewInit  {
   }
 
   ngAfterViewInit() {
-    this.filteredAndPagedIssues = merge(this.sort.sortChange, this.paginator.page)
+    this.filteredAndPagedIssues = merge(
+      this.sort.sortChange,
+      this.paginator.page,
+      this.select.selectionChange)
       .pipe(
         startWith({}),
         switchMap(() => {
           const type = +this.route.snapshot.paramMap.get('type');
           this.isLoadingResults = true;
-          return this.trailService.getTrails(type, this.sort.active, this.sort.direction);
+          return this.trailService.getTrails(type, this.sort.active,
+            this.sort.direction, this.selectedCity ? this.selectedCity : 'IS');
         }),
         map(data => {
           // Flip flag to show that loading has finished.

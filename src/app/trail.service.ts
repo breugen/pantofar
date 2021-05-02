@@ -39,7 +39,8 @@ export class TrailService {
   }
 
   /** GET trails from the server */
-  getTrails(type: number, active: string, direction: string): Observable<Trail[]> {
+  getTrails(type: number, active: string,
+      direction: string, cityCode: string): Observable<Trail[]> {
     return this.http.get<Trail[]>(this.trailsUrl)
       .pipe(
         map(data => {
@@ -48,8 +49,9 @@ export class TrailService {
             trail.mergeSegments();
             return trail;
           });
-          return trails.filter(trail => trail.type === type)
-            .sort((trailA: Object, trailB: Object) => {
+          return trails.filter(trail => {
+            return (trail.type === type) && (trail.cityCodes.includes(cityCode));
+          }).sort((trailA: Object, trailB: Object) => {
               if (direction === 'asc') {
                 return trailA[active] < trailB[active] ? -1 : 1;
               } else {

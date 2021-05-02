@@ -6,13 +6,15 @@ export default [
         "massif": "Barnova",
         "blaze": "banda albastra",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
-        "time": 90
+        "time": 90,
+        "cityCodes": ['IS']
     },
     {
         "id": 2,
         "type": 1,
         "name": null,
         "massif": "Barnova",
+        "cityCodes": ['IS'],
         "segments": [
             {
                 "id": 3,
