@@ -11,7 +11,11 @@ export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const database = new Database();
     const trails = database.getTrails();
-    return {trails};
+    const cities = database.getCities();
+    return {
+      trails,
+      cities
+    };
   }
 
   // Overrides the genId method to ensure that a trail always has an id.

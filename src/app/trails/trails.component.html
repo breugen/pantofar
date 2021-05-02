@@ -7,6 +7,15 @@
 
   <div class="example-table-container">
 
+    <mat-form-field appearance="fill">
+      <mat-label>Oras:</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let city of cities | async " [value]="city.code">
+          {{city.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
     <table mat-table [dataSource]="filteredAndPagedIssues" class="example-table" matSort
            matSortActive="massif" matSortDisableClear matSortDirection="desc"
            (matSortChange)="resetPaging()">

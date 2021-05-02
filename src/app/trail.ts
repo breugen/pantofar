@@ -15,6 +15,15 @@ enum Blaze {
   BLUE_TRIANGLE = 'triunghi albastru'
 }
 
+export class City {
+  code: string;
+  active?: boolean;
+  name: string;
+
+  constructor() {
+  }
+}
+
 interface TrailDetail {
   description?: string,
   // for things like 'forbidden in winter'
@@ -40,6 +49,7 @@ export class Trail {
   time?: number;
   reverseTime?: number;
   details: TrailDetail;
+  cityCodes: string[];
   
   constructor() {
   }

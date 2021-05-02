@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap, filter } from 'rxjs/operators';
 import { plainToClass } from 'class-transformer'
 
-import { Trail } from './trail';
+import { Trail, City } from './trail';
 import { MessageService } from './message.service';
 
 
@@ -13,6 +13,7 @@ import { MessageService } from './message.service';
 export class TrailService {
 
   private trailsUrl = 'api/trails';  // URL to web api
+  private citiesUrl = 'api/cities';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -21,6 +22,21 @@ export class TrailService {
   constructor(
     private http: HttpClient,
     private messageService: MessageService) { }
+
+      /** GET trails from the server */
+  getCities(): Observable<City[]> {
+    return this.http.get<City[]>(this.citiesUrl)
+      .pipe(
+        map(data => {
+          const cities = data.map(element => {
+            return plainToClass(City, element);
+          });
+          return cities.filter(city => city.active)
+        }),
+        tap(_ => this.log('fetched cities')),
+        catchError(this.handleError<City[]>('getCities', []))
+      );
+  }
 
   /** GET trails from the server */
   getTrails(type: number, active: string, direction: string): Observable<Trail[]> {

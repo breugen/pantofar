@@ -4,7 +4,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {fromEventPattern, merge, Observable, of as observableOf} from 'rxjs';
 import {catchError, map, startWith, switchMap} from 'rxjs/operators';
-import { Trail } from '../trail';
+import { Trail, City } from '../trail';
 import { TrailService } from '../trail.service';
 
 /**
@@ -21,6 +21,7 @@ export class TrailsComponent implements AfterViewInit  {
   static readonly pageSize: number = 5;
   displayedColumns: string[] = ['title', 'massif', 'time'];
   filteredAndPagedIssues: Observable<Trail[]>;
+  cities: Observable<City[]>;
 
   resultsLength = 0;
   isLoadingResults = true;
@@ -39,6 +40,7 @@ export class TrailsComponent implements AfterViewInit  {
 
   ngOnInit() {
     this.filteredAndPagedIssues = observableOf([]);
+    this.cities = this.trailService.getCities();
   }
 
   ngAfterViewInit() {
