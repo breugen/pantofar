@@ -38,6 +38,12 @@ a {
   flex: 45%;
 }
 
+/* temporary until we have a bigger DB for more trails.  */
+a:not(:first-child) {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
 a > div:first-child {
   width: 70%;
 }
