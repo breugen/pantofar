@@ -1,26 +1,24 @@
-<h2>My Trails</h2>
+<h2>Plimbari</h2>
 
 <div class="example-container mat-elevation-z8">
   <div class="example-loading-shade" *ngIf="isLoadingResults">
     <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
   </div>
 
-  <div class="example-table-container">
-
-    <a routerLink="/dashboard">
-      <i class="fas fa-house-user fa-2x"></i>
-    </a>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Oras:</mat-label>
+  <div class="trails-list-header">  
+    <mat-form-field appearance="fill" class="city-selector">
+      <mat-label>In apropiere de orasul:</mat-label>
       <mat-select [(value)]="selectedCity" (matSelectChange)="resetPaging()">
         <mat-option *ngFor="let city of cities | async " [value]="city.code">
           {{city.name}}
         </mat-option>
       </mat-select>
     </mat-form-field>
+  
+    <mat-slide-toggle [(ngModel)]="isRoundTrip">Doar Circuit</mat-slide-toggle>
+  </div>
 
-    <mat-checkbox [(ngModel)]="isRoundTrip">Doar Circuit</mat-checkbox>
+  <div class="example-table-container">
 
     <table mat-table [dataSource]="filteredAndPagedIssues" class="example-table" matSort
            matSortActive="massif" matSortDisableClear matSortDirection="desc"

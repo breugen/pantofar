@@ -5,6 +5,15 @@
   background: white;
   padding-top: .8rem;
   padding-bottom: .2rem;
+  display:flex;
+}
+
+.main-header {
+  flex: 5;
+}
+
+.header-menu {
+  flex: 1;
 }
 
 .app-title {

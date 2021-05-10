@@ -133,3 +133,15 @@ table {
 .mat-column-created {
   max-width: 124px;
 }
+
+.trails-list-header {
+  display: flex;
+}
+
+.trails-list-header .city-selector {
+    width: 50%;
+}
+
+.trails-list-header mat-slide-toggle {
+  padding: 1rem;
+}

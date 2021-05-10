@@ -7,7 +7,7 @@ import {catchError, map, startWith, switchMap} from 'rxjs/operators';
 import { Trail, City } from '../trail';
 import { TrailService } from '../trail.service';
 import { MatSelect } from '@angular/material/select';
-import { MatCheckbox } from '@angular/material/checkbox';
+import { MatSlideToggle } from '@angular/material/slide-toggle';
 
 /**
  * @title Table retrieving data through HTTP
@@ -33,7 +33,7 @@ export class TrailsComponent implements AfterViewInit  {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatSelect) select: MatSelect;
-  @ViewChild(MatCheckbox) checkbox: MatCheckbox;
+  @ViewChild(MatSlideToggle) slideToggle: MatSlideToggle;
 
   constructor(
     private route: ActivatedRoute,
@@ -54,7 +54,7 @@ export class TrailsComponent implements AfterViewInit  {
       this.sort.sortChange,
       this.paginator.page,
       this.select.selectionChange,
-      this.checkbox.change)
+      this.slideToggle.change)
       .pipe(
         startWith({}),
         switchMap(() => {
