@@ -18,14 +18,14 @@
     <mat-slide-toggle [(ngModel)]="isRoundTrip">Doar Circuit</mat-slide-toggle>
   </div>
 
-  <div class="example-table-container">
+  <div class="trails-table-container">
 
     <table mat-table [dataSource]="filteredAndPagedIssues" class="example-table" matSort
            matSortActive="massif" matSortDisableClear matSortDirection="desc"
            (matSortChange)="resetPaging()">
 
       <ng-container matColumnDef="title">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Traseu</th>
         <td mat-cell *matCellDef="let row">{{row.title}}</td>
       </ng-container>
 
@@ -35,7 +35,7 @@
       </ng-container>
 
       <ng-container matColumnDef="time">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Time</th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Timp</th>
         <td mat-cell *matCellDef="let row">{{row.time | duration}}</td>
       </ng-container>
 

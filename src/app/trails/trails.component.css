@@ -95,12 +95,21 @@ button.delete:hover {
   min-height: 200px;
 }
 
-.example-table-container {
+.trails-table-container {
   position: relative;
   height: 400px;
   overflow: auto;
 }
 
+.trails-table-container .mat-cell{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.trails-table-container .mat-row:nth-child(odd){
+  background-color:whitesmoke;
+}
+      
 table {
   width: 100%;
 }
