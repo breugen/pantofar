@@ -101,13 +101,22 @@ button.delete:hover {
   overflow: auto;
 }
 
-.trails-table-container .mat-cell{
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+.trails-table-container .mat-cell:not(:first-child) {
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+
+.trails-table-container .mat-header-cell:not(:first-child) {
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
 }
 
 .trails-table-container .mat-row:nth-child(odd){
   background-color:whitesmoke;
+}
+
+.trails-table-container .mat-column-time {
+  width: 20%;
 }
       
 table {

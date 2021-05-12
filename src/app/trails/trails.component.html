@@ -23,7 +23,7 @@
     <table mat-table [dataSource]="filteredAndPagedIssues" class="example-table" matSort
            matSortActive="massif" matSortDisableClear matSortDirection="desc"
            (matSortChange)="resetPaging()">
-
+           
       <ng-container matColumnDef="title">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Traseu</th>
         <td mat-cell *matCellDef="let row">{{row.title}}</td>
