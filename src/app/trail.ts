@@ -1,18 +1,18 @@
 
 // A blaze in the beginning meant "a mark made on a tree by slashing the bark"
-enum Blaze {
-  RED_CROSS = 'cruce rosie',
-  RED_STRIPE = 'banda rosie',
-  RED_DOT = 'punct rosu',
-  RED_TRIANGLE = 'triunghi rosu',
-  YELLOW_CROSS = 'cruce galbena',
-  YELLOW_STRIPE = 'banda galbena',
-  YELLOW_DOT = 'punct galben',
-  YELLOW_TRIANGLE = 'triunghi galben',
-  BLUE_CROSS = 'cruce albastra',
-  BLUE_STRIPE = 'banda albastra',
-  BLUE_DOT = 'punct albastru',
-  BLUE_TRIANGLE = 'triunghi albastru'
+export enum Blaze {
+  RED_CROSS = 'plus red',
+  RED_STRIPE = 'minus red',
+  RED_DOT = 'circle red',
+  RED_TRIANGLE = 'caret-up red',
+  YELLOW_CROSS = 'plus yellow',
+  YELLOW_STRIPE = 'minus yellow',
+  YELLOW_DOT = 'circle yellow',
+  YELLOW_TRIANGLE = 'caret-up yellow',
+  BLUE_CROSS = 'plus blue',
+  BLUE_STRIPE = 'minus blue',
+  BLUE_DOT = 'circle blue',
+  BLUE_TRIANGLE = 'caret-up blue'
 }
 
 export class City {
@@ -24,7 +24,9 @@ export class City {
   }
 }
 
-interface TrailDetail {
+export interface TrailDetail {
+  id: number;
+  picture?: string;
   description?: string,
   // for things like 'forbidden in winter'
   restrictions?: string,
@@ -38,6 +40,7 @@ interface TrailDetail {
 // very flexible.
 export class Trail {
   id: number;
+  trailDetailId?: number;
   type?: number;
   name?: string;
   massif?: string;
@@ -52,6 +55,10 @@ export class Trail {
   cityCodes: string[];
   
   constructor() {
+  }
+
+  get startBlaze(): Blaze {
+    return this.blaze ? this.blaze : this.segments[0].blaze;
   }
 
   get title(): string {

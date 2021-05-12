@@ -1,9 +1,10 @@
 <div *ngIf="trail">
-  <h2>{{trail.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{trail.id}}</div>
-  <div>
-    <label for="trail-name">Trail name: </label>
-    <input id="trail-name" [(ngModel)]="trail.name" placeholder="Trail name"/>
+  <h2>
+    <blaze form="{{trail.startBlaze}}" size="lg" caretSize="2x"></blaze>
+    {{trail.title}}
+  </h2>
+  <div *ngIf="trailDetail">
+    <section>{{trailDetail.description}}</section>
   </div>
   <button (click)="goBack()">go back</button>
 </div>

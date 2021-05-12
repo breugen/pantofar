@@ -115,6 +115,18 @@ button.delete:hover {
   background-color:whitesmoke;
 }
 
+.trails-table-container .mat-column-startBlaze {
+  width: 10%;
+}
+
+.trails-table-container .mat-column-title {
+  width: 50%;
+}
+
+.trails-table-container .mat-column-massif {
+  width: 20%;
+}
+
 .trails-table-container .mat-column-time {
   width: 20%;
 }

@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 import { catchError, map, tap, filter } from 'rxjs/operators';
 import { plainToClass } from 'class-transformer'
 
-import { Trail, City } from './trail';
+import { Trail, City, TrailDetail } from './trail';
 import { MessageService } from './message.service';
 
 
@@ -14,6 +14,7 @@ export class TrailService {
 
   private trailsUrl = 'api/trails';  // URL to web api
   private citiesUrl = 'api/cities';
+  private trailDetailsUrl = 'api/trailDetails';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -129,6 +130,15 @@ export class TrailService {
       catchError(this.handleError<any>('updateTrail'))
     );
   }
+
+    /** GET trail details by id. Will 404 if id not found */
+    getTrailDetail(id: number): Observable<TrailDetail> {
+      const url = `${this.trailDetailsUrl}/${id}`;
+      return this.http.get<TrailDetail>(url).pipe(
+        tap(_ => this.log(`fetched trail details id=${id}`)),
+        catchError(this.handleError<Trail>(`getTrailDetail id=${id}`))
+      );
+    }
 
   /**
    * Handle Http operation that failed.

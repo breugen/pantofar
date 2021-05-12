@@ -14,6 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TrailDetailComponent } from './trail-detail/trail-detail.component';
 import { TrailsComponent } from './trails/trails.component';
 import { TrailSearchComponent } from './trail-search/trail-search.component';
+import { BlazeComponent } from './blaze/blaze.component';
 import { MessagesComponent } from './messages/messages.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -54,7 +55,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     TrailDetailComponent,
     MessagesComponent,
     TrailSearchComponent,
-    DurationPipe
+    DurationPipe,
+    BlazeComponent
   ],
   bootstrap: [ AppComponent ]
 })

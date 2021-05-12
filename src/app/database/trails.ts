@@ -4,10 +4,11 @@ export default [
         "type": 1,
         "name": "Hadambu",
         "massif": "Barnova",
-        "blaze": "banda albastra",
+        "blaze": "minus blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
-        "cityCodes": ['IS']
+        "cityCodes": ['IS'],
+        "trailDetailId": 1
     },
     {
         "id": 2,
@@ -15,16 +16,17 @@ export default [
         "name": null,
         "massif": "Barnova",
         "cityCodes": ['IS'],
+        "trailDetailId": 2,
         "segments": [
             {
                 "id": 3,
-                "blaze": "punct albastru",
+                "blaze": "circle blue",
                 "pointShortList": ["Gara Barnova", "Poiana cu Schit"],
                 "time": 80
             },
             {
                 "id": 4,
-                "blaze": "punct rosu",
+                "blaze": "circle red",
                 "pointShortList": ["Poiana cu Schit", "Gara Barnova"],
                 "time": 40
             }
@@ -36,7 +38,29 @@ export default [
         "type": 1,
         "name": "Hadambu",
         "massif": "Barnova",
-        "blaze": "banda albastra",
+        "blaze": "plus red",
+        "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
+        "time": 90,
+        "cityCodes": ['IS'],
+        "trailDetailId": 3
+    },
+    {
+        "id": 6,
+        "type": 1,
+        "name": "Hadambu",
+        "massif": "Barnova",
+        "blaze": "minus red",
+        "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
+        "time": 90,
+        "cityCodes": ['IS'],
+        "trailDetailId": 4
+    },
+    {
+        "id": 6,
+        "type": 1,
+        "name": "Hadambu",
+        "massif": "Barnova",
+        "blaze": "caret-up red",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
         "cityCodes": ['IS']
@@ -46,7 +70,7 @@ export default [
         "type": 1,
         "name": "Hadambu",
         "massif": "Barnova",
-        "blaze": "banda albastra",
+        "blaze": "plus yellow",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
         "cityCodes": ['IS']
@@ -56,7 +80,7 @@ export default [
         "type": 1,
         "name": "Hadambu",
         "massif": "Barnova",
-        "blaze": "banda albastra",
+        "blaze": "minus yellow",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
         "cityCodes": ['IS']
@@ -66,7 +90,7 @@ export default [
         "type": 1,
         "name": "Hadambu",
         "massif": "Barnova",
-        "blaze": "banda albastra",
+        "blaze": "caret-up yellow",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
         "cityCodes": ['IS']
@@ -76,7 +100,7 @@ export default [
         "type": 1,
         "name": "Hadambu",
         "massif": "Barnova",
-        "blaze": "banda albastra",
+        "blaze": "plus blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
         "cityCodes": ['IS']
@@ -86,7 +110,7 @@ export default [
         "type": 1,
         "name": "Hadambu",
         "massif": "Barnova",
-        "blaze": "banda albastra",
+        "blaze": "minus blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
         "cityCodes": ['IS']
@@ -96,7 +120,7 @@ export default [
         "type": 1,
         "name": "Hadambu",
         "massif": "Barnova",
-        "blaze": "banda albastra",
+        "blaze": "circle blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
         "cityCodes": ['IS']
@@ -106,7 +130,7 @@ export default [
         "type": 1,
         "name": "Hadambu",
         "massif": "Barnova",
-        "blaze": "banda albastra",
+        "blaze": "caret-up blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
         "cityCodes": ['IS']
@@ -116,7 +140,7 @@ export default [
         "type": 1,
         "name": "Hadambu",
         "massif": "Barnova",
-        "blaze": "banda albastra",
+        "blaze": "minus blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
         "cityCodes": ['IS']
@@ -126,7 +150,7 @@ export default [
         "type": 1,
         "name": "Hadambu",
         "massif": "Barnova",
-        "blaze": "banda albastra",
+        "blaze": "minus blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
         "cityCodes": ['IS']
@@ -136,7 +160,7 @@ export default [
         "type": 1,
         "name": "Hadambu",
         "massif": "Barnova",
-        "blaze": "banda albastra",
+        "blaze": "minus blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
         "cityCodes": ['IS']
@@ -146,7 +170,7 @@ export default [
         "type": 1,
         "name": "Hadambu",
         "massif": "Barnova",
-        "blaze": "banda albastra",
+        "blaze": "minus blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
         "cityCodes": ['IS']
@@ -156,7 +180,7 @@ export default [
         "type": 1,
         "name": "Hadambu",
         "massif": "Barnova",
-        "blaze": "banda albastra",
+        "blaze": "minus blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
         "cityCodes": ['IS']
@@ -166,7 +190,7 @@ export default [
         "type": 1,
         "name": "Hadambu",
         "massif": "Barnova",
-        "blaze": "banda albastra",
+        "blaze": "minus blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
         "cityCodes": ['IS']
@@ -176,7 +200,7 @@ export default [
         "type": 1,
         "name": "Hadambu",
         "massif": "Barnova",
-        "blaze": "banda albastra",
+        "blaze": "minus blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
         "cityCodes": ['IS']
@@ -186,27 +210,7 @@ export default [
         "type": 1,
         "name": "Hadambu",
         "massif": "Barnova",
-        "blaze": "banda albastra",
-        "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
-        "time": 90,
-        "cityCodes": ['IS']
-    },
-    {
-        "id": 6,
-        "type": 1,
-        "name": "Hadambu",
-        "massif": "Barnova",
-        "blaze": "banda albastra",
-        "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
-        "time": 90,
-        "cityCodes": ['IS']
-    },
-    {
-        "id": 6,
-        "type": 1,
-        "name": "Hadambu",
-        "massif": "Barnova",
-        "blaze": "banda albastra",
+        "blaze": "minus blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
         "cityCodes": ['IS']

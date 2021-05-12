@@ -12,9 +12,11 @@ export class InMemoryDataService implements InMemoryDbService {
     const database = new Database();
     const trails = database.getTrails();
     const cities = database.getCities();
+    const trailDetails = database.getTrailDetails();
     return {
       trails,
-      cities
+      cities,
+      trailDetails
     };
   }
 
