@@ -15,6 +15,7 @@ import { TrailService } from '../trail.service';
 export class TrailDetailComponent implements OnInit {
   trail: Trail;
   trailDetail: TrailDetail;
+  segments: Trail[];
 
   constructor(
     private route: ActivatedRoute,
@@ -32,6 +33,8 @@ export class TrailDetailComponent implements OnInit {
       map(trail => {
         this.trail = plainToClass(Trail, trail);
         this.trail.mergeSegments();
+        this.segments =
+          this.trail.segments.map((segment: Trail) => plainToClass(Trail, segment));
         return trail;
       }),
       mergeMap(trail => this.trailService.getTrailDetail(trail.trailDetailId))

@@ -3,8 +3,44 @@
     <blaze form="{{trail.startBlaze}}" size="lg" caretSize="2x"></blaze>
     {{trail.title}}
   </h2>
-  <div *ngIf="trailDetail">
-    <section>{{trailDetail.description}}</section>
-  </div>
-  <button (click)="goBack()">go back</button>
+
+  <mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel [expanded]="true" *ngIf="trail.segments">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Etape
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <section>
+        <mat-list>
+          <mat-list-item *ngFor="let segment of segments">
+            <blaze form="{{segment.blaze}}" size="lg" caretSize="2x"></blaze>
+            {{segment.title}}
+          </mat-list-item>
+         </mat-list>
+      </section>
+    </mat-expansion-panel>
+    <mat-expansion-panel [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Descriere
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <section>
+        {{trailDetail.description}}
+      </section>
+    </mat-expansion-panel>
+    <mat-expansion-panel *ngIf="trailDetail.wildlife">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Flora si Fauna
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <section>
+        {{trailDetail.wildlife}}
+      </section>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <button (click)="goBack()">Inapoi</button>
 </div>
