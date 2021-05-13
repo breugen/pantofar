@@ -23,3 +23,7 @@ button:disabled {
   color: #ccc;
   cursor: auto;
 }
+
+.trail-segments-accordion mat-list-item:not(:first-child) {
+  padding-top: 1rem;
+}

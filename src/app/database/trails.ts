@@ -6,6 +6,7 @@ export default [
         "massif": "Barnova",
         "blaze": "minus blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
+        "pointLongList": ["Gara Barnova", "Sat Bordea", "Manastirea Barnova"],
         "time": 90,
         "cityCodes": ['IS'],
         "trailDetailId": 1
@@ -28,6 +29,7 @@ export default [
                 "id": 4,
                 "blaze": "circle red",
                 "pointShortList": ["Poiana cu Schit", "Gara Barnova"],
+                "pointLongList": ["Gara Barnova", "Cabana Barnova", "Manastirea Barnova"],
                 "time": 40
             }
         ]
@@ -40,6 +42,7 @@ export default [
         "massif": "Barnova",
         "blaze": "plus red",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
+        "pointLongList": ["Gara Barnova", "Sat Bordea", "Manastirea Barnova"],
         "time": 90,
         "cityCodes": ['IS'],
         "trailDetailId": 3

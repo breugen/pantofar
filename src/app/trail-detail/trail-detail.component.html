@@ -3,37 +3,44 @@
     <blaze form="{{trail.startBlaze}}" size="lg" caretSize="2x"></blaze>
     {{trail.title}}
   </h2>
+  <h4>
+    <span>Durata: <i> {{trail.time | duration}}</i></span>
+    <span *ngIf="trail.reverseTime"> | Intoarcere: <i> {{trail.reverseTime | duration}}</i></span>
+  </h4>
+  <h4 *ngIf="trail.pointLongList?.length > trail.pointShortList?.length">
+    {{trail.pointLongList.join(' - ')}}
+  </h4>
 
-  <mat-accordion class="example-headers-align" multi>
+  <mat-accordion class="trail-segments-accordion" multi>
     <mat-expansion-panel [expanded]="true" *ngIf="trail.segments">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Etape
+          <b>Etape</b>
         </mat-panel-title>
       </mat-expansion-panel-header>
       <section>
         <mat-list>
-          <mat-list-item *ngFor="let segment of segments">
-            <blaze form="{{segment.blaze}}" size="lg" caretSize="2x"></blaze>
-            {{segment.title}}
+          <mat-list-item *ngFor="let segment of segments; index as i">
+            <segment [trailSegment]="segment"></segment>
+            <mat-divider *ngIf="i !== segments.length - 1"></mat-divider>
           </mat-list-item>
          </mat-list>
       </section>
     </mat-expansion-panel>
-    <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel [expanded]="true" *ngIf="trailDetail?.description">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Descriere
+          <b>Descriere</b>
         </mat-panel-title>
       </mat-expansion-panel-header>
       <section>
         {{trailDetail.description}}
       </section>
     </mat-expansion-panel>
-    <mat-expansion-panel *ngIf="trailDetail.wildlife">
+    <mat-expansion-panel *ngIf="trailDetail?.wildlife">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          Flora si Fauna
+         <b>Flora si Fauna</b>
         </mat-panel-title>
       </mat-expansion-panel-header>
       <section>

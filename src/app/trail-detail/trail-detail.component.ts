@@ -8,7 +8,7 @@ import { Trail, TrailDetail } from '../trail';
 import { TrailService } from '../trail.service';
 
 @Component({
-  selector: 'app-trail-detail',
+  selector: 'trail-detail',
   templateUrl: './trail-detail.component.html',
   styleUrls: [ './trail-detail.component.css' ]
 })
@@ -32,10 +32,12 @@ export class TrailDetailComponent implements OnInit {
     this.trailService.getTrail(id).pipe(
       map(trail => {
         this.trail = plainToClass(Trail, trail);
-        this.trail.mergeSegments();
-        this.segments =
-          this.trail.segments.map((segment: Trail) => plainToClass(Trail, segment));
-        return trail;
+        if (Array.isArray(this.trail.segments)) {
+          this.trail.mergeSegments();
+          this.segments =
+            this.trail.segments.map((segment: Trail) => plainToClass(Trail, segment));
+        }
+        return this.trail;
       }),
       mergeMap(trail => this.trailService.getTrailDetail(trail.trailDetailId))
     ).subscribe(trailDetail => {
