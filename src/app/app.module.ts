@@ -29,7 +29,6 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
 import { GalleryModule } from 'ng-gallery';
-import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   imports: [
@@ -56,8 +55,7 @@ import { MatCardModule } from '@angular/material/card';
     MatDividerModule,
     MatExpansionModule,
     MatListModule,
-    GalleryModule,
-    MatCardModule
+    GalleryModule
   ],
   declarations: [
     AppComponent,

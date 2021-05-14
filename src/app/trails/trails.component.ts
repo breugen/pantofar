@@ -1,11 +1,12 @@
 import {Component, ViewChild, AfterViewInit, AfterContentInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {fromEventPattern, merge, Observable, of as observableOf} from 'rxjs';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { merge, Observable, of as observableOf} from 'rxjs';
 import {catchError, map, startWith, switchMap} from 'rxjs/operators';
 import { Trail, City } from '../trail';
 import { TrailService } from '../trail.service';
+import { WeatherService } from '../weather.service';
 import { MatSelect } from '@angular/material/select';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
 
@@ -37,7 +38,8 @@ export class TrailsComponent implements AfterViewInit  {
 
   constructor(
     private route: ActivatedRoute,
-    private trailService: TrailService
+    private trailService: TrailService,
+    private weatherService: WeatherService
   ) {}
 
   static pageSlice(data: Trail[], pageIndex: number) {
@@ -75,9 +77,22 @@ export class TrailsComponent implements AfterViewInit  {
           return observableOf([]);
         })
       );
+
+      this.cities.subscribe((cities) => {
+        const selectedCityName =
+          cities.find(city => this.selectedCity === city.code).name;
+        this.weatherService.getWeather(selectedCityName).then(result => {
+          console.log('vremea ' + result);
+        });
+      });
   }
 
   resetPaging(): void {
     this.paginator.pageIndex = 0;
+  }
+
+  onCityChange(): void {
+    this.resetPaging();
+    // 
   }
 }
