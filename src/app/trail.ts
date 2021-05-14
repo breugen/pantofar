@@ -26,7 +26,7 @@ export class City {
 
 export interface TrailDetail {
   id: number;
-  picture?: string;
+  pictures?: Array<Object>;
   description?: string,
   // for things like 'forbidden in winter'
   restrictions?: string,

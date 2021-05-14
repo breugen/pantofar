@@ -18,14 +18,20 @@
           <b>Etape</b>
         </mat-panel-title>
       </mat-expansion-panel-header>
-      <section>
-        <mat-list>
-          <mat-list-item *ngFor="let segment of segments; index as i">
-            <segment [trailSegment]="segment"></segment>
-            <mat-divider *ngIf="i !== segments.length - 1"></mat-divider>
-          </mat-list-item>
-         </mat-list>
-      </section>
+      <mat-list>
+        <mat-list-item *ngFor="let segment of segments; index as i">
+          <segment [trailSegment]="segment"></segment>
+          <mat-divider *ngIf="i !== segments.length - 1"></mat-divider>
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel [expanded]="false" *ngIf="images">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <b>Imagini</b>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <gallery [items]="images"></gallery>
     </mat-expansion-panel>
     <mat-expansion-panel [expanded]="true" *ngIf="trailDetail?.description">
       <mat-expansion-panel-header>
@@ -40,7 +46,7 @@
     <mat-expansion-panel *ngIf="trailDetail?.wildlife">
       <mat-expansion-panel-header>
         <mat-panel-title>
-         <b>Flora si Fauna</b>
+          <b>Flora si Fauna</b>
         </mat-panel-title>
       </mat-expansion-panel-header>
       <section>

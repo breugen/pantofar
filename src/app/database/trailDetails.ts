@@ -1,7 +1,16 @@
 export default [
     {
         "id": 1,
-        "picture": "https://lh3.googleusercontent.com/proxy/j2eNqXsiWaRgcl74onCp1-bHffh8KHzTs1IVRy20GAadymO5PHt34TztW90J3XsBRdujEpl4pkjRQx-sok5o5HGzBew",
+        "pictures": [
+            {
+                "url": "http://www.poianacuschit.ro/foto/2011/s5.jpg",
+                "description": "this picture label"
+            },
+            {
+                "url": "http://www.poianacuschit.ro/foto/2011/s4.jpg",
+                "description": "this 2 picture label"
+            }
+        ],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         // for things like 'forbidden in winter'
         "restrictions": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium",
@@ -11,7 +20,16 @@ export default [
     },
     {
         "id": 2,
-        "picture": "https://lh3.googleusercontent.com/proxy/j2eNqXsiWaRgcl74onCp1-bHffh8KHzTs1IVRy20GAadymO5PHt34TztW90J3XsBRdujEpl4pkjRQx-sok5o5HGzBew",
+        "pictures": [
+            {
+                "url": "http://www.poianacuschit.ro/foto/2011/s5.jpg",
+                "description": "this picture label"
+            },
+            {
+                "url": "http://www.poianacuschit.ro/foto/2011/s4.jpg",
+                "description": "this 2 picture label"
+            }
+        ],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         // for things like 'forbidden in winter'
         "restrictions": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium",
@@ -21,7 +39,16 @@ export default [
     },
     {
         "id": 3,
-        "picture": "https://lh3.googleusercontent.com/proxy/j2eNqXsiWaRgcl74onCp1-bHffh8KHzTs1IVRy20GAadymO5PHt34TztW90J3XsBRdujEpl4pkjRQx-sok5o5HGzBew",
+        "pictures": [
+            {
+                "url": "http://www.poianacuschit.ro/foto/2011/s5.jpg",
+                "description": "this picture label"
+            },
+            {
+                "url": "http://www.poianacuschit.ro/foto/2011/s4.jpg",
+                "description": "this 2 picture label"
+            }
+        ],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         // for things like 'forbidden in winter'
         "restrictions": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium",
@@ -31,7 +58,16 @@ export default [
     },
     {
         "id": 4,
-        "picture": "https://lh3.googleusercontent.com/proxy/j2eNqXsiWaRgcl74onCp1-bHffh8KHzTs1IVRy20GAadymO5PHt34TztW90J3XsBRdujEpl4pkjRQx-sok5o5HGzBew",
+        "pictures": [
+            {
+                "url": "http://www.poianacuschit.ro/foto/2011/s5.jpg",
+                "description": "this picture label"
+            },
+            {
+                "url": "http://www.poianacuschit.ro/foto/2011/s4.jpg",
+                "description": "this 2 picture label"
+            }
+        ],
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         // for things like 'forbidden in winter'
         "restrictions": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium",

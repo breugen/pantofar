@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { map, mergeMap } from 'rxjs/operators';
 import { plainToClass } from 'class-transformer'
+import { GalleryComponent, ImageItem } from 'ng-gallery';
 
 import { Trail, TrailDetail } from '../trail';
 import { TrailService } from '../trail.service';
@@ -16,6 +17,7 @@ export class TrailDetailComponent implements OnInit {
   trail: Trail;
   trailDetail: TrailDetail;
   segments: Trail[];
+  images: Object[];
 
   constructor(
     private route: ActivatedRoute,
@@ -42,6 +44,13 @@ export class TrailDetailComponent implements OnInit {
       mergeMap(trail => this.trailService.getTrailDetail(trail.trailDetailId))
     ).subscribe(trailDetail => {
       this.trailDetail = trailDetail;
+      if (Array.isArray(this.trailDetail.pictures)) {
+        this.images = this.trailDetail.pictures.map(picture => {
+          // if you ever want to add an image title:
+          // https://github.com/MurhafSousli/ngx-gallery/wiki/Advanced-Usage
+          return new ImageItem({src: picture['url']});
+        });
+      }
     });
   }
 

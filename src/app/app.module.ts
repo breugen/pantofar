@@ -28,6 +28,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
+import { GalleryModule } from 'ng-gallery';
 
 @NgModule({
   imports: [
@@ -53,7 +54,8 @@ import { MatListModule } from '@angular/material/list';
     MatSlideToggleModule,
     MatDividerModule,
     MatExpansionModule,
-    MatListModule
+    MatListModule,
+    GalleryModule
   ],
   declarations: [
     AppComponent,
