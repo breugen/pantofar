@@ -27,3 +27,7 @@ button:disabled {
 .trail-segments-accordion mat-list-item:not(:first-child) {
   padding-top: 1rem;
 }
+
+.restrictions b {
+  color: tomato;
+}

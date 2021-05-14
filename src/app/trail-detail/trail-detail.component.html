@@ -6,6 +6,7 @@
   <h4>
     <span>Durata: <i> {{trail.time | duration}}</i></span>
     <span *ngIf="trail.reverseTime"> | Intoarcere: <i> {{trail.reverseTime | duration}}</i></span>
+    <span class="restrictions" *ngIf="trailDetail?.restrictions"> | <b>{{trailDetail?.restrictions}} </b></span>
   </h4>
   <h4 *ngIf="trail.pointLongList?.length > trail.pointShortList?.length">
     {{trail.pointLongList.join(' - ')}}

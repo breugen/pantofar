@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { map, mergeMap } from 'rxjs/operators';
 import { plainToClass } from 'class-transformer'
-import { GalleryComponent, ImageItem } from 'ng-gallery';
+import { ImageItem } from 'ng-gallery';
 
 import { Trail, TrailDetail } from '../trail';
 import { TrailService } from '../trail.service';
