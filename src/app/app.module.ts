@@ -16,6 +16,7 @@ import { TrailsComponent } from './trails/trails.component';
 import { TrailSearchComponent } from './trail-search/trail-search.component';
 import { SegmentComponent } from './segment/segment.component';
 import { BlazeComponent } from './blaze/blaze.component';
+import { WeatherComponent } from './weather/weather.component';
 import { MessagesComponent } from './messages/messages.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -29,6 +30,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatListModule } from '@angular/material/list';
 import { GalleryModule } from 'ng-gallery';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   imports: [
@@ -55,7 +57,8 @@ import { GalleryModule } from 'ng-gallery';
     MatDividerModule,
     MatExpansionModule,
     MatListModule,
-    GalleryModule
+    GalleryModule,
+    MatSnackBarModule
   ],
   declarations: [
     AppComponent,
@@ -66,7 +69,8 @@ import { GalleryModule } from 'ng-gallery';
     TrailSearchComponent,
     DurationPipe,
     BlazeComponent,
-    SegmentComponent
+    SegmentComponent,
+    WeatherComponent
   ],
   bootstrap: [ AppComponent ]
 })

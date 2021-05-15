@@ -1,4 +1,4 @@
-import {Component, ViewChild, AfterViewInit, AfterContentInit} from '@angular/core';
+import {Component, ViewChild, AfterViewInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -9,6 +9,8 @@ import { TrailService } from '../trail.service';
 import { WeatherService } from '../weather.service';
 import { MatSelect } from '@angular/material/select';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { WeatherComponent } from '../weather/weather.component';
 
 /**
  * @title Table retrieving data through HTTP
@@ -28,7 +30,7 @@ export class TrailsComponent implements AfterViewInit  {
 
   resultsLength = 0;
   isLoadingResults = true;
-  selectedCity = 'IS';
+  selectedCity = 'Iasi';
   isRoundTrip = true;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -39,7 +41,8 @@ export class TrailsComponent implements AfterViewInit  {
   constructor(
     private route: ActivatedRoute,
     private trailService: TrailService,
-    private weatherService: WeatherService
+    private weatherService: WeatherService,
+    private _snackBar: MatSnackBar
   ) {}
 
   static pageSlice(data: Trail[], pageIndex: number) {
@@ -78,13 +81,7 @@ export class TrailsComponent implements AfterViewInit  {
         })
       );
 
-      this.cities.subscribe((cities) => {
-        const selectedCityName =
-          cities.find(city => this.selectedCity === city.code).name;
-        this.weatherService.getWeather(selectedCityName).then(result => {
-          console.log('vremea ' + result);
-        });
-      });
+      this.showWeatherForCity(this.selectedCity);
   }
 
   resetPaging(): void {
@@ -93,6 +90,16 @@ export class TrailsComponent implements AfterViewInit  {
 
   onCityChange(): void {
     this.resetPaging();
-    // 
+    this.showWeatherForCity(this.selectedCity);
+  }
+
+  showWeatherForCity(selectedCityName: string): void {
+    // I only show this when demo.
+    // this.weatherService.getWeather(selectedCityName).then(weather => {
+    //   this._snackBar.openFromComponent(WeatherComponent, {
+    //     duration: 6000,
+    //     data: Object.assign(weather, {city: selectedCityName})
+    //   });
+    // });
   }
 }

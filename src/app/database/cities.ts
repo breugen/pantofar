@@ -2,41 +2,42 @@ export default [
     {
         "name": "Bucuresti",
         "active": true,
-        "code": "B"
+        // a code that will work with the weather API.
+        "code": "Bucuresti"
     },
     {
         "name": "Iasi",
         "active": true,
-        "code": "IS"
+        "code": "Iasi"
     },
     {
         "name": "Cluj",
         "active": true,
-        "code": "CJ"
+        "code": "Cluj"
     },
     {
         "name": "Timisoara",
         "active": true,
-        "code": "TM"
+        "code": "Timisoara"
     },
     {
         "name": "Constanta",
         "active": true,
-        "code": "CT"
+        "code": "Constanta"
     },
     {
         "name": "Sibiu",
         "active": true,
-        "code": "SB"
+        "code": "Sibiu"
     },
     {
         "name": "Brasov",
         "active": true,
-        "code": "BV"
+        "code": "Brasov"
     },
     {
         "name": "Oradea",
         "active": true,
-        "code": "BH"
+        "code": "Oradea"
     }
 ]

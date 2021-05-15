@@ -8,7 +8,7 @@ export default [
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "pointLongList": ["Gara Barnova", "Sat Bordea", "Manastirea Barnova"],
         "time": 90,
-        "cityCodes": ['IS'],
+        "cityCodes": ['Iasi'],
         "trailDetailId": 1
     },
     {
@@ -16,7 +16,7 @@ export default [
         "type": 1,
         "name": null,
         "massif": "Barnova",
-        "cityCodes": ['IS'],
+        "cityCodes": ['Iasi'],
         "trailDetailId": 2,
         "segments": [
             {
@@ -44,7 +44,7 @@ export default [
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "pointLongList": ["Gara Barnova", "Sat Bordea", "Manastirea Barnova"],
         "time": 90,
-        "cityCodes": ['IS'],
+        "cityCodes": ['Iasi'],
         "trailDetailId": 3
     },
     {
@@ -55,7 +55,7 @@ export default [
         "blaze": "minus red",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
-        "cityCodes": ['IS'],
+        "cityCodes": ['Iasi'],
         "trailDetailId": 4
     },
     {
@@ -66,7 +66,7 @@ export default [
         "blaze": "caret-up red",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
-        "cityCodes": ['IS']
+        "cityCodes": ['Iasi']
     },
     {
         "id": 6,
@@ -76,7 +76,7 @@ export default [
         "blaze": "plus yellow",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
-        "cityCodes": ['IS']
+        "cityCodes": ['Iasi']
     },
     {
         "id": 6,
@@ -86,7 +86,7 @@ export default [
         "blaze": "minus yellow",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
-        "cityCodes": ['IS']
+        "cityCodes": ['Iasi']
     },
     {
         "id": 6,
@@ -96,7 +96,7 @@ export default [
         "blaze": "caret-up yellow",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
-        "cityCodes": ['IS']
+        "cityCodes": ['Iasi']
     },
     {
         "id": 6,
@@ -106,7 +106,7 @@ export default [
         "blaze": "plus blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
-        "cityCodes": ['IS']
+        "cityCodes": ['Iasi']
     },
     {
         "id": 6,
@@ -116,7 +116,7 @@ export default [
         "blaze": "minus blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
-        "cityCodes": ['IS']
+        "cityCodes": ['Iasi']
     },
     {
         "id": 6,
@@ -126,7 +126,7 @@ export default [
         "blaze": "circle blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
-        "cityCodes": ['IS']
+        "cityCodes": ['Iasi']
     },
     {
         "id": 6,
@@ -136,7 +136,7 @@ export default [
         "blaze": "caret-up blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
-        "cityCodes": ['IS']
+        "cityCodes": ['Iasi']
     },
     {
         "id": 6,
@@ -146,7 +146,7 @@ export default [
         "blaze": "minus blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
-        "cityCodes": ['IS']
+        "cityCodes": ['Iasi']
     },
     {
         "id": 6,
@@ -156,7 +156,7 @@ export default [
         "blaze": "minus blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
-        "cityCodes": ['IS']
+        "cityCodes": ['Iasi']
     },
     {
         "id": 6,
@@ -166,7 +166,7 @@ export default [
         "blaze": "minus blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
-        "cityCodes": ['IS']
+        "cityCodes": ['Iasi']
     },
     {
         "id": 6,
@@ -176,7 +176,7 @@ export default [
         "blaze": "minus blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
-        "cityCodes": ['IS']
+        "cityCodes": ['Iasi']
     },
     {
         "id": 6,
@@ -186,7 +186,7 @@ export default [
         "blaze": "minus blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
-        "cityCodes": ['IS']
+        "cityCodes": ['Iasi']
     },
     {
         "id": 6,
@@ -196,7 +196,7 @@ export default [
         "blaze": "minus blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
-        "cityCodes": ['IS']
+        "cityCodes": ['Iasi']
     },
     {
         "id": 6,
@@ -206,7 +206,7 @@ export default [
         "blaze": "minus blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
-        "cityCodes": ['IS']
+        "cityCodes": ['Iasi']
     },
     {
         "id": 6,
@@ -216,7 +216,7 @@ export default [
         "blaze": "minus blue",
         "pointShortList": ["Gara Barnova", "Manastirea Barnova"],
         "time": 90,
-        "cityCodes": ['IS']
+        "cityCodes": ['Iasi']
     },
     
 ];
