@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Poteca';
   subtitle = 'Trasee marcate pentru incepatori'
+  isScrolled = false;
+
+  @HostListener('document:scroll', ['$event'])
+  windowScroll(event: Event) {
+    const target = event.target as Document;
+    const newScroll = !!target.scrollingElement.scrollTop;
+    if (this.isScrolled !== newScroll) {
+      this.isScrolled = newScroll;
+    }
+  }
 }
