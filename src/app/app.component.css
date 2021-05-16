@@ -6,6 +6,11 @@
   padding-top: .8rem;
   padding-bottom: .2rem;
   display:flex;
+  z-index: 2;
+}
+
+.app-header.stuck {
+  box-shadow: 0 6px 4px -4px grey;
 }
 
 .main-header {
