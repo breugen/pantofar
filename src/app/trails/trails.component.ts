@@ -17,7 +17,7 @@ import { WeatherComponent } from '../weather/weather.component';
  */
 @Component({
   selector: 'trails',
-  styleUrls: ['trails.component.css'],
+  styleUrls: ['./trails.component.css'],
   templateUrl: 'trails.component.html',
 })
 export class TrailsComponent implements AfterViewInit  {
