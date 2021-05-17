@@ -2,11 +2,12 @@
 .app-header {
   position: sticky;
   top: 0px;
-  background: white;
+  background: whitesmoke;
   padding-top: .8rem;
   padding-bottom: .2rem;
   display:flex;
   z-index: 2;
+  border-radius: 10px;
 }
 
 .app-header.stuck {
