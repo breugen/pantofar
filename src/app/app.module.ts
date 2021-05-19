@@ -17,6 +17,7 @@ import { TrailSearchComponent } from './trail-search/trail-search.component';
 import { SegmentComponent } from './segment/segment.component';
 import { BlazeComponent } from './blaze/blaze.component';
 import { WeatherComponent } from './weather/weather.component';
+import { TrailTypeComponent } from './trail-type/trail-type.component';
 import { MessagesComponent } from './messages/messages.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -70,7 +71,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     DurationPipe,
     BlazeComponent,
     SegmentComponent,
-    WeatherComponent
+    WeatherComponent,
+    TrailTypeComponent
   ],
   bootstrap: [ AppComponent ]
 })
