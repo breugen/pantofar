@@ -14,8 +14,8 @@
       <div class='caption'>DRUMETIE DE ZI</div>
       <i class="fas fa-hiking fa-5x"></i>
     </div>
-    <div class="details">
-      <i class="fas fa-ban fa-lg"></i>
+    <div class="details" (click)="showTypeInfo($event, 2)">
+      <i class="fas fa-question-circle fa-2x"></i>
     </div>
   </a>
   <a routerLink="/trails/3">
@@ -23,8 +23,8 @@
       <div class='caption'>WEEKEND MARGARETA</div>
       <i class="fas fa-home fa-5x"></i>
     </div>
-    <div class="details">
-      <i class="fas fa-ban fa-lg"></i>
+    <div class="details" (click)="showTypeInfo($event, 3)">
+      <i class="fas fa-question-circle fa-2x"></i>
     </div>
   </a>
   <a routerLink="/trails/4">
@@ -32,8 +32,8 @@
       <div class='caption'>WEEKEND STEA</div>
       <i class="fas fa-hotel fa-5x"></i>
     </div>
-    <div class="details">
-      <i class="fas fa-ban fa-lg"></i>
+    <div class="details" (click)="showTypeInfo($event, 4)">
+      <i class="fas fa-question-circle fa-2x"></i>
     </div>
   </a>
 </div>

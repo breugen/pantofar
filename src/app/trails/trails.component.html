@@ -1,4 +1,7 @@
-<h2>Plimbari</h2>
+<h2 *ngIf="type === 1">Plimbari scurte</h2>
+<h2 *ngIf="type === 2">Drumetii de o zi</h2>
+<h2 *ngIf="type === 3">Drumetii de weekend</h2>
+<h2 *ngIf="type === 4">Plimbari de weekend</h2>
 
 <div class="trails-container mat-elevation-z8">
   <div class="example-loading-shade" *ngIf="isLoadingResults">

@@ -27,11 +27,12 @@ export class TrailsComponent implements AfterViewInit  {
   displayedColumns: string[] = ['startBlaze', 'title', 'massif', 'time'];
   filteredAndPagedIssues: Observable<Trail[]>;
   cities: Observable<City[]>;
+  type: number;
 
   resultsLength = 0;
   isLoadingResults = true;
   selectedCity = 'Iasi';
-  isRoundTrip = true;
+  isRoundTrip = false;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -63,9 +64,9 @@ export class TrailsComponent implements AfterViewInit  {
       .pipe(
         startWith({}),
         switchMap(() => {
-          const type = +this.route.snapshot.paramMap.get('type');
+          this.type = +this.route.snapshot.paramMap.get('type');
           this.isLoadingResults = true;
-          return this.trailService.getTrails(type, this.sort.active,
+          return this.trailService.getTrails(this.type, this.sort.active,
             this.sort.direction, this.selectedCity ? this.selectedCity : 'IS',
             this.isRoundTrip);
         }),

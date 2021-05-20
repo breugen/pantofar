@@ -15,16 +15,16 @@ import { MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
 
     ngOnInit(): void {
         switch (this.data['type']) {
-            case 0:
+            case 1:
                 this.description = 'type 1';
                 break;
-            case 1:
+            case 2:
                 this.description = 'type 2';
                 break;
-            case 2:
+            case 3:
                 this.description = 'type 3';
                 break;
-            case 3:
+            case 4:
                 this.description = 'type 4';
         };
     }
