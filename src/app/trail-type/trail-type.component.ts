@@ -16,16 +16,26 @@ import { MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
     ngOnInit(): void {
         switch (this.data['type']) {
             case 1:
-                this.description = 'type 1';
+                this.description =`
+                  Plimbari usoare care nu necesita echipament profesionist si cazare.
+                `;
                 break;
             case 2:
-                this.description = 'type 2';
+                this.description = `
+                  Drumetii de o zi care nu necesita cazare.
+                `;
                 break;
             case 3:
-                this.description = 'type 3';
+                this.description = `
+                  Drumetii de weekend, de dificultate medie, cu posibilitati de
+                  cazare in regim de pensiune. 
+                `;
                 break;
             case 4:
-                this.description = 'type 4';
+                this.description = `
+                  Plimbari de weekend cu posibilitati de cazare intr-un regim
+                  de confort sporit.
+                `;
         };
     }
 
