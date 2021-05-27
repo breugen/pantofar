@@ -42,7 +42,7 @@ export class TrailService {
   /** GET trails from the server */
   getTrails(type: number, active: string, direction: string,
       cityCode: string, isRoundTrip: boolean): Observable<Trail[]> {
-    return this.http.get<Trail[]>(this.trailsUrl)
+    return this.http.get<Trail[]>(this.trailsUrl + '/' + cityCode)
       .pipe(
         map(data => {
           const trails = data.map(element => {
@@ -51,8 +51,7 @@ export class TrailService {
             return trail;
           });
           return trails.filter(trail => {
-            return (trail.type === type) && (trail.cityCodes.includes(cityCode) &&
-            (!isRoundTrip || trail.isRoundTrip()));
+            return (trail.type === type) && (!isRoundTrip || trail.isRoundTrip());
           }).sort((trailA: Object, trailB: Object) => {
               if (direction === 'asc') {
                 return trailA[active] < trailB[active] ? -1 : 1;
