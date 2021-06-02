@@ -27,7 +27,7 @@ export class TrailsComponent implements AfterViewInit  {
   displayedColumns: string[] = ['startBlaze', 'title', 'massif', 'time'];
   filteredAndPagedIssues: Observable<Trail[]>;
   cities: Observable<City[]>;
-  type: number;
+  type: number = 0;
 
   resultsLength = 0;
   isLoadingResults = true;
@@ -51,6 +51,7 @@ export class TrailsComponent implements AfterViewInit  {
   }
 
   ngOnInit() {
+    this.type = +this.route.snapshot.paramMap.get('type');
     this.filteredAndPagedIssues = observableOf([]);
     this.cities = this.trailService.getCities();
   }
@@ -64,7 +65,6 @@ export class TrailsComponent implements AfterViewInit  {
       .pipe(
         startWith({}),
         switchMap(() => {
-          this.type = +this.route.snapshot.paramMap.get('type');
           this.isLoadingResults = true;
           return this.trailService.getTrails(this.type, this.sort.active,
             this.sort.direction, this.selectedCity ? this.selectedCity : 'IS',
