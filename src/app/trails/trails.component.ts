@@ -23,6 +23,7 @@ import { environment } from '../../environments/environment';
 })
 export class TrailsComponent implements AfterViewInit  {
 
+  static isWeatherShown: boolean = false;
   // if you change page size you also need to update the template, Or pass it!
   static readonly pageSize: number = 5;
   displayedColumns: string[] = ['startBlaze', 'title', 'massif', 'time'];
@@ -83,7 +84,7 @@ export class TrailsComponent implements AfterViewInit  {
         })
       );
 
-      this.showWeatherForCity(this.selectedCity);
+      this.showWeatherForCity(this.selectedCity, false);
   }
 
   resetPaging(): void {
@@ -92,18 +93,21 @@ export class TrailsComponent implements AfterViewInit  {
 
   onCityChange(): void {
     this.resetPaging();
-    this.showWeatherForCity(this.selectedCity);
+    this.showWeatherForCity(this.selectedCity, true);
   }
 
-  showWeatherForCity(selectedCityName: string): void {
+  showWeatherForCity(selectedCityName: string, forceShow: boolean): void {
     // I only show this when demo (prod build).
     if (environment.production) {
-      this.weatherService.getWeather(selectedCityName).then(weather => {
-        this._snackBar.openFromComponent(WeatherComponent, {
-          duration: 6000,
-          data: Object.assign(weather, {city: selectedCityName})
+      if (forceShow || !TrailsComponent.isWeatherShown) {
+        TrailsComponent.isWeatherShown = true;
+        this.weatherService.getWeather(selectedCityName).then(weather => {
+          this._snackBar.openFromComponent(WeatherComponent, {
+            duration: 6000,
+            data: Object.assign(weather, {city: selectedCityName})
+          });
         });
-      });
+      }
     }
   }
 }
