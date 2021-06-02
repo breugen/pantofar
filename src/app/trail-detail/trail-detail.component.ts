@@ -11,7 +11,7 @@ import { TrailService } from '../trail.service';
 @Component({
   selector: 'trail-detail',
   templateUrl: './trail-detail.component.html',
-  styleUrls: [ './trail-detail.component.css' ]
+  styleUrls: ['./trail-detail.component.css']
 })
 export class TrailDetailComponent implements OnInit {
   trail: Trail;
@@ -23,7 +23,7 @@ export class TrailDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private trailService: TrailService,
     private location: Location
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getTrail();
@@ -31,24 +31,23 @@ export class TrailDetailComponent implements OnInit {
 
   getTrail(): void {
     const code = this.route.snapshot.paramMap.get('code');
-    this.trailService.getTrail(code).pipe(
-      map(trail => {
-        this.trail = plainToClass(Trail, trail);
-        if (Array.isArray(this.trail.segments) && this.trail.segments.length) {
-          this.trail.mergeSegments();
-          this.segments =
-            this.trail.segments.map((segment: Trail) => plainToClass(Trail, segment));
-        }
-        return this.trail;
-      }),
-      mergeMap(trail => this.trailService.getTrailDetail(code))
-    ).subscribe(trailDetail => {
-      this.trailDetail = trailDetail;
+
+    this.trailService.getTrail(code).subscribe(trail => {
+      this.trail = plainToClass(Trail, trail);
+      if (Array.isArray(this.trail.segments) && this.trail.segments.length) {
+        this.trail.mergeSegments();
+        this.segments =
+          this.trail.segments.map((segment: Trail) => plainToClass(Trail, segment));
+      }
+    });
+
+    this.trailService.getTrailDetail(code).subscribe(trailDetail => {
+      this.trailDetail = plainToClass(TrailDetail, trailDetail);
       if (Array.isArray(this.trailDetail.pictures)) {
         this.images = this.trailDetail.pictures.map(picture => {
           // if you ever want to add an image title:
           // https://github.com/MurhafSousli/ngx-gallery/wiki/Advanced-Usage
-          return new ImageItem({src: picture['url']});
+          return new ImageItem({ src: picture['url'] });
         });
       }
     });
