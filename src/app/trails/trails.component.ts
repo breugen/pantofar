@@ -11,6 +11,7 @@ import { MatSelect } from '@angular/material/select';
 import { MatSlideToggle } from '@angular/material/slide-toggle';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { WeatherComponent } from '../weather/weather.component';
+import { environment } from '../../environments/environment';
 
 /**
  * @title Table retrieving data through HTTP
@@ -95,12 +96,14 @@ export class TrailsComponent implements AfterViewInit  {
   }
 
   showWeatherForCity(selectedCityName: string): void {
-    // I only show this when demo.
-    // this.weatherService.getWeather(selectedCityName).then(weather => {
-    //   this._snackBar.openFromComponent(WeatherComponent, {
-    //     duration: 6000,
-    //     data: Object.assign(weather, {city: selectedCityName})
-    //   });
-    // });
+    // I only show this when demo (prod build).
+    if (environment.production) {
+      this.weatherService.getWeather(selectedCityName).then(weather => {
+        this._snackBar.openFromComponent(WeatherComponent, {
+          duration: 6000,
+          data: Object.assign(weather, {city: selectedCityName})
+        });
+      });
+    }
   }
 }
