@@ -13,7 +13,7 @@
   </h4>
 
   <mat-accordion class="trail-segments-accordion" multi>
-    <mat-expansion-panel [expanded]="true" *ngIf="trail.segments">
+    <mat-expansion-panel [expanded]="true" *ngIf="trail.segments && trail.segments.length">
       <mat-expansion-panel-header>
         <mat-panel-title>
           <b>Etape</b>

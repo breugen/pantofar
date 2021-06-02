@@ -8,7 +8,7 @@ import { TrailDetailComponent } from './trail-detail/trail-detail.component';
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'detail/:id', component: TrailDetailComponent },
+  { path: 'detail/:code', component: TrailDetailComponent },
   { path: 'trails/:type', component: TrailsComponent }
 ];
 

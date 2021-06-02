@@ -13,8 +13,9 @@ import { MessageService } from './message.service';
 export class TrailService {
 
   private trailsUrl = 'api/trails';  // URL to web api
+  private trailUrl = 'api/trail';
   private citiesUrl = 'api/cities';
-  private trailDetailsUrl = 'api/trailDetails';
+  private trailDetailsUrl = 'api/detail';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -80,11 +81,11 @@ export class TrailService {
   }
 
   /** GET trail by id. Will 404 if id not found */
-  getTrail(id: number): Observable<Trail> {
-    const url = `${this.trailsUrl}/${id}`;
+  getTrail(code: string): Observable<Trail> {
+    const url = `${this.trailUrl}/${code}`;
     return this.http.get<Trail>(url).pipe(
-      tap(_ => this.log(`fetched trail id=${id}`)),
-      catchError(this.handleError<Trail>(`getTrail id=${id}`))
+      tap(_ => this.log(`fetched trail id=${code}`)),
+      catchError(this.handleError<Trail>(`getTrail id=${code}`))
     );
   }
 
@@ -131,11 +132,11 @@ export class TrailService {
   }
 
     /** GET trail details by id. Will 404 if id not found */
-    getTrailDetail(id: number): Observable<TrailDetail> {
-      const url = `${this.trailDetailsUrl}/${id}`;
+    getTrailDetail(code: string): Observable<TrailDetail> {
+      const url = `${this.trailDetailsUrl}/${code}`;
       return this.http.get<TrailDetail>(url).pipe(
-        tap(_ => this.log(`fetched trail details id=${id}`)),
-        catchError(this.handleError<Trail>(`getTrailDetail id=${id}`))
+        tap(_ => this.log(`fetched trail details id=${code}`)),
+        catchError(this.handleError<Trail>(`getTrailDetail id=${code}`))
       );
     }
 

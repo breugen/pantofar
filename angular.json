@@ -67,9 +67,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular.io-example:build",
-            "myComment": "the proxyConfig does not seem to work, I still have to start with ng serve --proxy-config proxy.conf.json",
-            "proxyConfig": "src/proxy.conf.json"
+            "browserTarget": "angular.io-example:build"
           },
           "configurations": {
             "production": {

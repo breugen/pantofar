@@ -30,18 +30,18 @@ export class TrailDetailComponent implements OnInit {
   }
 
   getTrail(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.trailService.getTrail(id).pipe(
+    const code = this.route.snapshot.paramMap.get('code');
+    this.trailService.getTrail(code).pipe(
       map(trail => {
         this.trail = plainToClass(Trail, trail);
-        if (Array.isArray(this.trail.segments)) {
+        if (Array.isArray(this.trail.segments) && this.trail.segments.length) {
           this.trail.mergeSegments();
           this.segments =
             this.trail.segments.map((segment: Trail) => plainToClass(Trail, segment));
         }
         return this.trail;
       }),
-      mergeMap(trail => this.trailService.getTrailDetail(trail.trailDetailId))
+      mergeMap(trail => this.trailService.getTrailDetail(code))
     ).subscribe(trailDetail => {
       this.trailDetail = trailDetail;
       if (Array.isArray(this.trailDetail.pictures)) {
