@@ -9,3 +9,7 @@
 .yellow {
     color: goldenrod
 }
+
+.fa-minus {
+    transform: rotate(90deg);
+}
