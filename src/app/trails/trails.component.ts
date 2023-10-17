@@ -98,7 +98,7 @@ export class TrailsComponent implements AfterViewInit  {
 
   showWeatherForCity(selectedCityName: string, forceShow: boolean): void {
     // I only show this when demo (prod build).
-    if (environment.production) {
+    if ( 1 === 1) {
       if (forceShow || !TrailsComponent.isWeatherShown) {
         TrailsComponent.isWeatherShown = true;
         this.weatherService.getWeather(selectedCityName).then(weather => {
