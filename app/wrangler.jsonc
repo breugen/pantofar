@@ -1,0 +1,11 @@
+// Cloudflare Workers config: serves the built Angular app as static assets.
+// Used by the "npx wrangler deploy" step in Cloudflare's git-connected builds.
+{
+  "name": "pantofar",
+  "compatibility_date": "2026-07-27",
+  "assets": {
+    "directory": "./dist/prietenii-muntelui/browser",
+    // Deep links like /trails/peaks/s35.s47~s36r must fall back to index.html
+    "not_found_handling": "single-page-application"
+  }
+}
