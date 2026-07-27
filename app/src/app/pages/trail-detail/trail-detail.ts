@@ -72,6 +72,12 @@ export class TrailDetailPage {
 
   protected readonly listLink = computed(() => ['/trails', this.typeDef().type]);
 
+  /** Official route number (16MN03 → "3"), shown map-style in a red square. */
+  protected readonly routeNo = computed(() => {
+    const m = this.route() ? this.code().match(/(\d+)$/) : null;
+    return m ? String(Number(m[1])) : null;
+  });
+
   protected readonly over = computed(() => {
     const r = this.route();
     const massif = r ? massifOf(r)

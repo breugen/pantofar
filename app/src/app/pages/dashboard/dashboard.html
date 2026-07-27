@@ -72,6 +72,7 @@
   </svg>
 
   <img class="sky-mark" src="logo.jpg" alt="" aria-hidden="true" />
+  <span class="cover-frame" aria-hidden="true"></span>
 
   <span class="lang home-lang" role="group" aria-label="Limbă">
     <button type="button" [class.on]="i18n.lang() === 'ro'" (click)="i18n.setLang('ro')">RO</button>
@@ -81,7 +82,10 @@
   <div class="hero-copy">
     <h1>PRIETENII MUNTELUI</h1>
     <p class="tagline">{{ i18n.ui('home.tagline') }}</p>
-    <p class="edition">{{ i18n.ui('home.edition') }}</p>
+    <div class="cartouche">
+      <span class="c-top">{{ i18n.ui('home.seriesTop') }}</span>
+      <span class="c-no">{{ i18n.ui('home.seriesNo') }}</span>
+    </div>
   </div>
 </header>
 

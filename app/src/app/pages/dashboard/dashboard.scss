@@ -43,12 +43,26 @@
   font-size: 15px; color: var(--ink-soft);
 }
 
-.edition {
-  margin: 10px 0 0; display: flex; align-items: center; justify-content: center; gap: 10px;
-  font-size: 11px; letter-spacing: .28em; text-indent: .28em; text-transform: uppercase;
+/* Series cartouche, after the volume marks of the old numbered guidebook
+   collections: a double-ruled box declaring this massif as volume № 1. */
+.cartouche {
+  margin: 13px auto 0; display: inline-flex; flex-direction: column; gap: 1px;
+  position: relative; border: 1.5px solid var(--ink); padding: 7px 20px 8px;
+  background: rgba(245, 238, 220, .55);
+}
+.cartouche::after { content: ""; position: absolute; inset: 3px; border: 1px solid rgba(38, 33, 25, .35); pointer-events: none; }
+.c-top {
+  font-size: 10px; letter-spacing: .3em; text-indent: .3em; text-transform: uppercase;
   color: var(--ochre-deep); font-weight: 600;
 }
-.edition::before, .edition::after { content: ""; width: 34px; border-top: 1px solid var(--ochre-deep); opacity: .55; }
+.c-no { font-family: var(--display); font-weight: 600; font-size: 15.5px; letter-spacing: .05em; }
+
+/* Thin printed frame inset around the whole cover, like the old volumes. */
+.cover-frame {
+  position: absolute; inset: 9px; z-index: 1; pointer-events: none;
+  border: 1.4px solid rgba(38, 33, 25, .34);
+}
+.cover-frame::after { content: ""; position: absolute; inset: 3px; border: 1px solid rgba(38, 33, 25, .22); }
 
 @media (prefers-reduced-motion: no-preference) {
   .mist-a { animation: pm-drift 16s ease-in-out infinite alternate; }

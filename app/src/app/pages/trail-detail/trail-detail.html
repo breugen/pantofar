@@ -14,6 +14,9 @@
     <span class="stamp" [class.warn]="kind() === 'generated'">
       {{ kind() === 'generated' ? i18n.ui('tags.suggestion') : i18n.ui('status.inValidation') }}
     </span>
+    @if (routeNo(); as n) {
+      <span class="route-no">{{ i18n.ui('detail.routeNo') }} <b>{{ n }}</b></span>
+    }
     <div class="meta-grid">
       @for (m of meta(); track m.k) {
         <div><div class="v">{{ m.v }}</div><div class="k">{{ m.k }}</div></div>
@@ -36,9 +39,17 @@
   @if (profile(); as pf) {
     <div class="profile" aria-label="Profil de urcare (schiță)">
       <svg viewBox="0 0 340 64">
+        <defs>
+          <!-- hypsometric tints, as on the old fold-out tourist maps -->
+          <linearGradient id="pf-hyps" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#7A4E22" />
+            <stop offset=".45" stop-color="#C9922E" />
+            <stop offset="1" stop-color="#2C4A33" />
+          </linearGradient>
+        </defs>
         <path d="M0 16 H340 M0 32 H340 M0 48 H340" stroke="currentColor" stroke-width="1"
           stroke-dasharray="1 5" opacity=".16" />
-        <path [attr.d]="pf.area" fill="currentColor" opacity=".1" />
+        <path [attr.d]="pf.area" fill="url(#pf-hyps)" opacity=".26" />
         <path class="pf-line" pathLength="1" [attr.d]="pf.line" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
         <circle class="pf-dot" [attr.cx]="pf.x0" [attr.cy]="pf.y0" r="3.4" fill="currentColor" />
         <circle class="pf-dot" [attr.cx]="pf.x1" [attr.cy]="pf.y1" r="3.4" fill="currentColor" />

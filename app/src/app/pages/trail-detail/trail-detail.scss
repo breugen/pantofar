@@ -16,6 +16,21 @@
   outline: 1px dotted var(--rule); outline-offset: -5px;
 }
 .meta-card .stamp { position: absolute; top: -13px; right: 10px; transform: rotate(6deg); }
+
+/* Official route number in a red square, like route numbering on old maps. */
+.route-no {
+  position: absolute; top: -12px; left: 12px;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 10px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; color: var(--ink);
+  background: var(--paper); padding: 2px 6px;
+}
+.route-no b {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 20px; height: 20px; padding: 0 3px;
+  border: 1.7px solid var(--b-red); color: var(--b-red);
+  font-size: 12.5px; font-variant-numeric: tabular-nums;
+  background: #FDFBF4;
+}
 .meta-grid { display: flex; text-align: center; }
 .meta-grid > div { flex: 1; padding: 2px 6px; min-width: 0; }
 .meta-grid > div + div { border-left: 1px dotted var(--rule); }

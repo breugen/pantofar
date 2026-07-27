@@ -8,7 +8,8 @@ const STORAGE_KEY = 'pm-lang';
 /** UI strings. Data-borne prose (route notes) is Romanian until validated; en appears where the DB has it. */
 const UI: Record<string, LocalizedText> = {
   'home.tagline': { ro: 'Trasee marcate pentru începători', en: 'Marked trails for beginners' },
-  'home.edition': { ro: 'Ghid de munte · Ediția I · Rarău', en: 'Mountain guide · First edition · Rarău' },
+  'home.seriesTop': { ro: 'Colecția · ghid de munte', en: 'The collection · mountain guide' },
+  'home.seriesNo': { ro: '№ 1 — Rarău · Giumalău', en: '№ 1 — Rarău · Giumalău' },
   'home.contribTitle': { ro: 'Construim ghidul împreună', en: 'We build this guide together' },
   'home.contribBody': {
     ro: 'Cod deschis, date deschise. Adaugă masivul tău, corectează un timp, tradu o pagină.',
@@ -19,6 +20,10 @@ const UI: Record<string, LocalizedText> = {
   'footer.motto': {
     ro: 'Tipărit în aer liber, pentru prietenii muntelui.',
     en: 'Printed in the open air, for friends of the mountains.'
+  },
+  'footer.heritage': {
+    ro: 'Din vechile ghiduri de buzunar am păstrat drumul; restul l-am luat de la capăt, volum cu volum.',
+    en: 'From the old pocket guidebooks we kept the trail; the rest we began anew, volume by volume.'
   },
   'home.yourRegion': { ro: 'Regiunea ta', en: 'Your region' },
   'home.regionSign': { ro: 'Rarău · Câmpulung Mold.', en: 'Rarău · Câmpulung Mold.' },
@@ -42,6 +47,7 @@ const UI: Record<string, LocalizedText> = {
   'tags.notRecommended': { ro: 'nerecomandat', en: 'not recommended' },
   'status.inValidation': { ro: 'în validare', en: 'under validation' },
   'detail.day': { ro: 'Ziua', en: 'Day' },
+  'detail.routeNo': { ro: 'Traseul', en: 'Route' },
   'detail.durata': { ro: 'Durata', en: 'Duration' },
   'detail.intoarcere': { ro: 'Întoarcere', en: 'Return' },
   'detail.urcare': { ro: 'Urcare', en: 'Ascent' },
