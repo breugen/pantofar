@@ -22,11 +22,11 @@
    multiplied into the paper so only the drawing remains, vignette-masked
    so it melts into the scene before it reaches the ridges. */
 .sky-mark {
-  position: absolute; left: 50%; top: -10px; transform: translateX(-50%);
-  width: min(350px, 82vw); height: auto;
-  mix-blend-mode: multiply; opacity: .22;
-  -webkit-mask-image: radial-gradient(ellipse 58% 54% at 50% 44%, #000 34%, transparent 76%);
-  mask-image: radial-gradient(ellipse 58% 54% at 50% 44%, #000 34%, transparent 76%);
+  position: absolute; left: 50%; top: -8px; transform: translateX(-50%);
+  width: min(360px, 86vw); height: auto;
+  mix-blend-mode: multiply; opacity: .52;
+  -webkit-mask-image: radial-gradient(ellipse 64% 60% at 50% 44%, #000 55%, transparent 92%);
+  mask-image: radial-gradient(ellipse 64% 60% at 50% 44%, #000 55%, transparent 92%);
   pointer-events: none;
 }
 
