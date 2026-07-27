@@ -18,14 +18,19 @@
 
 .home-lang { position: absolute; top: 14px; right: 14px; z-index: 2; }
 
-.hero-copy { position: relative; z-index: 1; }
-
-.seal {
-  display: block; width: 96px; height: 96px; margin: 0 auto 10px;
-  border-radius: 50%; object-fit: cover; object-position: 50% 58%;
-  border: 2px solid var(--ink); box-shadow: 0 0 0 4px var(--paper-hi), 2px 2px 0 4px rgba(38, 33, 25, .18);
-  mix-blend-mode: multiply;
+/* The badger–beer–boot logo as a large watermark fading into the sky:
+   multiplied into the paper so only the drawing remains, vignette-masked
+   so it melts into the scene before it reaches the ridges. */
+.sky-mark {
+  position: absolute; left: 50%; top: -8px; transform: translateX(-50%);
+  width: min(360px, 86vw); height: auto;
+  mix-blend-mode: multiply; opacity: .52;
+  -webkit-mask-image: radial-gradient(ellipse 64% 60% at 50% 44%, #000 55%, transparent 92%);
+  mask-image: radial-gradient(ellipse 64% 60% at 50% 44%, #000 55%, transparent 92%);
+  pointer-events: none;
 }
+
+.hero-copy { position: relative; z-index: 1; padding-top: 46px; }
 
 .hero-copy h1 {
   margin: 0; font-family: var(--display); font-weight: 900;
