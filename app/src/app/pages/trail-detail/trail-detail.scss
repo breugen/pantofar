@@ -1,0 +1,99 @@
+/* ---- header (ui-concept-v1 d-head) ---------------------------------------- */
+
+.d-head { padding: 18px 0 0; display: flex; gap: 13px; align-items: flex-start; }
+.d-head h2 { margin: 0; font-size: 19.5px; font-weight: 600; line-height: 1.22; text-wrap: balance; }
+.d-titles { flex: 1; min-width: 0; }
+.d-head .plate { margin-left: auto; }
+
+/* ---- meta card with the stamp --------------------------------------------- */
+
+.meta-card {
+  margin: 18px 0 0; border: 1.5px solid var(--ink); border-radius: 10px; background: var(--paper-hi);
+  padding: 12px 14px; position: relative; box-shadow: 2.5px 2.5px 0 rgba(38, 33, 25, .18);
+}
+.meta-card .stamp { position: absolute; top: -13px; right: 10px; transform: rotate(6deg); }
+.meta-grid { display: flex; text-align: center; }
+.meta-grid > div { flex: 1; padding: 2px 6px; min-width: 0; }
+.meta-grid > div + div { border-left: 1px dotted var(--rule); }
+.meta-grid .v { font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.meta-grid .k { font-size: 9.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft); margin-top: 2px; }
+
+/* ---- elevation sketch ------------------------------------------------------ */
+
+.profile { margin: 16px 0 0; }
+.profile svg { display: block; width: 100%; height: auto; color: var(--pine); }
+.pf-cap {
+  display: flex; justify-content: space-between; font-size: 10px; letter-spacing: .1em;
+  color: var(--ink-soft); font-variant-numeric: tabular-nums; margin-top: 3px;
+}
+
+/* ---- milestone timeline (the product) -------------------------------------- */
+
+.day-h {
+  font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-weight: 700;
+  color: var(--pine); border-bottom: 1px solid var(--rule);
+  padding-bottom: 3px; margin: 18px 0 4px;
+}
+
+.miles { padding: 14px 0 2px; }
+.mile { display: flex; align-items: stretch; }
+.when {
+  flex: none; width: 48px; text-align: right; padding-right: 12px; padding-top: 1px;
+  font-size: 13.5px; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--pine);
+}
+.node { flex: none; width: 26px; position: relative; display: flex; justify-content: center; }
+.node::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; border-left: 2px dotted var(--ink-faint); }
+.mile:first-child .node::before { top: 8px; }
+.mile:last-child .node::before { bottom: auto; height: 8px; }
+.pin {
+  position: relative; z-index: 1; width: 22px; height: 22px;
+  background: var(--paper); border: 1.8px solid var(--ink); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; color: var(--ink);
+}
+.mile.major .pin { background: var(--pine); border-color: var(--pine); color: var(--paper); }
+.what { flex: 1; padding: 0 0 18px 12px; min-width: 0; }
+.mile:last-child .what { padding-bottom: 6px; }
+.w-name { font-size: 14.5px; font-weight: 600; line-height: 1.25; }
+.w-sub { font-family: var(--serif); font-style: italic; font-size: 12px; color: var(--ink-soft); margin-top: 1px; }
+
+/* via milestones: smaller open pin, lighter text */
+.mile.via-row .pin { width: 12px; height: 12px; margin-top: 4px; border-width: 1.4px; border-color: var(--pine); background: var(--paper-hi); }
+.mile.via-row .when { font-weight: 400; color: var(--ink-soft); }
+.mile.via-row .w-name { font-weight: 400; font-style: italic; color: var(--ink-soft); font-size: 13px; }
+.mile.via-row .what { padding-bottom: 12px; }
+
+/* ---- prose sections -------------------------------------------------------- */
+
+.d-section { margin: 14px 0; border-top: 1px solid var(--rule); padding-top: 11px; }
+.d-section h3 {
+  margin: 0 0 6px; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-soft);
+}
+.d-section p { margin: 0 0 5px; font-family: var(--serif); font-size: 13.5px; line-height: 1.55; }
+.lead-in { font-weight: 700; font-family: var(--sans); font-size: 12px; letter-spacing: .04em; }
+
+.warn-k {
+  display: block; font-family: var(--sans);
+  font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 4px;
+}
+
+.acc {
+  border: 1px solid var(--rule); border-radius: 6px; background: var(--paper-hi);
+  margin: 10px 0; box-shadow: 2px 2px 0 rgba(38, 33, 25, .10);
+}
+.acc summary {
+  cursor: pointer; padding: 10px 14px; font-weight: 700;
+  font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
+}
+.acc summary::marker { color: var(--ochre-deep); }
+.acc-body { padding: 2px 14px 12px; border-top: 1px dotted var(--rule); }
+.src { padding-left: 18px; margin: 8px 0 2px; }
+
+/* ---- back ------------------------------------------------------------------ */
+
+.d-back {
+  display: block; margin: 20px 0 4px; width: 100%; text-align: center;
+  border: 1.5px solid var(--ink); border-radius: 999px; padding: 10px;
+  font-size: 13px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; color: var(--ink);
+  background: var(--paper-hi); box-shadow: 2px 2px 0 rgba(38, 33, 25, .18);
+  text-decoration: none;
+}

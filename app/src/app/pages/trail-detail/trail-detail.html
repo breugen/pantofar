@@ -1,0 +1,122 @@
+@if (found()) {
+  <div class="d-head">
+    <button class="appbar-back" type="button" (click)="goBack()" aria-label="Înapoi">
+      <pm-icon name="back" [size]="16" />
+    </button>
+    <div class="d-titles">
+      <div class="appbar-over">{{ over() }}</div>
+      <h2>{{ title() }}</h2>
+    </div>
+    <pm-blaze [blaze]="blaze()" size="lg" />
+  </div>
+
+  <div class="meta-card">
+    <span class="stamp" [class.warn]="kind() === 'generated'">
+      {{ kind() === 'generated' ? i18n.ui('tags.suggestion') : i18n.ui('status.inValidation') }}
+    </span>
+    <div class="meta-grid">
+      @for (m of meta(); track m.k) {
+        <div><div class="v">{{ m.v }}</div><div class="k">{{ m.k }}</div></div>
+      }
+    </div>
+  </div>
+
+  @if (route()?.pantofarConcerns?.length) {
+    <div class="warnbox">
+      <strong class="warn-k">{{ i18n.ui('detail.concerns') }}</strong>
+      @for (c of route()!.pantofarConcerns; track c) { <div>{{ c }}</div> }
+    </div>
+  }
+  @if (warnings().length) {
+    <div class="warnbox">
+      @for (w of warnings(); track w) { <div>{{ w }}</div> }
+    </div>
+  }
+
+  @if (profile(); as pf) {
+    <div class="profile" aria-label="Profil de urcare (schiță)">
+      <svg viewBox="0 0 340 64">
+        <path [attr.d]="pf.area" fill="currentColor" opacity=".1" />
+        <path [attr.d]="pf.line" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+        <circle [attr.cx]="pf.x0" [attr.cy]="pf.y0" r="3.4" fill="currentColor" />
+        <circle [attr.cx]="pf.x1" [attr.cy]="pf.y1" r="3.4" fill="currentColor" />
+      </svg>
+      <div class="pf-cap"><span>{{ pf.startCap }}</span><span>{{ pf.endCap }}</span></div>
+    </div>
+  }
+
+  @for (day of days(); track $index) {
+    @if (days().length > 1) {
+      <div class="day-h">{{ i18n.ui('detail.day') }} {{ $index + 1 }} — {{ day.minutes | duration }} h</div>
+    }
+    <div class="miles">
+      @for (m of day.rows; track $index) {
+        <div class="mile" [class.major]="m.major" [class.via-row]="m.via">
+          <div class="when">@if (m.via) {≈}{{ m.cumMinutes | duration }}</div>
+          <div class="node">
+            <span class="pin">@if (m.icon; as ic) { <pm-icon [name]="ic" [size]="12" /> }</span>
+          </div>
+          <div class="what">
+            <div class="w-name">{{ m.name }}</div>
+            @if (m.ele != null) { <div class="w-sub">{{ m.ele }} m</div> }
+          </div>
+        </div>
+      }
+    </div>
+  }
+  <p class="serif-note">
+    {{ kind() === 'generated' ? i18n.ui('detail.comfortNote') : i18n.ui('detail.milestonesNote') }}
+    @if (estimated()) { · {{ i18n.ui('detail.estimatedNote') }} }
+  </p>
+
+  @if (route()?.scopeNote || descriptionNotes().length) {
+    <div class="d-section">
+      <h3>{{ i18n.ui('detail.descriere') }}</h3>
+      @if (route()?.scopeNote) { <p>{{ route()!.scopeNote }}</p> }
+      @for (n of descriptionNotes(); track n.key) {
+        <p><span class="lead-in">{{ i18n.ui(n.key) }}:</span> {{ i18n.t(n.text) }}</p>
+      }
+    </div>
+  }
+
+  @if (natureNotes().length) {
+    <div class="d-section">
+      <h3>{{ i18n.ui('detail.flora') }}</h3>
+      @for (n of natureNotes(); track n.name) {
+        <p><span class="lead-in">{{ n.name }}:</span> {{ i18n.t(n.notes) }}</p>
+      }
+    </div>
+  }
+
+  @if (sources().length) {
+    <details class="acc">
+      <summary>{{ i18n.ui('detail.sources') }}</summary>
+      <div class="acc-body">
+        <ol class="src serif-note">
+          @for (s of sources(); track s.id) {
+            <li>
+              @if (s.url) { <a [href]="s.url" target="_blank" rel="noopener">{{ s.title }}</a> }
+              @else { {{ s.title }} }
+            </li>
+          }
+        </ol>
+      </div>
+    </details>
+  }
+
+  @if (route()?.issues?.length) {
+    <details class="acc">
+      <summary>{{ i18n.ui('detail.validation') }} ({{ route()!.issues!.length }})</summary>
+      <div class="acc-body">
+        <ul class="serif-note">
+          @for (issue of route()!.issues; track issue) { <li>{{ issue }}</li> }
+        </ul>
+      </div>
+    </details>
+  }
+
+  <a class="d-back" [routerLink]="listLink()">‹ {{ i18n.ui('detail.backToList') }}</a>
+} @else {
+  <p class="prose">{{ i18n.ui('detail.notFound') }}</p>
+  <a class="d-back" routerLink="/dashboard">‹ {{ i18n.ui('common.back') }}</a>
+}

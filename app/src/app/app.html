@@ -1,0 +1,16 @@
+<main class="page">
+  @if (dbs.error()) {
+    <div class="warnbox">Baza de date nu s-a putut încărca ({{ dbs.error() }}).</div>
+  } @else {
+    <router-outlet />
+  }
+</main>
+
+<footer class="foot">
+  <div class="page">
+    <p class="serif-note">{{ i18n.ui('footer.disclaimer') }}</p>
+    <p class="serif-note">{{ i18n.ui('footer.attribution') }}
+      @if (dbs.db(); as db) { · v{{ db.schemaVersion }} / {{ db.generated }} }
+    </p>
+  </div>
+</footer>

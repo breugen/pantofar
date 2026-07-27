@@ -1,0 +1,42 @@
+.list-desc { margin: 0 0 4px; max-width: 60ch; }
+
+/* ---- filter chips (ui-concept-v1) ----------------------------------------- */
+
+.filters { display: flex; gap: 8px; padding: 12px 0 2px; flex-wrap: wrap; align-items: center; }
+
+.chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  border: 1.5px solid var(--ink); border-radius: 999px; padding: 5px 12px;
+  font-family: var(--sans); font-size: 12px; letter-spacing: .05em; font-weight: 600; color: var(--ink);
+  background: var(--paper-hi); cursor: pointer;
+}
+.chip.on { background: var(--pine); border-color: var(--pine); color: var(--paper); }
+.chip .knob { width: 10px; height: 10px; border-radius: 50%; background: currentColor; opacity: .85; }
+
+.chip-select select {
+  border: none; background: none; padding: 0; font: inherit; color: inherit;
+  max-width: 180px; cursor: pointer;
+}
+
+/* ---- ledger foot ---------------------------------------------------------- */
+
+.ledger-foot {
+  padding: 12px 2px 4px; display: flex; justify-content: space-between; align-items: center;
+}
+.ledger-foot .pg {
+  background: none; border: none; cursor: pointer; padding: 0;
+  font-family: var(--sans); font-size: 12px; letter-spacing: .12em;
+  text-transform: uppercase; font-weight: 600; color: var(--pine);
+}
+
+/* ---- row extras beyond the global ledger ---------------------------------- */
+
+.row-tags .tg { display: inline-flex; align-items: center; gap: 4px; }
+.row-time .loop { display: flex; justify-content: flex-end; margin-top: 3px; color: var(--pine); }
+.row-time .d { display: block; }
+
+.badge-draft {
+  display: inline-block; margin-top: 5px; padding: 2px 8px;
+  border: 1px dashed var(--ochre-deep); border-radius: 999px;
+  font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ochre-deep); font-weight: 600;
+}

@@ -1,0 +1,38 @@
+<span class="lang home-lang" role="group" aria-label="Limbă">
+  <button type="button" [class.on]="i18n.lang() === 'ro'" (click)="i18n.setLang('ro')">RO</button>
+  <button type="button" [class.on]="i18n.lang() === 'en'" (click)="i18n.setLang('en')">EN</button>
+</span>
+
+<header class="masthead">
+  <img class="logo-mark" src="logo.jpg"
+    alt="Prietenii Muntelui — bursucul cu halba, bocancul și munții" />
+  <h1>PRIETENII MUNTELUI</h1>
+  <p class="tagline">{{ i18n.ui('home.tagline') }}</p>
+</header>
+
+<div class="signpost home-sign">
+  <span class="sign-text">
+    <span class="where">{{ i18n.ui('home.yourRegion') }}</span>
+    <span class="place">{{ i18n.ui('home.regionSign') }}</span>
+  </span>
+</div>
+
+<div class="home-body">
+  <p class="s-label">{{ i18n.ui('home.chooseType') }}</p>
+
+  @for (t of types; track t.type) {
+    <a class="type-card" [routerLink]="['/trails', t.type]">
+      <span class="medal"><pm-icon [name]="t.icon" [size]="26" /></span>
+      <span class="t-text">
+        <span class="t-name">{{ i18n.t(t.caption) }}</span>
+        <span class="t-sub">{{ i18n.t(t.sub) }}</span>
+      </span>
+      <span class="t-dur">{{ i18n.t(t.dur) }}</span>
+    </a>
+  }
+</div>
+
+<footer class="home-foot">
+  <pm-icon class="ridge" name="ridge" [size]="26" />
+  <div>{{ i18n.ui('home.foot') }}</div>
+</footer>

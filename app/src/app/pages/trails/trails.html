@@ -1,0 +1,60 @@
+<pm-appbar backTo="/dashboard"
+  [over]="i18n.ui('home.regionSign')"
+  [title]="typeDef() ? i18n.t(typeDef()!.listTitle) : ''" />
+
+@if (typeDef(); as def) {
+  <p class="serif-note list-desc">{{ i18n.t(def.description) }}</p>
+}
+
+<div class="filters">
+  <button class="chip" type="button" [class.on]="circuitOnly()" (click)="toggleCircuit()">
+    <span class="knob"></span>{{ i18n.ui('list.circuitOnly') }}
+  </button>
+  <label class="chip chip-select">
+    {{ i18n.ui('list.start') }}
+    <select [value]="city()" (change)="onCity($event)">
+      <option value="toate">{{ i18n.ui('list.anywhere') }}</option>
+      @for (loc of localities; track loc.id) {
+        <option [value]="loc.id" [selected]="loc.id === city()">{{ loc.name }}</option>
+      }
+    </select>
+  </label>
+  <button class="chip" type="button" (click)="toggleSort()">
+    {{ i18n.ui('list.duration') }} {{ sortDir() === 1 ? '↑' : '↓' }}
+  </button>
+</div>
+
+<div class="ledger">
+  @for (row of rows(); track row.id) {
+    <button class="row" type="button" (click)="open(row)">
+      <pm-blaze [blaze]="row.blaze" />
+      <span class="row-main">
+        <span class="row-title">{{ row.title }}</span>
+        <span class="row-tags">
+          @for (tag of row.tags; track tag) {
+            <span class="tg"><pm-icon [name]="tagIcon(tag)" [size]="12" />{{ i18n.ui('tags.' + tag) }}</span>
+          }
+          @if (row.difficulty) { <span class="tg">{{ i18n.difficulty(row.difficulty) }}</span> }
+          @if (row.excluded) { <span class="tag red">{{ i18n.ui('tags.notRecommended') }}</span> }
+        </span>
+        @if (row.kind === 'generated') {
+          <span class="badge-draft">{{ i18n.ui('tags.suggestion') }}</span>
+        }
+      </span>
+      <span class="row-time">
+        <span class="t">{{ row.minutes | duration }}</span>
+        @if (row.days === 2) { <span class="d">{{ i18n.ui('list.twoDays') }}</span> }
+        @if (row.roundtrip) { <span class="loop"><pm-icon name="loop" [size]="14" /></span> }
+      </span>
+    </button>
+  } @empty {
+    <p class="serif-note">{{ i18n.ui('list.none') }}</p>
+  }
+</div>
+
+<div class="ledger-foot">
+  <span class="serif-note">{{ rows().length }} {{ i18n.ui('list.of') }} {{ filtered().length }} {{ i18n.ui('list.results') }}</span>
+  @if (rows().length < filtered().length) {
+    <button class="pg" type="button" (click)="more()">{{ i18n.ui('list.more') }} ›</button>
+  }
+</div>

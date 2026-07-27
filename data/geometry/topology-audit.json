@@ -1,0 +1,772 @@
+{
+  "routes": {
+    "16MN03": {
+      "stitchedKm": 58.68,
+      "gaps": [],
+      "publishedKm": 58.05,
+      "deltaPct": 1.1,
+      "sequence": [
+        {
+          "id": "pasul-mestecanis",
+          "alongM": 0,
+          "distM": 0
+        },
+        {
+          "id": "poiana-ciungi",
+          "alongM": 14856,
+          "distM": 0
+        },
+        {
+          "id": "vf-giumalau",
+          "alongM": 16438,
+          "distM": 21
+        },
+        {
+          "id": "saua-fundul-colbului",
+          "alongM": 21169,
+          "distM": 6
+        },
+        {
+          "id": "saua-poiana-soimului",
+          "alongM": 23242,
+          "distM": 0
+        },
+        {
+          "id": "hotel-rarau",
+          "alongM": 24992,
+          "distM": 11
+        },
+        {
+          "id": "saua-ciobanilor",
+          "alongM": 27126,
+          "distM": 0
+        },
+        {
+          "id": "muntele-todirescu",
+          "alongM": 29308,
+          "distM": 0
+        },
+        {
+          "id": "curmatura-prislop",
+          "alongM": 32861,
+          "distM": 3
+        }
+      ],
+      "monotonic": true,
+      "maxOffRouteM": 21
+    },
+    "16MN04": {
+      "stitchedKm": 21.03,
+      "gaps": [],
+      "publishedKm": 20.99,
+      "deltaPct": 0.2,
+      "sequence": [
+        {
+          "id": "sat-rusca",
+          "alongM": 12,
+          "distM": 155
+        },
+        {
+          "id": "cabana-giumalau",
+          "alongM": 6992,
+          "distM": 26
+        },
+        {
+          "id": "poiana-ciungi",
+          "alongM": 8541,
+          "distM": 0
+        },
+        {
+          "id": "sat-valea-putnei",
+          "alongM": 20534,
+          "distM": 295
+        }
+      ],
+      "monotonic": true,
+      "maxOffRouteM": 295
+    },
+    "16MN05": {
+      "stitchedKm": 9.28,
+      "gaps": [],
+      "publishedKm": 9.18,
+      "deltaPct": 1.1,
+      "sequence": [
+        {
+          "id": "sat-rusca",
+          "alongM": 12,
+          "distM": 155
+        },
+        {
+          "id": "cabana-giumalau",
+          "alongM": 9251,
+          "distM": 26
+        }
+      ],
+      "monotonic": true,
+      "maxOffRouteM": 155
+    },
+    "16MN06": {
+      "stitchedKm": 18.34,
+      "gaps": [],
+      "publishedKm": 18.5,
+      "deltaPct": -0.9,
+      "sequence": [
+        {
+          "id": "popas-zugreni",
+          "alongM": 0,
+          "distM": 160
+        },
+        {
+          "id": "cabana-giumalau",
+          "alongM": 4147,
+          "distM": 41
+        },
+        {
+          "id": "vf-giumalau",
+          "alongM": 5509,
+          "distM": 21
+        },
+        {
+          "id": "junction-zmarzii",
+          "alongM": 8033,
+          "distM": 0
+        },
+        {
+          "id": "halta-valea-putnei",
+          "alongM": 18339,
+          "distM": 20
+        }
+      ],
+      "monotonic": true,
+      "maxOffRouteM": 160
+    },
+    "16MN07": {
+      "stitchedKm": 3.33,
+      "gaps": [],
+      "publishedKm": 3.4,
+      "deltaPct": -2.1,
+      "sequence": [
+        {
+          "id": "cabana-giumalau",
+          "alongM": 0,
+          "distM": 41
+        },
+        {
+          "id": "polita-caprelor",
+          "alongM": 3328,
+          "distM": 0
+        }
+      ],
+      "monotonic": true,
+      "maxOffRouteM": 41
+    },
+    "16MN08": {
+      "stitchedKm": 5.97,
+      "gaps": [],
+      "publishedKm": 5.94,
+      "deltaPct": 0.5,
+      "sequence": [
+        {
+          "id": "dj175b-chilia",
+          "alongM": 0,
+          "distM": 0
+        },
+        {
+          "id": "junction-zmarzii",
+          "alongM": 5972,
+          "distM": 0
+        }
+      ],
+      "monotonic": true,
+      "maxOffRouteM": 0
+    },
+    "16MN09": {
+      "stitchedKm": 18.77,
+      "gaps": [],
+      "publishedKm": 18.69,
+      "deltaPct": 0.4,
+      "sequence": [
+        {
+          "id": "popas-zugreni",
+          "alongM": 0,
+          "distM": 160
+        },
+        {
+          "id": "saua-fundul-colbului",
+          "alongM": 6773,
+          "distM": 6
+        },
+        {
+          "id": "sat-pojorata",
+          "alongM": 18543,
+          "distM": 155
+        }
+      ],
+      "monotonic": true,
+      "maxOffRouteM": 160
+    },
+    "16MN10": {
+      "stitchedKm": 8.05,
+      "gaps": [],
+      "publishedKm": 8.02,
+      "deltaPct": 0.4,
+      "sequence": [
+        {
+          "id": "popas-zugreni",
+          "alongM": 0,
+          "distM": 160
+        },
+        {
+          "id": "hotel-rarau",
+          "alongM": 8014,
+          "distM": 11
+        }
+      ],
+      "monotonic": true,
+      "maxOffRouteM": 160
+    },
+    "16MN11": {
+      "stitchedKm": 11.4,
+      "gaps": [],
+      "publishedKm": 11.35,
+      "deltaPct": 0.4,
+      "sequence": [
+        {
+          "id": "sat-chiril",
+          "alongM": 19,
+          "distM": 41
+        },
+        {
+          "id": "hotel-rarau",
+          "alongM": 11365,
+          "distM": 11
+        }
+      ],
+      "monotonic": true,
+      "maxOffRouteM": 41
+    },
+    "16MN12": {
+      "stitchedKm": 4.25,
+      "gaps": [],
+      "publishedKm": 4.3,
+      "deltaPct": -1.2,
+      "sequence": [
+        {
+          "id": "schitul-rarau",
+          "alongM": 15,
+          "distM": 5
+        },
+        {
+          "id": "hotel-rarau",
+          "alongM": 4249,
+          "distM": 41
+        }
+      ],
+      "monotonic": true,
+      "maxOffRouteM": 41
+    },
+    "16MN13": {
+      "stitchedKm": 5.04,
+      "gaps": [],
+      "publishedKm": 5.1,
+      "deltaPct": -1.2,
+      "sequence": [
+        {
+          "id": "sat-pojorata",
+          "alongM": 0,
+          "distM": 336
+        },
+        {
+          "id": "junction-13x14",
+          "alongM": 5037,
+          "distM": 0
+        }
+      ],
+      "monotonic": true,
+      "maxOffRouteM": 336
+    },
+    "16MN14": {
+      "stitchedKm": 14.77,
+      "gaps": [
+        59,
+        45,
+        55
+      ],
+      "publishedKm": 14.06,
+      "deltaPct": 5,
+      "sequence": [
+        {
+          "id": "th-campulung-sirenei",
+          "alongM": 0,
+          "distM": 0
+        },
+        {
+          "id": "junction-13x14",
+          "alongM": 6955,
+          "distM": 0
+        },
+        {
+          "id": "hotel-rarau",
+          "alongM": 14771,
+          "distM": 91
+        }
+      ],
+      "monotonic": true,
+      "maxOffRouteM": 91
+    },
+    "16MN15": {
+      "stitchedKm": 6.36,
+      "gaps": [],
+      "publishedKm": 6.32,
+      "deltaPct": 0.6,
+      "sequence": [
+        {
+          "id": "th-campulung-valea-seaca",
+          "alongM": 234,
+          "distM": 0
+        },
+        {
+          "id": "poiana-mandrila",
+          "alongM": 6357,
+          "distM": 0
+        }
+      ],
+      "monotonic": true,
+      "maxOffRouteM": 0
+    },
+    "16MN16": {
+      "stitchedKm": 7.52,
+      "gaps": [],
+      "publishedKm": 7.36,
+      "deltaPct": 2.2,
+      "sequence": [
+        {
+          "id": "th-campulung-valea-seaca",
+          "alongM": 0,
+          "distM": 0
+        },
+        {
+          "id": "vf-bodea",
+          "alongM": 2647,
+          "distM": 797
+        },
+        {
+          "id": "poiana-mandrila",
+          "alongM": 5968,
+          "distM": 0
+        },
+        {
+          "id": "man-sihastria",
+          "alongM": 7509,
+          "distM": 18
+        }
+      ],
+      "monotonic": true,
+      "maxOffRouteM": 797
+    },
+    "16MN17": {
+      "stitchedKm": 11.84,
+      "gaps": [],
+      "publishedKm": 11.82,
+      "deltaPct": 0.2,
+      "sequence": [
+        {
+          "id": "gara-campulung-est",
+          "alongM": 284,
+          "distM": 79
+        },
+        {
+          "id": "junction-17pr-limpedea",
+          "alongM": 2975,
+          "distM": 0
+        },
+        {
+          "id": "man-sihastria",
+          "alongM": 7566,
+          "distM": 105
+        },
+        {
+          "id": "hotel-rarau",
+          "alongM": 11800,
+          "distM": 11
+        }
+      ],
+      "monotonic": true,
+      "maxOffRouteM": 105
+    },
+    "16MN18": {
+      "stitchedKm": 7.76,
+      "gaps": [],
+      "publishedKm": 7.72,
+      "deltaPct": 0.5,
+      "sequence": [
+        {
+          "id": "junction-17pr-limpedea",
+          "alongM": 0,
+          "distM": 0
+        },
+        {
+          "id": "saua-ciobanilor",
+          "alongM": 5657,
+          "distM": 0
+        },
+        {
+          "id": "hotel-rarau",
+          "alongM": 7755,
+          "distM": 41
+        }
+      ],
+      "monotonic": true,
+      "maxOffRouteM": 41
+    },
+    "16MN19": {
+      "stitchedKm": 12.16,
+      "gaps": [],
+      "publishedKm": 12.12,
+      "deltaPct": 0.3,
+      "sequence": [
+        {
+          "id": "dn17-valea-caselor",
+          "alongM": 0,
+          "distM": 0
+        },
+        {
+          "id": "cheile-moara-dracului",
+          "alongM": 4519,
+          "distM": 0
+        },
+        {
+          "id": "junction-23x19",
+          "alongM": 9177,
+          "distM": 0
+        },
+        {
+          "id": "popii-raraului",
+          "alongM": 9316,
+          "distM": 242
+        },
+        {
+          "id": "saua-ciobanilor",
+          "alongM": 10064,
+          "distM": 0
+        },
+        {
+          "id": "hotel-rarau",
+          "alongM": 12162,
+          "distM": 41
+        }
+      ],
+      "monotonic": true,
+      "maxOffRouteM": 242
+    },
+    "16MN20": {
+      "stitchedKm": 1.54,
+      "gaps": [
+        239
+      ],
+      "publishedKm": 1.37,
+      "deltaPct": 12.4,
+      "note": "loop cut at hotel-rarau@353m/41m, pietrele-doamnei@666m/34m, junction-20x22@934m/0m; gap 260 m bridged on the s54 side",
+      "monotonic": true
+    },
+    "16MN21": {
+      "stitchedKm": 1.46,
+      "gaps": [],
+      "publishedKm": 1.5,
+      "deltaPct": -2.7,
+      "sequence": [
+        {
+          "id": "hotel-rarau",
+          "alongM": 14,
+          "distM": 140
+        },
+        {
+          "id": "punct-salvamont",
+          "alongM": 491,
+          "distM": 19
+        },
+        {
+          "id": "cabana-pastorala",
+          "alongM": 515,
+          "distM": 35
+        },
+        {
+          "id": "vf-rarau",
+          "alongM": 1460,
+          "distM": 21
+        }
+      ],
+      "monotonic": true,
+      "maxOffRouteM": 140
+    },
+    "16MN22": {
+      "stitchedKm": 1.06,
+      "gaps": [],
+      "publishedKm": 1.1,
+      "deltaPct": -3.6,
+      "sequence": [
+        {
+          "id": "junction-20x22",
+          "alongM": 0,
+          "distM": 0
+        },
+        {
+          "id": "vf-rarau",
+          "alongM": 1061,
+          "distM": 21
+        }
+      ],
+      "monotonic": true,
+      "maxOffRouteM": 21
+    },
+    "16MN23": {
+      "stitchedKm": 5.62,
+      "gaps": [],
+      "publishedKm": 5.6,
+      "deltaPct": 0.4,
+      "sequence": [
+        {
+          "id": "th-slatioara",
+          "alongM": 0,
+          "distM": 0
+        },
+        {
+          "id": "junction-23x19",
+          "alongM": 5620,
+          "distM": 0
+        }
+      ],
+      "monotonic": true,
+      "maxOffRouteM": 0
+    },
+    "16MN24": {
+      "stitchedKm": 9.1,
+      "gaps": [
+        115
+      ],
+      "publishedKm": 9.3,
+      "deltaPct": -2.2,
+      "sequence": [
+        {
+          "id": "th-slatioara",
+          "alongM": 0,
+          "distM": 0
+        },
+        {
+          "id": "codrul-secular",
+          "alongM": 1031,
+          "distM": 0
+        },
+        {
+          "id": "muntele-todirescu",
+          "alongM": 4825,
+          "distM": 26
+        },
+        {
+          "id": "saua-ciobanilor",
+          "alongM": 7001,
+          "distM": 0
+        },
+        {
+          "id": "hotel-rarau",
+          "alongM": 9099,
+          "distM": 41
+        }
+      ],
+      "monotonic": true,
+      "maxOffRouteM": 41
+    },
+    "16MN25": {
+      "stitchedKm": 11.11,
+      "gaps": [],
+      "publishedKm": 11.2,
+      "deltaPct": -0.8,
+      "sequence": [
+        {
+          "id": "th-chiril-dj175a",
+          "alongM": 0,
+          "distM": 0
+        },
+        {
+          "id": "curmatura-prislop",
+          "alongM": 3705,
+          "distM": 4
+        },
+        {
+          "id": "sat-gemenea",
+          "alongM": 10358,
+          "distM": 54
+        }
+      ],
+      "monotonic": true,
+      "maxOffRouteM": 54
+    }
+  },
+  "derived": {
+    "pasul-mestecanis": {
+      "lat": 47.4640237,
+      "lon": 25.3476779,
+      "confidence": "high",
+      "how": "capătul de NV al poligonului 16MN03"
+    },
+    "dn17-valea-caselor": {
+      "lat": 47.5100437,
+      "lon": 25.622238,
+      "confidence": "high",
+      "how": "capătul dinspre DN17 al 16MN19"
+    },
+    "dj175b-chilia": {
+      "lat": 47.496743,
+      "lon": 25.4821901,
+      "confidence": "high",
+      "how": "capătul dinspre DJ175B al 16MN08"
+    },
+    "polita-caprelor": {
+      "lat": 47.4432992,
+      "lon": 25.4893362,
+      "confidence": "high",
+      "how": "capătul 16MN07 (joncțiunea cu BR)",
+      "distToMN03m": 0
+    },
+    "junction-zmarzii": {
+      "lat": 47.452549,
+      "lon": 25.4682634,
+      "confidence": "high",
+      "how": "capătul 16MN08 proiectat pe 16MN06 (dist 0 m)",
+      "joinDistM": 0,
+      "joined": true
+    },
+    "junction-17pr-limpedea": {
+      "lat": 47.4960178,
+      "lon": 25.5803659,
+      "confidence": "high",
+      "how": "capătul 16MN18 proiectat pe 16MN17 (dist 0 m)",
+      "joinDistM": 0,
+      "joined": true
+    },
+    "poiana-mandrila": {
+      "lat": 47.4826192,
+      "lon": 25.5409971,
+      "confidence": "high",
+      "how": "capătul 16MN15 proiectat pe 16MN16 (dist 0 m)",
+      "joinDistM": 0,
+      "joined": true
+    },
+    "junction-23x19": {
+      "lat": 47.4522907,
+      "lon": 25.593063,
+      "confidence": "high",
+      "how": "capătul 16MN23 proiectat pe 16MN19 (dist 0 m)",
+      "joinDistM": 0,
+      "joined": true
+    },
+    "junction-20x22": {
+      "lat": 47.447668,
+      "lon": 25.5647243,
+      "confidence": "high",
+      "how": "capătul 16MN22 pe circuitul 16MN20 (dist 0 m)",
+      "distToMN20m": 0
+    },
+    "poiana-ciungi": {
+      "lat": 47.4285027,
+      "lon": 25.4690124,
+      "confidence": "high",
+      "how": "joncțiune 16MN04×16MN03 (51 puncte de suprapunere <40 m; cea mai mică distanță 0 m)"
+    },
+    "muntele-todirescu": {
+      "lat": 47.4437459,
+      "lon": 25.6059088,
+      "confidence": "medium",
+      "how": "primul punct al 16MN24 (dinspre Slătioara) aflat pe 16MN03",
+      "note": "altitudinea 1487 rămâne nesursată"
+    },
+    "codrul-secular": {
+      "lat": 47.4468698,
+      "lon": 25.6471348,
+      "confidence": "high",
+      "how": "intrarea 16MN24 în poligonul rezervației (OSM way/180206581)"
+    },
+    "cheile-moara-dracului": {
+      "lat": 47.4748796,
+      "lon": 25.6113477,
+      "confidence": "high",
+      "how": "element OSM «Cheile Moara Dracului» (way/180214729) proiectat pe 16MN19 (dist 37 m)"
+    }
+  },
+  "decisions": {
+    "16MN08-orientation": {
+      "startToMN06m": 3961,
+      "endToMN06m": 0
+    },
+    "saua-ciobanilor": {
+      "saua-ciobanilor": {
+        "16MN03": 0,
+        "16MN18": 0,
+        "16MN19": 0,
+        "16MN24": 0
+      },
+      "saua-ciobanilor-sud": {
+        "16MN03": 22,
+        "16MN18": 2790,
+        "16MN19": 2138,
+        "16MN24": 717
+      },
+      "swapped": false
+    }
+  },
+  "crossChecks": [],
+  "via": {
+    "attached": [
+      {
+        "wp": "obcina-floceasca",
+        "segment": "s30",
+        "atKm": 4.44,
+        "offM": 54
+      },
+      {
+        "wp": "saua-ciobanilor-sud",
+        "segment": "s07",
+        "atKm": 0.96,
+        "offM": 22
+      },
+      {
+        "wp": "izvor-sihastria",
+        "segment": "s34",
+        "atKm": 1.42,
+        "offM": 65
+      },
+      {
+        "wp": "izvor-crucea-codreanu",
+        "segment": "s36",
+        "atKm": 2.72,
+        "offM": 4
+      },
+      {
+        "wp": "izvor-cabana-giumalau",
+        "segment": "s16",
+        "atKm": 2.15,
+        "offM": 7
+      },
+      {
+        "wp": "izvor-transrarau",
+        "segment": "s29",
+        "atKm": 4.74,
+        "offM": 5
+      }
+    ],
+    "nearMisses": [
+      {
+        "wp": "piatra-zimbrului",
+        "segment": "s22",
+        "atKm": 2.15,
+        "offM": 166
+      },
+      {
+        "wp": "izvor-sub-pietrele",
+        "segment": "s42",
+        "atKm": 0.01,
+        "offM": 225
+      }
+    ]
+  }
+}

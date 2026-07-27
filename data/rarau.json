@@ -1,0 +1,6202 @@
+{
+  "schemaVersion": "0.2.0",
+  "generated": "2026-07-25",
+  "generator": "claude-draft-extraction",
+  "region": {
+    "id": "rarau",
+    "name": {
+      "ro": "Munții Rarău–Giumalău",
+      "en": "Rarău–Giumalău Mountains"
+    },
+    "officialGroup": "Munții Giumalău - Rarău - Tarnița",
+    "county": "Suceava",
+    "bbox": [
+      47.36,
+      25.35,
+      47.57,
+      25.75
+    ]
+  },
+  "attribution": {
+    "osm": "Conține date © OpenStreetMap contributors, licență ODbL (openstreetmap.org/copyright). Extracted via Overpass API, 2026-07-24.",
+    "muntiiNostri": "Date factuale despre trasee (durate, distanțe, diferențe de nivel, marcaje) extrase de pe muntii-nostri.ro, 2026-07-24. Textele descriptive sunt reformulate, nu copiate."
+  },
+  "conventions": {
+    "factShape": "Faptele critice sunt obiecte {value, sources[], status}. status: extracted (neverificat de om) | validated (confirmat de om). confidence apare doar când nu e 'high'.",
+    "coordsStatus": "osm = coordonate din OSM; approx-estimated = estimare din descrieri, NECESITĂ validare; missing = nod de graf fără coordonate încă.",
+    "durations": "durationListed = durata publicată în sensul din titlul traseului. durationReverse lipsește peste tot: se va calcula (DIN 33466 calibrat) după extragerea geometriei + DEM.",
+    "osmIdNote": "osmId poate fi node sau way (way => coordonatele sunt centrul).",
+    "via": "via pe segmente = repere (izvoare, vârfuri, șei, obiective) aflate PE segment, nu la capete: {wp, atKm în sensul from→to, offM = abaterea laterală}. Scrise de tool-ul 02 din geometrie — nu se editează manual.",
+    "microAccess": "Segmentele kind=access cu method=micro-access sunt legături de zeci de metri (parcare→nod) cu timp fix 1 min."
+  },
+  "sources": {
+    "osm": {
+      "type": "osm-overpass",
+      "title": "OpenStreetMap via Overpass API",
+      "url": "https://overpass-api.de/",
+      "accessed": "2026-07-24",
+      "role": "geometrie, coordonate, relații de trasee, osmc:symbol, altitudini"
+    },
+    "claude-estimate": {
+      "type": "estimate",
+      "title": "Estimare din descrierile traseelor (Claude)",
+      "accessed": "2026-07-24",
+      "role": "coordonate aproximative pentru noduri fără sursă directă — DE VALIDAT"
+    },
+    "mn-16MN03": {
+      "type": "web",
+      "title": "Muntii Nostri: Pasul Mestecăniș - vf. Giumalău - Curmătura Prislop - Vf. Tarniței (16MN03)",
+      "url": "https://www.muntii-nostri.ro/trail/pasul-mestecanis-vf-giumalau-curmatura-prislop-vf",
+      "accessed": "2026-07-24",
+      "role": "durate, distanțe, diferențe nivel, avertizări"
+    },
+    "mn-16MN04": {
+      "type": "web",
+      "title": "Muntii Nostri: Rusca - Cabana Giumalău - localitatea Valea Putnei (16MN04)",
+      "url": "https://www.muntii-nostri.ro/trail/16mn04-rusca-cabana-giumalau-localitatea-valea-put/",
+      "accessed": "2026-07-24",
+      "role": "durate, distanțe, diferențe nivel, cazare"
+    },
+    "mn-16MN05": {
+      "type": "web",
+      "title": "Muntii Nostri: Rusca - Valea Rusca - Cabana Giumalău (16MN05)",
+      "url": "https://www.muntii-nostri.ro/trail/rusca-valea-rusca-cabana-giumalau/",
+      "accessed": "2026-07-24",
+      "role": "durate, distanțe, apă, acces"
+    },
+    "mn-16MN06": {
+      "type": "web",
+      "title": "Muntii Nostri: popas Zugreni - Vârful Giumalău - gara Valea Putnei (16MN06)",
+      "url": "https://www.muntii-nostri.ro/trail/popas-zugreni-vf-giumalau-gara-valea-putnei/",
+      "accessed": "2026-07-24",
+      "role": "durate, avertizare iarnă, cazare"
+    },
+    "mn-16MN07": {
+      "type": "web",
+      "title": "Muntii Nostri: Cabana Giumalău - ocolire Vf. Giumalău - Polița Caprelor (16MN07)",
+      "url": "https://www.muntii-nostri.ro/trail/cabana-giumalau-ocolire-vf-giumalau-polita-caprelo/",
+      "accessed": "2026-07-24",
+      "role": "durate, avertizare iarnă"
+    },
+    "mn-16MN08": {
+      "type": "web",
+      "title": "Muntii Nostri: DJ175B Transrarău - lângă Vf. Zmârzii - traseul PA (16MN08)",
+      "url": "https://www.muntii-nostri.ro/trail/dj-175b-transrarau-langa-vf-zmarzii-traseul-6-pa/",
+      "accessed": "2026-07-24",
+      "role": "durate, acces"
+    },
+    "mn-16MN09": {
+      "type": "web",
+      "title": "Muntii Nostri: popas Zugreni - Pojorâta (16MN09)",
+      "url": "https://www.muntii-nostri.ro/trail/popas-zugreni-pojorata/",
+      "accessed": "2026-07-24",
+      "role": "durate, stare marcaje"
+    },
+    "mn-16MN10": {
+      "type": "web",
+      "title": "Muntii Nostri: popas Zugreni - Hotel Rarău (16MN10)",
+      "url": "https://www.muntii-nostri.ro/trail/popas-zugreni-hotel-rarau/",
+      "accessed": "2026-07-24",
+      "role": "durate, apă"
+    },
+    "mn-16MN11": {
+      "type": "web",
+      "title": "Muntii Nostri: Chiril - DJ175A Transrarău - Hotel Rarău (16MN11)",
+      "url": "https://www.muntii-nostri.ro/trail/chiril-dj175a-transrarau-hotel-rarau/",
+      "accessed": "2026-07-24",
+      "role": "durate, drum deszăpezit, stare marcaje"
+    },
+    "mn-16MN12": {
+      "type": "web",
+      "title": "Muntii Nostri: Schitul Rarău - Hotel Rarău (16MN12)",
+      "url": "https://www.muntii-nostri.ro/trail/schitul-rarau-hotel-rarau/",
+      "accessed": "2026-07-24",
+      "role": "durate, acces auto"
+    },
+    "mn-16MN13": {
+      "type": "web",
+      "title": "Muntii Nostri: Pojorâta - traseul BA (16MN13)",
+      "url": "https://www.muntii-nostri.ro/trail/pojorata-traseul-14-ba/",
+      "accessed": "2026-07-24",
+      "role": "durate, lipsă indicator la intrare"
+    },
+    "mn-16MN14": {
+      "type": "web",
+      "title": "Muntii Nostri: Câmpulung Moldovenesc - Culmea Munceii Rarăului - Hotel Rarău (16MN14)",
+      "url": "https://www.muntii-nostri.ro/trail/campulung-moldovenesc-culmea-munceii-raraului-hote/",
+      "accessed": "2026-07-24",
+      "role": "durate, acces din oraș"
+    },
+    "mn-16MN15": {
+      "type": "web",
+      "title": "Muntii Nostri: Câmpulung Moldovenesc - Poiana lui Mândrilă (16MN15)",
+      "url": "https://www.muntii-nostri.ro/trail/campulung-moldovenesc-poiana-lui-mandrila/",
+      "accessed": "2026-07-24",
+      "role": "durate, AVERTISMENT nerecomandat Salvamont"
+    },
+    "mn-16MN16-search": {
+      "type": "web-search-snippet",
+      "title": "Muntii Nostri: Câmpulung Moldovenesc - Mănăstirea Sihăstria Rarăului (16MN16) — doar fragmente din căutare, pagina nu a fost accesată direct",
+      "url": "https://muntii-nostri.ro/en/routes/campulung-moldovenesc-manastirea-sihastria-raraului",
+      "accessed": "2026-07-24",
+      "role": "durată, distanță (confidence redusă)"
+    },
+    "mn-16MN17": {
+      "type": "web",
+      "title": "Muntii Nostri: Câmpulung Moldovenesc - Mănăstirea Sihăstria Rarăului - Hotel Rarău (16MN17)",
+      "url": "https://www.muntii-nostri.ro/trail/campulung-moldovenesc-manastirea-sihastria-rarau-2/",
+      "accessed": "2026-07-24",
+      "role": "durate, apă, cazare"
+    },
+    "mn-16MN18": {
+      "type": "web",
+      "title": "Muntii Nostri: traseul PR - Hotel Rarău (16MN18)",
+      "url": "https://www.muntii-nostri.ro/trail/traseul-17-pr-hotel-rarau/",
+      "accessed": "2026-07-24",
+      "role": "durate, apă, acces"
+    },
+    "mn-16MN19": {
+      "type": "web",
+      "title": "Muntii Nostri: DN17 (est de Câmpulung Moldovenesc) - Hotel Rarău (16MN19)",
+      "url": "https://www.muntii-nostri.ro/trail/dn17-la-est-de-campulung-moldovenesc-hotel-rarau/",
+      "accessed": "2026-07-24",
+      "role": "durate, rezervația Moara Dracului, parcare"
+    },
+    "mn-16MN20": {
+      "type": "web",
+      "title": "Muntii Nostri: Circuit Pietrele Doamnei + Platoul Belvedere (16MN20)",
+      "url": "https://www.muntii-nostri.ro/trail/circuit-in-jurul-pietrelor-doamnei-urcare-la-plato/",
+      "accessed": "2026-07-24",
+      "role": "durate, dificultate, lanțuri, avertizare iarnă"
+    },
+    "mn-16MN21": {
+      "type": "web",
+      "title": "Muntii Nostri: Hotel Rarău - Vârful Rarău (16MN21)",
+      "url": "https://www.muntii-nostri.ro/trail/hotel-rarau-vf-rarau/",
+      "accessed": "2026-07-24",
+      "role": "durate"
+    },
+    "mn-16MN22": {
+      "type": "web",
+      "title": "Muntii Nostri: traseul CA - Vârful Rarău (16MN22)",
+      "url": "https://www.muntii-nostri.ro/trail/traseul-20-ca-vf-rarau/",
+      "accessed": "2026-07-24",
+      "role": "durate"
+    },
+    "mn-16MN23": {
+      "type": "web",
+      "title": "Muntii Nostri: Slătioara - traseul CR (16MN23)",
+      "url": "https://www.muntii-nostri.ro/trail/slatioara-traseul-19-cr/",
+      "accessed": "2026-07-24",
+      "role": "durate"
+    },
+    "mn-16MN24": {
+      "type": "web",
+      "title": "Muntii Nostri: Slătioara - Hotel Rarău (16MN24)",
+      "url": "https://www.muntii-nostri.ro/trail/slatioara-hotel-rarau/",
+      "accessed": "2026-07-24",
+      "role": "durate, Codrul Secular Slătioara"
+    },
+    "mn-16MN25": {
+      "type": "web",
+      "title": "Muntii Nostri: Chiril - Gemenea (16MN25)",
+      "url": "https://www.muntii-nostri.ro/trail/chiril-gemenea/",
+      "accessed": "2026-07-24",
+      "role": "durate, stare marcaje"
+    },
+    "osm-geometry": {
+      "type": "osm-overpass",
+      "title": "Geometrie extrasă din relațiile OSM (out geom), asamblată și tăiată pe segmente la build",
+      "url": "https://overpass-api.de/",
+      "accessed": "2026-07-24",
+      "role": "polilinii trasee, distanțe pe segmente, coordonate joncțiuni derivate"
+    },
+    "opentopodata-srtm30m": {
+      "type": "dem",
+      "title": "Open Topo Data — SRTM 30m, eșantionat la 60 m de-a lungul segmentelor",
+      "url": "https://www.opentopodata.org/",
+      "accessed": "2026-07-24",
+      "role": "profil altimetric, urcare/coborâre pe segmente"
+    },
+    "computed-din33466": {
+      "type": "computed",
+      "title": "Timpi calculați DIN 33466, calibrați pe duratele publicate MN (factor median 1.06, n=20)",
+      "accessed": "2026-07-24",
+      "role": "timeMinutes pe segmente (ambele sensuri) și durationReverse pe trasee — NEVERIFICAȚI pe teren"
+    }
+  },
+  "waypoints": [
+    {
+      "id": "gara-campulung",
+      "type": "train-station",
+      "name": {
+        "ro": "Gara Câmpulung Moldovenesc"
+      },
+      "lat": 47.5336366,
+      "lon": 25.5527955,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "481269840",
+      "notes": {
+        "ro": "Punct de acces feroviar principal pentru versantul nordic.",
+        "en": "Main rail access point for the northern side."
+      }
+    },
+    {
+      "id": "gara-campulung-est",
+      "type": "train-station",
+      "name": {
+        "ro": "Gara Câmpulung Est"
+      },
+      "lat": 47.5175093,
+      "lon": 25.5946425,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "367413289",
+      "notes": {
+        "ro": "Cea mai apropiată gară de traseele prin Valea Izvorul Alb și Valea Seacă.",
+        "en": "Closest station to the Izvorul Alb and Valea Seacă trailheads."
+      }
+    },
+    {
+      "id": "gara-pojorata",
+      "type": "train-station",
+      "name": {
+        "ro": "Gara Pojorâta"
+      },
+      "lat": 47.525439,
+      "lon": 25.4755305,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "3123952053"
+    },
+    {
+      "id": "halta-valea-putnei",
+      "type": "train-halt",
+      "name": {
+        "ro": "Halta Valea Putnei"
+      },
+      "lat": 47.4893681,
+      "lon": 25.383849,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "3123950394",
+      "notes": {
+        "ro": "Capătul feroviar al traseelor de pe Giumalău (16MN06, 16MN04).",
+        "en": "Rail endpoint for the Giumalău routes (16MN06, 16MN04)."
+      }
+    },
+    {
+      "id": "sat-pojorata",
+      "type": "village",
+      "name": {
+        "ro": "Pojorâta"
+      },
+      "lat": 47.5240443,
+      "lon": 25.4666778,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "464518590"
+    },
+    {
+      "id": "sat-valea-putnei",
+      "type": "village",
+      "name": {
+        "ro": "Valea Putnei"
+      },
+      "lat": 47.4848529,
+      "lon": 25.3755367,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "109794085"
+    },
+    {
+      "id": "sat-rusca",
+      "type": "village",
+      "name": {
+        "ro": "Rusca"
+      },
+      "lat": 47.3684011,
+      "lon": 25.4556287,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "109892700",
+      "notes": {
+        "ro": "Intrare în traseu la DN17B, lângă podul peste Bistrița (11 km de Vatra Dornei).",
+        "en": "Trailhead on DN17B by the Bistrița bridge (11 km from Vatra Dornei)."
+      }
+    },
+    {
+      "id": "sat-chiril",
+      "type": "village",
+      "name": {
+        "ro": "Chiril"
+      },
+      "lat": 47.3964935,
+      "lon": 25.5631742,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "109895161",
+      "notes": {
+        "ro": "Pe DN17B, la baza drumului DJ175A Transrarău (~24 km de Vatra Dornei).",
+        "en": "On DN17B, at the foot of the DJ175A Transrarău road (~24 km from Vatra Dornei)."
+      }
+    },
+    {
+      "id": "sat-slatioara",
+      "type": "village",
+      "name": {
+        "ro": "Slătioara"
+      },
+      "lat": 47.4635461,
+      "lon": 25.6676238,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "464529117",
+      "notes": {
+        "ro": "Intrările în trasee sunt în capătul vestic al satului, la confluența Pârâul Ursului / Pârâul lui Ion.",
+        "en": "Trailheads at the west end of the village, at the Ursului/Ion streams confluence."
+      }
+    },
+    {
+      "id": "sat-gemenea",
+      "type": "village",
+      "name": {
+        "ro": "Gemenea"
+      },
+      "lat": 47.438031,
+      "lon": 25.7012051,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "464528508"
+    },
+    {
+      "id": "popas-zugreni",
+      "type": "trailhead",
+      "name": {
+        "ro": "Popas Zugreni (Cheile Zugrenilor)"
+      },
+      "lat": 47.4074452,
+      "lon": 25.5198702,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted",
+        "confidence": "medium"
+      },
+      "osmId": "1852542614",
+      "issues": [
+        "Coordonatele sunt ale Cabanei Zugreni; popasul/intrarea în trasee e vizavi, peste DN17B."
+      ],
+      "notes": {
+        "ro": "Punct de plecare pe valea Bistriței pentru 16MN06/09/10. Cabana Zugreni nu este momentan în circuitul turistic.",
+        "en": "Bistrița-valley trailhead for 16MN06/09/10. Cabana Zugreni is currently not operating."
+      }
+    },
+    {
+      "id": "pasul-mestecanis",
+      "type": "pass",
+      "name": {
+        "ro": "Pasul Mestecăniș"
+      },
+      "lat": 47.4640237,
+      "lon": 25.3476779,
+      "coords": {
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted",
+        "confidence": "high",
+        "derivedBy": "capătul de NV al poligonului 16MN03"
+      },
+      "issues": [
+        "Capătul NV al gpx-ului MN e la ~6 km SE de pasul Mestecăniș propriu-zis (DN17). Numele traseului sugerează pasul; punctul real de start de clarificat."
+      ],
+      "notes": {
+        "ro": "Capătul nord-vestic al magistralei 16MN03, pe DN17.",
+        "en": "North-western end of the 16MN03 ridge trail, on DN17."
+      }
+    },
+    {
+      "id": "hotel-rarau",
+      "type": "hotel",
+      "name": {
+        "ro": "Hotel Alpin Rarău"
+      },
+      "lat": 47.4478817,
+      "lon": 25.558299,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "553928876",
+      "ele": {
+        "value": 1520,
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "notes": {
+        "ro": "Nodul central al masivului: aici converg 16MN03/10/11/12/14/17/18/19/20/21/24. Hotel cu 38 de camere; lângă el, punct Salvamont.",
+        "en": "The hub of the massif — most routes converge here. 38-room hotel; Salvamont post nearby."
+      }
+    },
+    {
+      "id": "cabana-pastorala",
+      "type": "hut",
+      "name": {
+        "ro": "Cabana Pastorală (a lui Mao)"
+      },
+      "lat": 47.4514168,
+      "lon": 25.5640313,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "633216620",
+      "issues": [
+        "Statut/funcționare necunoscute — de validat dacă oferă cazare."
+      ]
+    },
+    {
+      "id": "punct-salvamont",
+      "type": "poi",
+      "name": {
+        "ro": "Punctul Salvamont Rarău"
+      },
+      "lat": 47.4510141,
+      "lon": 25.5639049,
+      "coords": {
+        "sources": [
+          "claude-estimate"
+        ],
+        "status": "extracted",
+        "confidence": "medium"
+      },
+      "issues": [
+        "Poziționat pe parcarea OSM adiacentă; de verificat."
+      ],
+      "notes": {
+        "ro": "Pe traseul 16MN21, între hotel și Cabana Pastorală.",
+        "en": "On route 16MN21 between the hotel and Cabana Pastorală."
+      }
+    },
+    {
+      "id": "cabana-giumalau",
+      "type": "hut",
+      "name": {
+        "ro": "Cabana Giumalău"
+      },
+      "lat": 47.4224641,
+      "lon": 25.4826042,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "914934507",
+      "notes": {
+        "ro": "Cazare în 3 camere cu paturi suprapuse (~30 locuri), sală de mese comună. Nu oferă mâncare — proviziile se cară.",
+        "en": "3 dorm rooms (~30 bunks), common dining room. No meals served — carry your own food."
+      },
+      "issues": [
+        "Pagina 16MN04 sugerează că s-ar servi masa; 16MN05/06 spun explicit că nu. De clarificat la validare."
+      ]
+    },
+    {
+      "id": "man-sihastria",
+      "type": "monastery",
+      "name": {
+        "ro": "Mănăstirea Sihăstria Rarăului"
+      },
+      "lat": 47.474474,
+      "lon": 25.5355283,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "917533435",
+      "notes": {
+        "ro": "Ctitorie atestată la 1541. Izvor cu apă potabilă; loc bun de popas pe 16MN16/17.",
+        "en": "Monastery attested in 1541. Drinking-water spring; good rest stop on 16MN16/17."
+      }
+    },
+    {
+      "id": "schitul-rarau",
+      "type": "monastery",
+      "name": {
+        "ro": "Schitul Rarău"
+      },
+      "lat": 47.43233,
+      "lon": 25.58367,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted",
+        "confidence": "medium"
+      },
+      "osmId": "1316063356",
+      "issues": [
+        "În OSM apare ca «Mănăstirea Rarău» — de confirmat că e același loc cu Schitul Rarău din 16MN12 (la ~800 m de DJ175A pe drum nepavat)."
+      ]
+    },
+    {
+      "id": "vf-rarau",
+      "type": "peak",
+      "name": {
+        "ro": "Vârful Rarău"
+      },
+      "lat": 47.453582,
+      "lon": 25.5739996,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "633226546",
+      "ele": {
+        "value": 1651,
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      }
+    },
+    {
+      "id": "pietrele-doamnei",
+      "type": "peak",
+      "name": {
+        "ro": "Pietrele Doamnei"
+      },
+      "lat": 47.4469962,
+      "lon": 25.5623823,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "1913037861",
+      "ele": {
+        "value": 1634,
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "notes": {
+        "ro": "Emblema Rarăului — turnuri de calcar, rezervație naturală, circuit amenajat cu panouri.",
+        "en": "The Rarău landmark — limestone towers, nature reserve, waymarked circuit with info panels."
+      }
+    },
+    {
+      "id": "piatra-zimbrului",
+      "type": "peak",
+      "name": {
+        "ro": "Piatra Zimbrului"
+      },
+      "lat": 47.448851,
+      "lon": 25.5753583,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "1913037848",
+      "ele": {
+        "value": 1444,
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted",
+        "issues": [
+          "Altitudine suspectă (sub platou) — de verificat în OSM."
+        ]
+      }
+    },
+    {
+      "id": "popii-raraului",
+      "type": "peak",
+      "name": {
+        "ro": "Popii Rarăului (Stâncile Popii)"
+      },
+      "lat": 47.4495869,
+      "lon": 25.591163,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "1859866818",
+      "ele": {
+        "value": 1628,
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "issues": [
+        "Echivalarea «Stâncile Popii» (16MN19) = Popii Rarăului este o presupunere — de validat."
+      ]
+    },
+    {
+      "id": "vf-giumalau",
+      "type": "peak",
+      "name": {
+        "ro": "Vârful Giumalău"
+      },
+      "lat": 47.4342663,
+      "lon": 25.4840426,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "26862946",
+      "ele": {
+        "value": 1857,
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "notes": {
+        "ro": "Cel mai înalt punct al grupei. Zonă expusă, periculoasă iarna; există variantă de iarnă marcată portocaliu lângă vârf.",
+        "en": "Highest point of the group. Exposed; dangerous in winter — an orange-marked winter variant exists near the summit."
+      }
+    },
+    {
+      "id": "vf-bodea",
+      "type": "peak",
+      "name": {
+        "ro": "Muntele Bodea"
+      },
+      "lat": 47.5092688,
+      "lon": 25.563825,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "13335406048",
+      "ele": {
+        "value": 1073,
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      }
+    },
+    {
+      "id": "obcina-floceasca",
+      "type": "peak",
+      "name": {
+        "ro": "Vârful Obcina Flocească"
+      },
+      "lat": 47.495828,
+      "lon": 25.5043245,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "1852584333",
+      "ele": {
+        "value": 1259,
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "issues": [
+        "Traseul 16MN13 (s30) trece la ~54 m de vârf (km 4,4) — atașat ca reper via; vârful propriu-zis rămâne lângă poteca."
+      ]
+    },
+    {
+      "id": "muntele-todirescu",
+      "type": "peak",
+      "name": {
+        "ro": "Muntele Todirescu"
+      },
+      "lat": 47.4437459,
+      "lon": 25.6059088,
+      "coords": {
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted",
+        "confidence": "medium",
+        "derivedBy": "primul punct al 16MN24 (dinspre Slătioara) aflat pe 16MN03"
+      },
+      "ele": {
+        "value": 1487,
+        "sources": [
+          "claude-estimate"
+        ],
+        "status": "extracted",
+        "confidence": "low"
+      },
+      "issues": [
+        "Coordonata = punctul unde 16MN24 întâlnește magistrala BR. Poiana Todirescu (OSM way/1372004332, pajiște) e centrată la ~600 m E. Altitudinea 1487 rămâne nesursată."
+      ],
+      "notes": {
+        "ro": "Poiana Todirescului e renumită pentru flora bogată; deasupra Codrului Secular Slătioara.",
+        "en": "Todirescu meadow is famous for its flora; sits above the Slătioara old-growth forest."
+      }
+    },
+    {
+      "id": "saua-ciobanilor",
+      "type": "saddle",
+      "name": {
+        "ro": "Șaua Ciobanilor"
+      },
+      "lat": 47.4528331,
+      "lon": 25.5824741,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted",
+        "confidence": "medium"
+      },
+      "osmId": "633216742",
+      "issues": [
+        "OSM conține DOUĂ șei cu acest nume (vezi saua-ciobanilor-sud). Am ales-o pe cea dintre Popii Rarăului și hotel drept nodul unde converg 16MN03/18/19/24 — de validat pe teren/geometrie."
+      ]
+    },
+    {
+      "id": "saua-ciobanilor-sud",
+      "type": "saddle",
+      "name": {
+        "ro": "Șaua Ciobanilor (sud, spre Todirescu)"
+      },
+      "lat": 47.4377604,
+      "lon": 25.6121376,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted",
+        "confidence": "low"
+      },
+      "osmId": "12704414729",
+      "ele": {
+        "value": 1362,
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "issues": [
+        "Nume duplicat în OSM — posibil două toponime reale. De clarificat.",
+        "Pe geometrie e la ~22 m de traseul 16MN03 (segmentul s07, km 0,96 de la Todirescu) — atașat ca reper via; toponimul de confirmat pe teren."
+      ]
+    },
+    {
+      "id": "saua-fundul-colbului",
+      "type": "saddle",
+      "name": {
+        "ro": "Șaua Fundul Colbului"
+      },
+      "lat": 47.4579667,
+      "lon": 25.5217024,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "4863873221",
+      "ele": {
+        "value": 1285,
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "notes": {
+        "ro": "Joncțiunea traseelor 16MN03 și 16MN09, lângă DJ175B.",
+        "en": "Junction of 16MN03 and 16MN09, near the DJ175B road."
+      }
+    },
+    {
+      "id": "saua-poiana-soimului",
+      "type": "saddle",
+      "name": {
+        "ro": "Șaua Poiana Șoimului"
+      },
+      "lat": 47.4532966,
+      "lon": 25.5431798,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "3082507641",
+      "ele": {
+        "value": 1425,
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "issues": [
+        "Nod duplicat în OSM (13335406047, aceleași nume/altitudine, poziție ușor diferită).",
+        "Confirmat pe geometrie: pe 16MN03, la ~2,1 km de Șaua Fundul Colbului (dist 0 m). Nod de graf din 0.2.0 — s04 împărțit aici în s55+s56."
+      ]
+    },
+    {
+      "id": "curmatura-prislop",
+      "type": "saddle",
+      "name": {
+        "ro": "Curmătura Prislop (Chiril)"
+      },
+      "lat": 47.4226052,
+      "lon": 25.6283167,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "8508251419",
+      "ele": {
+        "value": 1220,
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "notes": {
+        "ro": "Joncțiunea 16MN03 × 16MN25, la marginea sud-estică a platoului.",
+        "en": "Junction of 16MN03 and 16MN25 at the SE edge of the plateau."
+      }
+    },
+    {
+      "id": "poiana-mandrila",
+      "type": "junction",
+      "name": {
+        "ro": "Poiana lui Mândrilă"
+      },
+      "lat": 47.4826192,
+      "lon": 25.5409971,
+      "coords": {
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted",
+        "confidence": "high",
+        "derivedBy": "capătul 16MN15 proiectat pe 16MN16 (dist 0 m)"
+      },
+      "issues": [
+        "Fără nod OSM; estimat între Muntele Bodea și Sihăstria. Joncțiune 16MN15 × 16MN16 — de localizat."
+      ]
+    },
+    {
+      "id": "poiana-ciungi",
+      "type": "junction",
+      "name": {
+        "ro": "Poiana Ciungi (Giumalău)"
+      },
+      "lat": 47.4285027,
+      "lon": 25.4690124,
+      "coords": {
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted",
+        "confidence": "high",
+        "derivedBy": "joncțiune 16MN04×16MN03 (51 puncte de suprapunere <40 m; cea mai mică distanță 0 m)"
+      },
+      "issues": [
+        "Coordonata = joncțiunea geometrică 16MN03×16MN04 (51 puncte de suprapunere). Dacă toponimul «Poiana Ciungilor» e exact aici — de confirmat pe teren."
+      ]
+    },
+    {
+      "id": "polita-caprelor",
+      "type": "junction",
+      "name": {
+        "ro": "Polița Caprelor"
+      },
+      "lat": 47.4432992,
+      "lon": 25.4893362,
+      "coords": {
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted",
+        "confidence": "high",
+        "derivedBy": "capătul 16MN07 (joncțiunea cu BR)"
+      },
+      "issues": [
+        "Joncțiunea 16MN07 × 16MN03 pe umărul SV al Giumalăului; coordonate estimate."
+      ]
+    },
+    {
+      "id": "junction-zmarzii",
+      "type": "junction",
+      "name": {
+        "ro": "Șaua de lângă Vf. Zmârzii (lac temporar)"
+      },
+      "lat": 47.452549,
+      "lon": 25.4682634,
+      "coords": {
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted",
+        "confidence": "high",
+        "derivedBy": "capătul 16MN08 proiectat pe 16MN06 (dist 0 m)"
+      },
+      "issues": [
+        "Joncțiunea 16MN08 × 16MN06, ~1612 m, cu lac temporar în șa. De extras din geometrie."
+      ]
+    },
+    {
+      "id": "dj175b-chilia",
+      "type": "trailhead",
+      "name": {
+        "ro": "DJ175B — intrarea pe Valea Chilia"
+      },
+      "lat": 47.496743,
+      "lon": 25.4821901,
+      "coords": {
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted",
+        "confidence": "high",
+        "derivedBy": "capătul dinspre DJ175B al 16MN08"
+      },
+      "issues": [
+        "La ~3,8 km de Pojorâta pe DJ175B (sursa 16MN08). De extras din geometrie."
+      ]
+    },
+    {
+      "id": "junction-17pr-limpedea",
+      "type": "junction",
+      "name": {
+        "ro": "Desprinderea 16MN18 din traseul PR (Valea Limpedea)"
+      },
+      "lat": 47.4960178,
+      "lon": 25.5803659,
+      "coords": {
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted",
+        "confidence": "high",
+        "derivedBy": "capătul 16MN18 proiectat pe 16MN17 (dist 0 m)"
+      },
+      "issues": [
+        "Punctul unde 16MN18 se desprinde din 16MN17 spre Valea Limpedea. De extras din geometrie."
+      ]
+    },
+    {
+      "id": "dn17-valea-caselor",
+      "type": "trailhead",
+      "name": {
+        "ro": "DN17 — intrarea pe Valea Caselor"
+      },
+      "lat": 47.5100437,
+      "lon": 25.622238,
+      "coords": {
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted",
+        "confidence": "high",
+        "derivedBy": "capătul dinspre DN17 al 16MN19"
+      },
+      "issues": [
+        "Start 16MN19, la est de Câmpulung. Primii 4,4 km sunt accesibili auto până la o parcare — parcarea de localizat și ea."
+      ]
+    },
+    {
+      "id": "cheile-moara-dracului",
+      "type": "sight",
+      "name": {
+        "ro": "Cheile Moara Dracului"
+      },
+      "lat": 47.4748796,
+      "lon": 25.6113477,
+      "coords": {
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted",
+        "confidence": "high",
+        "derivedBy": "element OSM «Cheile Moara Dracului» (way/180214729) proiectat pe 16MN19 (dist 37 m)"
+      },
+      "notes": {
+        "ro": "Chei scurte și înguste, spectaculoase, cu punți de lemn; rezervație naturală cu specii rare.",
+        "en": "Short, narrow, spectacular gorge with wooden footbridges; a nature reserve with rare species."
+      },
+      "issues": [
+        "Poziționat pe elementul OSM al cheilor, proiectat pe traseu (37 m)."
+      ]
+    },
+    {
+      "id": "codrul-secular",
+      "type": "sight",
+      "name": {
+        "ro": "Codrul Secular Slătioara"
+      },
+      "lat": 47.4468698,
+      "lon": 25.6471348,
+      "coords": {
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted",
+        "confidence": "high",
+        "derivedBy": "intrarea 16MN24 în poligonul rezervației (OSM way/180206581)"
+      },
+      "notes": {
+        "ro": "Una dintre cele mai bătrâne păduri din țară — molizi și brazi de 350–400 de ani, până la 50 m înălțime. Rezervație strictă: doar pe potecă.",
+        "en": "One of the country's oldest forests — 350–400-year-old firs and spruces up to 50 m tall. Strict reserve: stay on the path."
+      },
+      "issues": [
+        "Punct de intrare pe 16MN24 de extras din geometrie; de adăugat regulile oficiale ale rezervației."
+      ]
+    },
+    {
+      "id": "junction-23x19",
+      "type": "junction",
+      "name": {
+        "ro": "Ieșirea traseului 16MN23 în traseul CR"
+      },
+      "lat": 47.4522907,
+      "lon": 25.593063,
+      "coords": {
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted",
+        "confidence": "high",
+        "derivedBy": "capătul 16MN23 proiectat pe 16MN19 (dist 0 m)"
+      },
+      "issues": [
+        "Rezolvat geometric: capătul 16MN23 e chiar pe 16MN19 (dist 0 m), la N de Popii Rarăului. De confirmat indicatorul pe teren."
+      ]
+    },
+    {
+      "id": "izvor-sihastria",
+      "type": "spring",
+      "name": {
+        "ro": "Izvorul de la Sihăstria"
+      },
+      "lat": 47.473898,
+      "lon": 25.5357624,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "8521739401"
+    },
+    {
+      "id": "izvor-crucea-codreanu",
+      "type": "spring",
+      "name": {
+        "ro": "Crucea lui Codreanu (apă potabilă)"
+      },
+      "lat": 47.4536521,
+      "lon": 25.5518255,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "9090515790"
+    },
+    {
+      "id": "izvor-sub-pietrele",
+      "type": "spring",
+      "name": {
+        "ro": "Izvor sub Pietrele Doamnei"
+      },
+      "lat": 47.4526904,
+      "lon": 25.5623513,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "3655613830"
+    },
+    {
+      "id": "izvor-cabana-giumalau",
+      "type": "spring",
+      "name": {
+        "ro": "Izvor lângă Cabana Giumalău"
+      },
+      "lat": 47.4347345,
+      "lon": 25.4909589,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "4868279221"
+    },
+    {
+      "id": "izvor-transrarau",
+      "type": "spring",
+      "name": {
+        "ro": "Izvor la DJ175B (vest de hotel)"
+      },
+      "lat": 47.4589741,
+      "lon": 25.5330832,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "701753659"
+    },
+    {
+      "id": "parcare-cota-1400",
+      "type": "parking",
+      "name": {
+        "ro": "Parcare cota 1400 (Transrarău)"
+      },
+      "lat": 47.4531453,
+      "lon": 25.5434237,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "224613389"
+    },
+    {
+      "id": "parcare-hotel",
+      "type": "parking",
+      "name": {
+        "ro": "Parcare Hotel Rarău"
+      },
+      "lat": 47.4477541,
+      "lon": 25.5585374,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "915789542"
+    },
+    {
+      "id": "parcare-sihastria",
+      "type": "parking",
+      "name": {
+        "ro": "Parcare Mănăstirea Sihăstria"
+      },
+      "lat": 47.4746258,
+      "lon": 25.5355748,
+      "coords": {
+        "sources": [
+          "osm"
+        ],
+        "status": "extracted"
+      },
+      "osmId": "917533434"
+    },
+    {
+      "id": "th-campulung-sirenei",
+      "type": "trailhead",
+      "name": {
+        "ro": "Câmpulung Moldovenesc — intrarea traseului BA (str. Sirenei / Pârâul Mesteacăn)"
+      },
+      "lat": 47.533287,
+      "lon": 25.547589,
+      "coords": {
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted",
+        "confidence": "high",
+        "derivedBy": "capătul poliliniei 16MN14"
+      },
+      "notes": {
+        "ro": "Startul real al 16MN14, în oraș."
+      }
+    },
+    {
+      "id": "th-campulung-valea-seaca",
+      "type": "trailhead",
+      "name": {
+        "ro": "Câmpulung Moldovenesc — capătul străzii Valea Seacă"
+      },
+      "lat": 47.526168,
+      "lon": 25.563312,
+      "coords": {
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted",
+        "confidence": "high",
+        "derivedBy": "capătul poliliniei 16MN16"
+      },
+      "notes": {
+        "ro": "Start comun 16MN15/16MN16 (dacă distanța dintre capete confirmă)."
+      }
+    },
+    {
+      "id": "th-slatioara",
+      "type": "trailhead",
+      "name": {
+        "ro": "Slătioara — confluența Pârâul Ursului / Pârâul lui Ion"
+      },
+      "lat": 47.454895,
+      "lon": 25.650894,
+      "coords": {
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted",
+        "confidence": "high",
+        "derivedBy": "capătul poliliniei 16MN24"
+      },
+      "notes": {
+        "ro": "Start comun 16MN23/16MN24, în capătul vestic al satului."
+      }
+    },
+    {
+      "id": "th-chiril-dj175a",
+      "type": "trailhead",
+      "name": {
+        "ro": "Chiril — intrarea traseului PG (km 2,8 pe DJ175A)"
+      },
+      "lat": 47.415542,
+      "lon": 25.58537,
+      "coords": {
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted",
+        "confidence": "high",
+        "derivedBy": "capătul poliliniei 16MN25"
+      }
+    },
+    {
+      "id": "junction-13x14",
+      "type": "junction",
+      "name": {
+        "ro": "Joncțiunea traseelor PR (Pojorâta) și BA (Munceii Rarăului)"
+      },
+      "lat": 47.491406,
+      "lon": 25.507923,
+      "coords": {
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted",
+        "confidence": "high",
+        "derivedBy": "capătul 16MN13 proiectat pe 16MN14 (dist 0 m)"
+      },
+      "notes": {
+        "ro": "Lângă Vf. Obcina Flocească; vârful propriu-zis rămâne reper separat."
+      }
+    },
+    {
+      "id": "junction-20x22",
+      "type": "junction",
+      "name": {
+        "ro": "Stâlp indicator sub Pietrele Doamnei (spre Vf. Rarău)"
+      },
+      "lat": 47.447668,
+      "lon": 25.5647243,
+      "coords": {
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted",
+        "confidence": "high",
+        "derivedBy": "capătul 16MN22 pe circuitul 16MN20 (dist 0 m)"
+      },
+      "notes": {
+        "ro": "Desprinderea traseului CA (16MN22) din circuitul Pietrelor Doamnei (16MN20)."
+      }
+    }
+  ],
+  "segments": [
+    {
+      "id": "s01",
+      "from": "pasul-mestecanis",
+      "to": "poiana-ciungi",
+      "routes": [
+        "16MN03"
+      ],
+      "timeMinutes": {
+        "forward": 320,
+        "backward": 300,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 14.86,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s01.json",
+      "profile": {
+        "ascentM": 665,
+        "descentM": 187,
+        "eleStartM": 1089,
+        "eleEndM": 1570,
+        "eleMaxM": 1570,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s02",
+      "from": "poiana-ciungi",
+      "to": "vf-giumalau",
+      "routes": [
+        "16MN03"
+      ],
+      "timeMinutes": {
+        "forward": 70,
+        "backward": 45,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 1.58,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s02.json",
+      "profile": {
+        "ascentM": 269,
+        "descentM": 0,
+        "eleStartM": 1570,
+        "eleEndM": 1841,
+        "eleMaxM": 1841,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s03",
+      "from": "vf-giumalau",
+      "to": "saua-fundul-colbului",
+      "routes": [
+        "16MN03"
+      ],
+      "timeMinutes": {
+        "forward": 120,
+        "backward": 165,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 4.73,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s03.json",
+      "profile": {
+        "ascentM": 34,
+        "descentM": 578,
+        "eleStartM": 1841,
+        "eleEndM": 1297,
+        "eleMaxM": 1842,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s55",
+      "from": "saua-fundul-colbului",
+      "to": "saua-poiana-soimului",
+      "routes": [
+        "16MN03"
+      ],
+      "notes": {
+        "ro": "Din Șaua Fundul Colbului până la DJ175B în Șaua Poiana Șoimului (parcarea cota 1400)."
+      },
+      "timeMinutes": {
+        "forward": 50,
+        "backward": 45,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 2.07,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s55.json",
+      "profile": {
+        "ascentM": 148,
+        "descentM": 9,
+        "eleStartM": 1297,
+        "eleEndM": 1436,
+        "eleMaxM": 1450,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s56",
+      "from": "saua-poiana-soimului",
+      "to": "hotel-rarau",
+      "routes": [
+        "16MN03"
+      ],
+      "notes": {
+        "ro": "Din Șaua Poiana Șoimului la Hotel Rarău."
+      },
+      "timeMinutes": {
+        "forward": 40,
+        "backward": 35,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 1.75,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s56.json",
+      "profile": {
+        "ascentM": 86,
+        "descentM": 13,
+        "eleStartM": 1436,
+        "eleEndM": 1509,
+        "eleMaxM": 1509,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s05",
+      "from": "hotel-rarau",
+      "to": "saua-ciobanilor",
+      "routes": [
+        "16MN03",
+        "16MN18",
+        "16MN19",
+        "16MN24"
+      ],
+      "notes": {
+        "ro": "Tronson comun: toate traseele dinspre est intră în platou pe aici."
+      },
+      "timeMinutes": {
+        "forward": 50,
+        "backward": 50,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 2.13,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s05.json",
+      "profile": {
+        "ascentM": 97,
+        "descentM": 81,
+        "eleStartM": 1509,
+        "eleEndM": 1523,
+        "eleMaxM": 1601,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s06",
+      "from": "saua-ciobanilor",
+      "to": "muntele-todirescu",
+      "routes": [
+        "16MN03",
+        "16MN24"
+      ],
+      "timeMinutes": {
+        "forward": 45,
+        "backward": 45,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 2.18,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s06.json",
+      "profile": {
+        "ascentM": 26,
+        "descentM": 85,
+        "eleStartM": 1523,
+        "eleEndM": 1463,
+        "eleMaxM": 1554,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s07",
+      "from": "muntele-todirescu",
+      "to": "curmatura-prislop",
+      "routes": [
+        "16MN03"
+      ],
+      "notes": {
+        "ro": "16MN03 continuă din Curmătura Prislop spre SE (Creasta Iepei, Vf. Tarniței) — în afara regiunii pilot."
+      },
+      "timeMinutes": {
+        "forward": 75,
+        "backward": 90,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 3.55,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s07.json",
+      "profile": {
+        "ascentM": 26,
+        "descentM": 273,
+        "eleStartM": 1463,
+        "eleEndM": 1216,
+        "eleMaxM": 1463,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      },
+      "via": [
+        {
+          "wp": "saua-ciobanilor-sud",
+          "atKm": 0.96,
+          "offM": 22
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "from": "sat-rusca",
+      "to": "cabana-giumalau",
+      "routes": [
+        "16MN04"
+      ],
+      "variantNote": "pe Piciorul Ruscăi (culme)",
+      "timeMinutes": {
+        "forward": 230,
+        "backward": 165,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 6.98,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s08.json",
+      "profile": {
+        "ascentM": 806,
+        "descentM": 23,
+        "eleStartM": 767,
+        "eleEndM": 1553,
+        "eleMaxM": 1553,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s09",
+      "from": "sat-rusca",
+      "to": "cabana-giumalau",
+      "routes": [
+        "16MN05"
+      ],
+      "variantNote": "pe Valea Rusca (drum forestier; izvor amenajat cu băncuță)",
+      "timeMinutes": {
+        "forward": 240,
+        "backward": 195,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 9.24,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s09.json",
+      "profile": {
+        "ascentM": 786,
+        "descentM": 0,
+        "eleStartM": 767,
+        "eleEndM": 1553,
+        "eleMaxM": 1553,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s10",
+      "from": "cabana-giumalau",
+      "to": "poiana-ciungi",
+      "routes": [
+        "16MN04"
+      ],
+      "timeMinutes": {
+        "forward": 30,
+        "backward": 30,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 1.55,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s10.json",
+      "profile": {
+        "ascentM": 37,
+        "descentM": 18,
+        "eleStartM": 1553,
+        "eleEndM": 1570,
+        "eleMaxM": 1592,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s11",
+      "from": "poiana-ciungi",
+      "to": "sat-valea-putnei",
+      "routes": [
+        "16MN04"
+      ],
+      "notes": {
+        "ro": "Coborâre pe valea Putnei; cabană de vânătoare pe parcurs."
+      },
+      "timeMinutes": {
+        "forward": 240,
+        "backward": 270,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 11.99,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s11.json",
+      "profile": {
+        "ascentM": 16,
+        "descentM": 731,
+        "eleStartM": 1570,
+        "eleEndM": 854,
+        "eleMaxM": 1570,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s12",
+      "from": "popas-zugreni",
+      "to": "cabana-giumalau",
+      "routes": [
+        "16MN06"
+      ],
+      "variantNote": "pe Piciorul Țepușelor",
+      "timeMinutes": {
+        "forward": 215,
+        "backward": 145,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 4.15,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s12.json",
+      "profile": {
+        "ascentM": 834,
+        "descentM": 34,
+        "eleStartM": 758,
+        "eleEndM": 1558,
+        "eleMaxM": 1600,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s13",
+      "from": "cabana-giumalau",
+      "to": "vf-giumalau",
+      "routes": [
+        "16MN06"
+      ],
+      "timeMinutes": {
+        "forward": 70,
+        "backward": 45,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 1.36,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s13.json",
+      "profile": {
+        "ascentM": 283,
+        "descentM": 0,
+        "eleStartM": 1558,
+        "eleEndM": 1841,
+        "eleMaxM": 1841,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s14",
+      "from": "vf-giumalau",
+      "to": "junction-zmarzii",
+      "routes": [
+        "16MN06"
+      ],
+      "notes": {
+        "ro": "Pe la Vf. Chilia și Vf. Alunul."
+      },
+      "timeMinutes": {
+        "forward": 55,
+        "backward": 75,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 2.52,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s14.json",
+      "profile": {
+        "ascentM": 0,
+        "descentM": 262,
+        "eleStartM": 1841,
+        "eleEndM": 1578,
+        "eleMaxM": 1842,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s15",
+      "from": "junction-zmarzii",
+      "to": "halta-valea-putnei",
+      "routes": [
+        "16MN06"
+      ],
+      "notes": {
+        "ro": "Prin Poiana Sapele; final pe drum și potecă de-a lungul căii ferate."
+      },
+      "timeMinutes": {
+        "forward": 235,
+        "backward": 290,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 10.31,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s15.json",
+      "profile": {
+        "ascentM": 144,
+        "descentM": 890,
+        "eleStartM": 1578,
+        "eleEndM": 833,
+        "eleMaxM": 1656,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s16",
+      "from": "cabana-giumalau",
+      "to": "polita-caprelor",
+      "routes": [
+        "16MN07"
+      ],
+      "variantNote": "ocolește vârful pe curba de nivel — utile pe vreme rea (dar nerecomandat iarna)",
+      "timeMinutes": {
+        "forward": 70,
+        "backward": 70,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 3.33,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s16.json",
+      "profile": {
+        "ascentM": 98,
+        "descentM": 92,
+        "eleStartM": 1558,
+        "eleEndM": 1567,
+        "eleMaxM": 1647,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      },
+      "via": [
+        {
+          "wp": "izvor-cabana-giumalau",
+          "atKm": 2.15,
+          "offM": 7
+        }
+      ]
+    },
+    {
+      "id": "s17",
+      "from": "dj175b-chilia",
+      "to": "junction-zmarzii",
+      "routes": [
+        "16MN08"
+      ],
+      "timeMinutes": {
+        "forward": 225,
+        "backward": 160,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 5.97,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s17.json",
+      "profile": {
+        "ascentM": 821,
+        "descentM": 33,
+        "eleStartM": 791,
+        "eleEndM": 1578,
+        "eleMaxM": 1612,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s18",
+      "from": "popas-zugreni",
+      "to": "saua-fundul-colbului",
+      "routes": [
+        "16MN09"
+      ],
+      "variantNote": "pe Valea Colbului",
+      "timeMinutes": {
+        "forward": 170,
+        "backward": 145,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 6.77,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s18.json",
+      "profile": {
+        "ascentM": 546,
+        "descentM": 10,
+        "eleStartM": 758,
+        "eleEndM": 1296,
+        "eleMaxM": 1296,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s19",
+      "from": "saua-fundul-colbului",
+      "to": "sat-pojorata",
+      "routes": [
+        "16MN09"
+      ],
+      "notes": {
+        "ro": "Pe DJ175B spre nord."
+      },
+      "timeMinutes": {
+        "forward": 225,
+        "backward": 250,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 11.77,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s19.json",
+      "profile": {
+        "ascentM": 0,
+        "descentM": 598,
+        "eleStartM": 1296,
+        "eleEndM": 697,
+        "eleMaxM": 1296,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s20",
+      "from": "popas-zugreni",
+      "to": "hotel-rarau",
+      "routes": [
+        "16MN10"
+      ],
+      "variantNote": "Valea Colbului → DJ175A; se desparte de 16MN09 undeva pe vale — punctul de bifurcație de stabilit din geometrie",
+      "timeMinutes": {
+        "forward": 225,
+        "backward": 175,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 8.01,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s20.json",
+      "profile": {
+        "ascentM": 759,
+        "descentM": 10,
+        "eleStartM": 758,
+        "eleEndM": 1509,
+        "eleMaxM": 1509,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s21",
+      "from": "sat-chiril",
+      "to": "hotel-rarau",
+      "routes": [
+        "16MN11"
+      ],
+      "notes": {
+        "ro": "De-a lungul DJ175A cu scurtături prin serpentine; marcaje foarte rare, dar drumul e reper sigur."
+      },
+      "timeMinutes": {
+        "forward": 265,
+        "backward": 230,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 11.35,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s21.json",
+      "profile": {
+        "ascentM": 780,
+        "descentM": 0,
+        "eleStartM": 729,
+        "eleEndM": 1509,
+        "eleMaxM": 1509,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s22",
+      "from": "schitul-rarau",
+      "to": "hotel-rarau",
+      "routes": [
+        "16MN12"
+      ],
+      "notes": {
+        "ro": "Prin Poiana Călugărului, pe sub Vârful Rarău; pe lângă pârâul Ciurgăului în partea de jos."
+      },
+      "timeMinutes": {
+        "forward": 160,
+        "backward": 125,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 4.23,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s22.json",
+      "profile": {
+        "ascentM": 539,
+        "descentM": 97,
+        "eleStartM": 1068,
+        "eleEndM": 1508,
+        "eleMaxM": 1601,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s23",
+      "from": "th-chiril-dj175a",
+      "to": "curmatura-prislop",
+      "routes": [
+        "16MN25"
+      ],
+      "notes": {
+        "ro": "Pe Valea Măgura; intrare la 2,8 km de DN17B pe DJ175A."
+      },
+      "timeMinutes": {
+        "forward": 120,
+        "backward": 85,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 3.71,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s23.json",
+      "profile": {
+        "ascentM": 419,
+        "descentM": 0,
+        "eleStartM": 795,
+        "eleEndM": 1216,
+        "eleMaxM": 1216,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s24",
+      "from": "curmatura-prislop",
+      "to": "sat-gemenea",
+      "routes": [
+        "16MN25"
+      ],
+      "notes": {
+        "ro": "Coborâre pe văile Prislop și Hojda."
+      },
+      "timeMinutes": {
+        "forward": 140,
+        "backward": 160,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 6.65,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s24.json",
+      "profile": {
+        "ascentM": 6,
+        "descentM": 499,
+        "eleStartM": 1216,
+        "eleEndM": 723,
+        "eleMaxM": 1216,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s25",
+      "from": "th-slatioara",
+      "to": "junction-23x19",
+      "routes": [
+        "16MN23"
+      ],
+      "notes": {
+        "ro": "Pe Pârâul Ursului, prin Pădurea Todirescu."
+      },
+      "timeMinutes": {
+        "forward": 210,
+        "backward": 145,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 5.62,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s25.json",
+      "profile": {
+        "ascentM": 770,
+        "descentM": 0,
+        "eleStartM": 774,
+        "eleEndM": 1544,
+        "eleMaxM": 1544,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s26",
+      "from": "th-slatioara",
+      "to": "codrul-secular",
+      "routes": [
+        "16MN24"
+      ],
+      "notes": {
+        "ro": "Primul km pe Pârâul lui Ion."
+      },
+      "timeMinutes": {
+        "forward": 20,
+        "backward": 20,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 1.03,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s26.json",
+      "profile": {
+        "ascentM": 48,
+        "descentM": 0,
+        "eleStartM": 774,
+        "eleEndM": 824,
+        "eleMaxM": 824,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s27",
+      "from": "codrul-secular",
+      "to": "muntele-todirescu",
+      "routes": [
+        "16MN24"
+      ],
+      "notes": {
+        "ro": "~3 ore prin codrul secular, pe Bâtca cu Plai."
+      },
+      "timeMinutes": {
+        "forward": 170,
+        "backward": 115,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 3.79,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s27.json",
+      "profile": {
+        "ascentM": 657,
+        "descentM": 17,
+        "eleStartM": 824,
+        "eleEndM": 1465,
+        "eleMaxM": 1465,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s28",
+      "from": "th-campulung-sirenei",
+      "to": "junction-13x14",
+      "routes": [
+        "16MN14"
+      ],
+      "notes": {
+        "ro": "Din oraș pe str. Sirenei / Pârâul Mesteacăn, apoi pe Culmea Munceii Rarăului."
+      },
+      "timeMinutes": {
+        "forward": 185,
+        "backward": 155,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 6.95,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s28.json",
+      "profile": {
+        "ascentM": 583,
+        "descentM": 49,
+        "eleStartM": 653,
+        "eleEndM": 1189,
+        "eleMaxM": 1189,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s29",
+      "from": "junction-13x14",
+      "to": "hotel-rarau",
+      "routes": [
+        "16MN14"
+      ],
+      "notes": {
+        "ro": "Ultimii ~2,5 km pe DJ175B asfaltat."
+      },
+      "timeMinutes": {
+        "forward": 180,
+        "backward": 165,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 7.82,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s29.json",
+      "profile": {
+        "ascentM": 431,
+        "descentM": 125,
+        "eleStartM": 1189,
+        "eleEndM": 1497,
+        "eleMaxM": 1497,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      },
+      "via": [
+        {
+          "wp": "izvor-transrarau",
+          "atKm": 4.74,
+          "offM": 5
+        }
+      ]
+    },
+    {
+      "id": "s30",
+      "from": "sat-pojorata",
+      "to": "junction-13x14",
+      "routes": [
+        "16MN13"
+      ],
+      "notes": {
+        "ro": "Pe lângă pensiunea Adam și Eva; intrarea în traseu greu de găsit (fără indicator)."
+      },
+      "timeMinutes": {
+        "forward": 165,
+        "backward": 125,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 5.04,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s30.json",
+      "profile": {
+        "ascentM": 548,
+        "descentM": 69,
+        "eleStartM": 710,
+        "eleEndM": 1189,
+        "eleMaxM": 1242,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      },
+      "via": [
+        {
+          "wp": "obcina-floceasca",
+          "atKm": 4.44,
+          "offM": 54
+        }
+      ]
+    },
+    {
+      "id": "s31",
+      "from": "th-campulung-valea-seaca",
+      "to": "poiana-mandrila",
+      "routes": [
+        "16MN15"
+      ],
+      "variantNote": "pe Valea Seacă — traseu NERECOMANDAT de Salvamont, marcaje vechi și șterse",
+      "timeMinutes": {
+        "forward": 125,
+        "backward": 115,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 6.12,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s31.json",
+      "profile": {
+        "ascentM": 241,
+        "descentM": 0,
+        "eleStartM": 645,
+        "eleEndM": 887,
+        "eleMaxM": 895,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s32",
+      "from": "th-campulung-valea-seaca",
+      "to": "vf-bodea",
+      "routes": [
+        "16MN16"
+      ],
+      "notes": {
+        "ro": "Din capătul străzii Valea Seacă, urcare abruptă pe versantul nordic al Bodei."
+      },
+      "timeMinutes": {
+        "forward": 60,
+        "backward": 50,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 2.65,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s32.json",
+      "profile": {
+        "ascentM": 160,
+        "descentM": 0,
+        "eleStartM": 645,
+        "eleEndM": 806,
+        "eleMaxM": 806,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s33",
+      "from": "vf-bodea",
+      "to": "poiana-mandrila",
+      "routes": [
+        "16MN16"
+      ],
+      "timeMinutes": {
+        "forward": 75,
+        "backward": 75,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 3.32,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s33.json",
+      "profile": {
+        "ascentM": 172,
+        "descentM": 88,
+        "eleStartM": 806,
+        "eleEndM": 887,
+        "eleMaxM": 965,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s34",
+      "from": "poiana-mandrila",
+      "to": "man-sihastria",
+      "routes": [
+        "16MN16"
+      ],
+      "timeMinutes": {
+        "forward": 40,
+        "backward": 35,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 1.54,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s34.json",
+      "profile": {
+        "ascentM": 109,
+        "descentM": 36,
+        "eleStartM": 887,
+        "eleEndM": 962,
+        "eleMaxM": 962,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      },
+      "via": [
+        {
+          "wp": "izvor-sihastria",
+          "atKm": 1.42,
+          "offM": 65
+        }
+      ]
+    },
+    {
+      "id": "s35",
+      "from": "gara-campulung-est",
+      "to": "junction-17pr-limpedea",
+      "routes": [
+        "16MN17"
+      ],
+      "variantNote": "pe Valea Izvorul Alb (fostul drum auto), până la desprinderea traseului CG",
+      "timeMinutes": {
+        "forward": 50,
+        "backward": 45,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 2.69,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s35.json",
+      "profile": {
+        "ascentM": 51,
+        "descentM": 0,
+        "eleStartM": 628,
+        "eleEndM": 679,
+        "eleMaxM": 680,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s36",
+      "from": "man-sihastria",
+      "to": "hotel-rarau",
+      "routes": [
+        "16MN17"
+      ],
+      "notes": {
+        "ro": "Serpentine pe fostul drum auto, cu scurtături marcate."
+      },
+      "timeMinutes": {
+        "forward": 150,
+        "backward": 105,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 4.23,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s36.json",
+      "profile": {
+        "ascentM": 553,
+        "descentM": 0,
+        "eleStartM": 954,
+        "eleEndM": 1509,
+        "eleMaxM": 1509,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      },
+      "via": [
+        {
+          "wp": "izvor-crucea-codreanu",
+          "atKm": 2.72,
+          "offM": 4
+        }
+      ]
+    },
+    {
+      "id": "s37",
+      "from": "junction-17pr-limpedea",
+      "to": "saua-ciobanilor",
+      "routes": [
+        "16MN18"
+      ],
+      "notes": {
+        "ro": "Pe Valea Limpedea; izvor rece și un șipot pe parcurs; o mică grotă."
+      },
+      "timeMinutes": {
+        "forward": 225,
+        "backward": 150,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 5.66,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s37.json",
+      "profile": {
+        "ascentM": 844,
+        "descentM": 0,
+        "eleStartM": 679,
+        "eleEndM": 1523,
+        "eleMaxM": 1523,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s38",
+      "from": "dn17-valea-caselor",
+      "to": "cheile-moara-dracului",
+      "routes": [
+        "16MN19"
+      ],
+      "notes": {
+        "ro": "Primii 4,4 km accesibili auto până la o parcare cu loc de popas."
+      },
+      "timeMinutes": {
+        "forward": 95,
+        "backward": 85,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 4.52,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s38.json",
+      "profile": {
+        "ascentM": 202,
+        "descentM": 6,
+        "eleStartM": 606,
+        "eleEndM": 804,
+        "eleMaxM": 804,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s39",
+      "from": "cheile-moara-dracului",
+      "to": "junction-23x19",
+      "routes": [
+        "16MN19"
+      ],
+      "timeMinutes": {
+        "forward": 195,
+        "backward": 130,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 4.66,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s39.json",
+      "profile": {
+        "ascentM": 736,
+        "descentM": 0,
+        "eleStartM": 804,
+        "eleEndM": 1544,
+        "eleMaxM": 1544,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s40",
+      "from": "popii-raraului",
+      "to": "saua-ciobanilor",
+      "routes": [
+        "16MN19"
+      ],
+      "timeMinutes": {
+        "forward": 15,
+        "backward": 15,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 0.75,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s40.json",
+      "profile": {
+        "ascentM": 7,
+        "descentM": 44,
+        "eleStartM": 1564,
+        "eleEndM": 1523,
+        "eleMaxM": 1572,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s41",
+      "from": "hotel-rarau",
+      "to": "punct-salvamont",
+      "routes": [
+        "16MN21"
+      ],
+      "timeMinutes": {
+        "forward": 10,
+        "backward": 10,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 0.48,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s41.json",
+      "profile": {
+        "ascentM": 25,
+        "descentM": 0,
+        "eleStartM": 1491,
+        "eleEndM": 1516,
+        "eleMaxM": 1516,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s42",
+      "from": "punct-salvamont",
+      "to": "cabana-pastorala",
+      "routes": [
+        "16MN21"
+      ],
+      "timeMinutes": {
+        "forward": 5,
+        "backward": 5,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 0.02,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s42.json",
+      "profile": {
+        "ascentM": 0,
+        "descentM": 0,
+        "eleStartM": 1516,
+        "eleEndM": 1519,
+        "eleMaxM": 1519,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s43",
+      "from": "cabana-pastorala",
+      "to": "vf-rarau",
+      "routes": [
+        "16MN21"
+      ],
+      "notes": {
+        "ro": "Pe la Stâna Rarău."
+      },
+      "timeMinutes": {
+        "forward": 30,
+        "backward": 20,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 0.94,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s43.json",
+      "profile": {
+        "ascentM": 113,
+        "descentM": 0,
+        "eleStartM": 1519,
+        "eleEndM": 1632,
+        "eleMaxM": 1632,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s52",
+      "from": "hotel-rarau",
+      "to": "pietrele-doamnei",
+      "routes": [
+        "16MN20"
+      ],
+      "notes": {
+        "ro": "Latura dinspre hotel a circuitului, până sub turnurile Pietrelor Doamnei."
+      },
+      "issues": [
+        "Timpul e cota-parte din durata publicată a circuitului (120 min), împărțită proporțional cu efortul DIN pe laturi — de verificat pe teren."
+      ],
+      "timeMinutes": {
+        "forward": 30,
+        "backward": 20,
+        "status": "computed",
+        "method": "published-total-din-split",
+        "sources": [
+          "mn-16MN20",
+          "computed-din33466"
+        ],
+        "confidence": "low",
+        "note": "cota-parte din durata publicată a circuitului (120 min), împărțită DIN-proporțional — porțiunea cu lanțuri face formula DIN nefiabilă aici"
+      },
+      "distanceKm": {
+        "value": 0.31,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s52.json",
+      "profile": {
+        "ascentM": 62,
+        "descentM": 0,
+        "eleStartM": 1508,
+        "eleEndM": 1570,
+        "eleMaxM": 1570,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s53",
+      "from": "pietrele-doamnei",
+      "to": "junction-20x22",
+      "routes": [
+        "16MN20"
+      ],
+      "notes": {
+        "ro": "Latura sudică, pe sub Pietrele Doamnei, până la stâlpul indicator al traseului CA (16MN22)."
+      },
+      "issues": [
+        "Timpul e cota-parte din durata publicată a circuitului (120 min), împărțită proporțional cu efortul DIN pe laturi — de verificat pe teren."
+      ],
+      "timeMinutes": {
+        "forward": 15,
+        "backward": 15,
+        "status": "computed",
+        "method": "published-total-din-split",
+        "sources": [
+          "mn-16MN20",
+          "computed-din33466"
+        ],
+        "confidence": "low",
+        "note": "cota-parte din durata publicată a circuitului (120 min), împărțită DIN-proporțional — porțiunea cu lanțuri face formula DIN nefiabilă aici"
+      },
+      "distanceKm": {
+        "value": 0.27,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s53.json",
+      "profile": {
+        "ascentM": 25,
+        "descentM": 13,
+        "eleStartM": 1570,
+        "eleEndM": 1582,
+        "eleMaxM": 1599,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s54",
+      "from": "junction-20x22",
+      "to": "hotel-rarau",
+      "routes": [
+        "16MN20"
+      ],
+      "notes": {
+        "ro": "Latura estică și nordică a circuitului, cu urcarea la Platoul Belvedere. Piatră lustruită, alunecoasă pe umezeală; porțiune cu lanțuri."
+      },
+      "issues": [
+        "Timpul e cota-parte din durata publicată a circuitului (120 min), împărțită proporțional cu efortul DIN pe laturi — de verificat pe teren.",
+        "Poziția exactă a porțiunii cu lanțuri (spre Belvedere) e nesigură — de localizat la validare.",
+        "Geometria OSM are o breșă de ~260 m pe latura nordică — închisă sintetic la build; de verificat poteca reală."
+      ],
+      "timeMinutes": {
+        "forward": 75,
+        "backward": 85,
+        "status": "computed",
+        "method": "published-total-din-split",
+        "sources": [
+          "mn-16MN20",
+          "computed-din33466"
+        ],
+        "confidence": "low",
+        "note": "cota-parte din durata publicată a circuitului (120 min), împărțită DIN-proporțional — porțiunea cu lanțuri face formula DIN nefiabilă aici"
+      },
+      "distanceKm": {
+        "value": 1.22,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s54.json",
+      "profile": {
+        "ascentM": 63,
+        "descentM": 135,
+        "eleStartM": 1582,
+        "eleEndM": 1508,
+        "eleMaxM": 1584,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s45",
+      "from": "junction-20x22",
+      "to": "vf-rarau",
+      "routes": [
+        "16MN22"
+      ],
+      "notes": {
+        "ro": "Se desprinde din circuitul CA la un stâlp indicator; pe la cabana Meteo și Piatra Zimbrului. Marcaj pe copaci doar în sensul urcării."
+      },
+      "timeMinutes": {
+        "forward": 30,
+        "backward": 30,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 1.06,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s45.json",
+      "profile": {
+        "ascentM": 88,
+        "descentM": 38,
+        "eleStartM": 1582,
+        "eleEndM": 1632,
+        "eleMaxM": 1632,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s48",
+      "kind": "access",
+      "from": "gara-campulung",
+      "to": "th-campulung-sirenei",
+      "routes": [],
+      "notes": {
+        "ro": "Legătură prin oraș până la intrarea traseului BA."
+      },
+      "timeMinutes": {
+        "forward": null,
+        "backward": null,
+        "status": "to-compute",
+        "method": "walk-estimate-pending"
+      },
+      "distanceKm": {
+        "value": null,
+        "sources": [],
+        "status": "missing",
+        "note": "în linie dreaptă ~0.4 km — distanța reală pe străzi de măsurat"
+      }
+    },
+    {
+      "id": "s49",
+      "kind": "access",
+      "from": "gara-campulung-est",
+      "to": "th-campulung-valea-seaca",
+      "routes": [],
+      "notes": {
+        "ro": "Legătură prin oraș (str. Rândunicii / Valea Seacă)."
+      },
+      "timeMinutes": {
+        "forward": null,
+        "backward": null,
+        "status": "to-compute",
+        "method": "walk-estimate-pending"
+      },
+      "distanceKm": {
+        "value": null,
+        "sources": [],
+        "status": "missing",
+        "note": "în linie dreaptă ~2.5 km — distanța reală pe străzi de măsurat"
+      }
+    },
+    {
+      "id": "s50",
+      "kind": "access",
+      "from": "sat-slatioara",
+      "to": "th-slatioara",
+      "routes": [],
+      "notes": {
+        "ro": "Prin sat, spre capătul vestic."
+      },
+      "timeMinutes": {
+        "forward": null,
+        "backward": null,
+        "status": "to-compute",
+        "method": "walk-estimate-pending"
+      },
+      "distanceKm": {
+        "value": null,
+        "sources": [],
+        "status": "missing",
+        "note": "în linie dreaptă ~1.6 km — distanța reală pe străzi de măsurat"
+      }
+    },
+    {
+      "id": "s51",
+      "kind": "access",
+      "from": "sat-chiril",
+      "to": "th-chiril-dj175a",
+      "routes": [],
+      "notes": {
+        "ro": "Pe DJ175A Transrarău, 2,8 km de la DN17B (sursă: pagina 16MN25)."
+      },
+      "timeMinutes": {
+        "forward": null,
+        "backward": null,
+        "status": "to-compute",
+        "method": "walk-estimate-pending"
+      },
+      "distanceKm": {
+        "value": 2.8,
+        "sources": [
+          "mn-16MN25"
+        ],
+        "status": "extracted"
+      }
+    },
+    {
+      "id": "s47",
+      "from": "junction-17pr-limpedea",
+      "to": "man-sihastria",
+      "routes": [
+        "16MN17"
+      ],
+      "variantNote": "continuarea pe Izvorul Alb, pe la Piatra Buhei, până la mănăstire",
+      "timeMinutes": {
+        "forward": 100,
+        "backward": 90,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 4.59,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s47.json",
+      "profile": {
+        "ascentM": 271,
+        "descentM": 0,
+        "eleStartM": 679,
+        "eleEndM": 954,
+        "eleMaxM": 954,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s46",
+      "from": "junction-23x19",
+      "to": "popii-raraului",
+      "routes": [
+        "16MN19"
+      ],
+      "timeMinutes": {
+        "forward": 5,
+        "backward": 5,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "distanceKm": {
+        "value": 0.14,
+        "sources": [
+          "osm-geometry"
+        ],
+        "status": "extracted"
+      },
+      "geometryFile": "geometry/segments/s46.json",
+      "profile": {
+        "ascentM": 18,
+        "descentM": 0,
+        "eleStartM": 1544,
+        "eleEndM": 1564,
+        "eleMaxM": 1564,
+        "sources": [
+          "opentopodata-srtm30m"
+        ],
+        "status": "extracted",
+        "note": "sensul from→to; netezit cu prag 5 m; SRTM are deriva coronamentului în pădure"
+      }
+    },
+    {
+      "id": "s57",
+      "kind": "access",
+      "from": "gara-pojorata",
+      "to": "sat-pojorata",
+      "routes": [],
+      "notes": {
+        "ro": "Legătură prin sat între gară și centrul Pojorâtei (intrările traseelor spre Rarău și Giumalău)."
+      },
+      "timeMinutes": {
+        "forward": null,
+        "backward": null,
+        "status": "to-compute",
+        "method": "walk-estimate-pending"
+      },
+      "distanceKm": {
+        "value": null,
+        "sources": [],
+        "status": "missing",
+        "note": "în linie dreaptă ~0.7 km — distanța reală pe străzi de măsurat"
+      }
+    },
+    {
+      "id": "s58",
+      "kind": "access",
+      "from": "parcare-hotel",
+      "to": "hotel-rarau",
+      "routes": [],
+      "timeMinutes": {
+        "forward": 1,
+        "backward": 1,
+        "status": "estimated",
+        "method": "micro-access",
+        "note": "legătură de câțiva zeci de metri"
+      },
+      "distanceKm": {
+        "value": 0.02,
+        "sources": [
+          "claude-estimate"
+        ],
+        "status": "extracted",
+        "note": "linie dreaptă"
+      }
+    },
+    {
+      "id": "s59",
+      "kind": "access",
+      "from": "parcare-sihastria",
+      "to": "man-sihastria",
+      "routes": [],
+      "timeMinutes": {
+        "forward": 1,
+        "backward": 1,
+        "status": "estimated",
+        "method": "micro-access",
+        "note": "legătură de câțiva zeci de metri"
+      },
+      "distanceKm": {
+        "value": 0.02,
+        "sources": [
+          "claude-estimate"
+        ],
+        "status": "extracted",
+        "note": "linie dreaptă"
+      }
+    },
+    {
+      "id": "s60",
+      "kind": "access",
+      "from": "parcare-cota-1400",
+      "to": "saua-poiana-soimului",
+      "routes": [],
+      "timeMinutes": {
+        "forward": 1,
+        "backward": 1,
+        "status": "estimated",
+        "method": "micro-access",
+        "note": "parcarea e chiar în șa"
+      },
+      "distanceKm": {
+        "value": 0.03,
+        "sources": [
+          "claude-estimate"
+        ],
+        "status": "extracted",
+        "note": "linie dreaptă"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "id": "16MN03",
+      "osmRelation": 9709967,
+      "name": {
+        "ro": "Pasul Mestecăniș – Vf. Giumalău – Hotel Rarău – Curmătura Prislop – Vf. Tarniței"
+      },
+      "blaze": {
+        "shape": "stripe",
+        "color": "red",
+        "ro": "bandă roșie",
+        "osmc": "red:white:red_stripe",
+        "sources": [
+          "osm",
+          "mn-16MN03"
+        ],
+        "status": "extracted"
+      },
+      "from": "pasul-mestecanis",
+      "to": "curmatura-prislop",
+      "waypointSequence": [
+        "pasul-mestecanis",
+        "poiana-ciungi",
+        "vf-giumalau",
+        "saua-fundul-colbului",
+        "saua-poiana-soimului",
+        "hotel-rarau",
+        "saua-ciobanilor",
+        "muntele-todirescu",
+        "curmatura-prislop"
+      ],
+      "segments": [
+        "s01",
+        "s02",
+        "s03",
+        "s55",
+        "s56",
+        "s05",
+        "s06",
+        "s07"
+      ],
+      "scopeNote": "Magistrala grupei. În baza de date e inclusă doar porțiunea din regiunea pilot (până în Curmătura Prislop); traseul întreg continuă spre Munții Stânișoarei.",
+      "distanceKm": {
+        "value": 58.05,
+        "sources": [
+          "mn-16MN03"
+        ],
+        "status": "extracted",
+        "note": "pe întreg traseul, nu doar porțiunea pilot"
+      },
+      "durationListed": {
+        "direction": "forward",
+        "minutes": 1500,
+        "listed": "25:00",
+        "rangeMinutes": [
+          1200,
+          1500
+        ],
+        "sources": [
+          "mn-16MN03"
+        ],
+        "status": "extracted",
+        "note": "pe întreg traseul — de împărțit pe segmente la pasul de calcul"
+      },
+      "durationReverse": {
+        "minutes": null,
+        "status": "missing",
+        "note": "traseul publicat depășește regiunea pilot; se folosesc timpii pe segmente"
+      },
+      "ascentM": {
+        "value": 3052,
+        "sources": [
+          "mn-16MN03"
+        ],
+        "status": "extracted"
+      },
+      "descentM": {
+        "value": 2930,
+        "sources": [
+          "mn-16MN03"
+        ],
+        "status": "extracted"
+      },
+      "maxElevationM": {
+        "value": 1857,
+        "sources": [
+          "mn-16MN03"
+        ],
+        "status": "extracted"
+      },
+      "difficulty": {
+        "value": "mediu",
+        "sources": [
+          "mn-16MN03"
+        ],
+        "status": "extracted"
+      },
+      "winter": {
+        "ro": "Periculos iarna sau pe umezeală în zonele stâncoase; lângă vârful Giumalău există variantă de iarnă marcată portocaliu.",
+        "sources": [
+          "mn-16MN03"
+        ],
+        "status": "extracted"
+      },
+      "water": {
+        "ro": "Izvor amenajat lângă Vf. Căpățânii; izvor lângă Muntele Todirescu.",
+        "sources": [
+          "mn-16MN03"
+        ],
+        "status": "extracted"
+      },
+      "status": "extracted",
+      "pantofarConcerns": [
+        "Traseu de mai multe zile — se folosește doar pe segmente, în combinație cu trasee de acces."
+      ],
+      "durationComputedCheck": {
+        "pilotPortionForwardMinutes": 760,
+        "pilotPortionReverseMinutes": 770,
+        "sources": [
+          "computed-din33466"
+        ],
+        "note": "doar porțiunea Pasul Mestecăniș → Curmătura Prislop"
+      }
+    },
+    {
+      "id": "16MN04",
+      "osmRelation": 9718294,
+      "name": {
+        "ro": "Rusca – Piciorul Ruscăi – Cabana Giumalău – Poiana Ciungilor – Valea Putnei"
+      },
+      "blaze": {
+        "shape": "stripe",
+        "color": "yellow",
+        "ro": "bandă galbenă",
+        "osmc": "yellow:white:yellow_stripe",
+        "sources": [
+          "osm",
+          "mn-16MN04"
+        ],
+        "status": "extracted"
+      },
+      "from": "sat-rusca",
+      "to": "sat-valea-putnei",
+      "waypointSequence": [
+        "sat-rusca",
+        "cabana-giumalau",
+        "poiana-ciungi",
+        "sat-valea-putnei"
+      ],
+      "segments": [
+        "s08",
+        "s10",
+        "s11"
+      ],
+      "distanceKm": {
+        "value": 20.99,
+        "sources": [
+          "mn-16MN04"
+        ],
+        "status": "extracted"
+      },
+      "durationListed": {
+        "direction": "forward",
+        "minutes": 540,
+        "listed": "9:00",
+        "rangeMinutes": [
+          420,
+          540
+        ],
+        "sources": [
+          "mn-16MN04"
+        ],
+        "status": "extracted"
+      },
+      "durationReverse": {
+        "minutes": 465,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "ascentM": {
+        "value": 916,
+        "sources": [
+          "mn-16MN04"
+        ],
+        "status": "extracted"
+      },
+      "descentM": {
+        "value": 853,
+        "sources": [
+          "mn-16MN04"
+        ],
+        "status": "extracted"
+      },
+      "maxElevationM": {
+        "value": 1589,
+        "sources": [
+          "mn-16MN04"
+        ],
+        "status": "extracted"
+      },
+      "difficulty": {
+        "value": "mediu",
+        "sources": [
+          "mn-16MN04"
+        ],
+        "status": "extracted"
+      },
+      "winter": {
+        "ro": "Iarna, accesibil în funcție de cantitatea și calitatea zăpezii.",
+        "sources": [
+          "mn-16MN04"
+        ],
+        "status": "extracted"
+      },
+      "lodging": {
+        "ro": "Cabana Giumalău (~30 locuri, fără mâncare); adăposturi de stână pentru urgențe.",
+        "sources": [
+          "mn-16MN04"
+        ],
+        "status": "extracted"
+      },
+      "status": "extracted",
+      "durationComputedCheck": {
+        "forwardMinutes": 500,
+        "residualVsPublishedPct": -7,
+        "sources": [
+          "computed-din33466"
+        ]
+      }
+    },
+    {
+      "id": "16MN05",
+      "osmRelation": 9718349,
+      "name": {
+        "ro": "Rusca – Valea Rusca – Cabana Giumalău"
+      },
+      "blaze": {
+        "shape": "triangle",
+        "color": "red",
+        "ro": "triunghi roșu",
+        "osmc": "red:white:red_triangle",
+        "sources": [
+          "osm",
+          "mn-16MN05"
+        ],
+        "status": "extracted"
+      },
+      "from": "sat-rusca",
+      "to": "cabana-giumalau",
+      "waypointSequence": [
+        "sat-rusca",
+        "cabana-giumalau"
+      ],
+      "segments": [
+        "s09"
+      ],
+      "distanceKm": {
+        "value": 9.18,
+        "sources": [
+          "mn-16MN05"
+        ],
+        "status": "extracted"
+      },
+      "durationListed": {
+        "direction": "forward",
+        "minutes": 240,
+        "listed": "4:00",
+        "rangeMinutes": [
+          120,
+          240
+        ],
+        "sources": [
+          "mn-16MN05"
+        ],
+        "status": "extracted"
+      },
+      "durationReverse": {
+        "minutes": 195,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "ascentM": {
+        "value": 826,
+        "sources": [
+          "mn-16MN05"
+        ],
+        "status": "extracted"
+      },
+      "descentM": {
+        "value": 41,
+        "sources": [
+          "mn-16MN05"
+        ],
+        "status": "extracted"
+      },
+      "maxElevationM": {
+        "value": 1641,
+        "sources": [
+          "mn-16MN05"
+        ],
+        "status": "extracted"
+      },
+      "difficulty": {
+        "value": "ușor",
+        "sources": [
+          "mn-16MN05"
+        ],
+        "status": "extracted"
+      },
+      "water": {
+        "ro": "Izvor amenajat cu băncuță de lemn pe parcurs.",
+        "sources": [
+          "mn-16MN05"
+        ],
+        "status": "extracted"
+      },
+      "access": {
+        "ro": "Primii 2,3 km asfalt, apoi 5,6 km macadam OK pentru mașini obișnuite; ultimii 1,2 km doar 4x4. Scurtături prin serpentine.",
+        "sources": [
+          "mn-16MN05"
+        ],
+        "status": "extracted"
+      },
+      "status": "extracted",
+      "durationComputedCheck": {
+        "forwardMinutes": 240,
+        "residualVsPublishedPct": 0,
+        "sources": [
+          "computed-din33466"
+        ]
+      }
+    },
+    {
+      "id": "16MN06",
+      "osmRelation": 9718400,
+      "name": {
+        "ro": "Popas Zugreni – Vf. Giumalău – gara Valea Putnei"
+      },
+      "blaze": {
+        "shape": "dot",
+        "color": "blue",
+        "ro": "punct albastru",
+        "osmc": "blue:white:blue_dot",
+        "sources": [
+          "osm",
+          "mn-16MN06"
+        ],
+        "status": "extracted"
+      },
+      "from": "popas-zugreni",
+      "to": "halta-valea-putnei",
+      "waypointSequence": [
+        "popas-zugreni",
+        "cabana-giumalau",
+        "vf-giumalau",
+        "junction-zmarzii",
+        "halta-valea-putnei"
+      ],
+      "segments": [
+        "s12",
+        "s13",
+        "s14",
+        "s15"
+      ],
+      "distanceKm": {
+        "value": 18.5,
+        "sources": [
+          "mn-16MN06"
+        ],
+        "status": "extracted"
+      },
+      "durationListed": {
+        "direction": "forward",
+        "minutes": 540,
+        "listed": "9:00",
+        "rangeMinutes": [
+          420,
+          540
+        ],
+        "sources": [
+          "mn-16MN06"
+        ],
+        "status": "extracted"
+      },
+      "durationReverse": {
+        "minutes": 560,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "ascentM": {
+        "value": 1350,
+        "sources": [
+          "mn-16MN06"
+        ],
+        "status": "extracted"
+      },
+      "descentM": {
+        "value": 1273,
+        "sources": [
+          "mn-16MN06"
+        ],
+        "status": "extracted"
+      },
+      "maxElevationM": {
+        "value": 1857,
+        "sources": [
+          "mn-16MN06"
+        ],
+        "status": "extracted"
+      },
+      "difficulty": {
+        "value": "mediu",
+        "sources": [
+          "mn-16MN06"
+        ],
+        "status": "extracted"
+      },
+      "winter": {
+        "ro": "Iarna, accesibil în funcție de zăpadă; în zona vârfului Giumalău poate fi periculos.",
+        "sources": [
+          "mn-16MN06"
+        ],
+        "status": "extracted"
+      },
+      "water": {
+        "ro": "Pârâul Colbu pe drumul forestier inițial.",
+        "sources": [
+          "mn-16MN06"
+        ],
+        "status": "extracted"
+      },
+      "lodging": {
+        "ro": "Cabana Giumalău (~30 locuri, fără mâncare).",
+        "sources": [
+          "mn-16MN06"
+        ],
+        "status": "extracted"
+      },
+      "status": "extracted",
+      "pantofarConcerns": [
+        "9 ore și 1350 m urcare — peste bugetul zilnic pantofar; de folosit doar pe segmente."
+      ],
+      "durationComputedCheck": {
+        "forwardMinutes": 575,
+        "residualVsPublishedPct": 6,
+        "sources": [
+          "computed-din33466"
+        ]
+      }
+    },
+    {
+      "id": "16MN07",
+      "osmRelation": 9718505,
+      "name": {
+        "ro": "Cabana Giumalău – ocolire Vf. Giumalău – Polița Caprelor"
+      },
+      "blaze": {
+        "shape": "cross",
+        "color": "red",
+        "ro": "cruce roșie",
+        "osmc": "red:white:red_cross",
+        "sources": [
+          "osm",
+          "mn-16MN07"
+        ],
+        "status": "extracted"
+      },
+      "from": "cabana-giumalau",
+      "to": "polita-caprelor",
+      "waypointSequence": [
+        "cabana-giumalau",
+        "polita-caprelor"
+      ],
+      "segments": [
+        "s16"
+      ],
+      "distanceKm": {
+        "value": 3.4,
+        "sources": [
+          "mn-16MN07"
+        ],
+        "status": "extracted"
+      },
+      "durationListed": {
+        "direction": "forward",
+        "minutes": 90,
+        "listed": "1:30",
+        "rangeMinutes": [
+          60,
+          90
+        ],
+        "sources": [
+          "mn-16MN07"
+        ],
+        "status": "extracted"
+      },
+      "durationReverse": {
+        "minutes": 70,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "ascentM": {
+        "value": 155,
+        "sources": [
+          "mn-16MN07"
+        ],
+        "status": "extracted"
+      },
+      "descentM": {
+        "value": 145,
+        "sources": [
+          "mn-16MN07"
+        ],
+        "status": "extracted"
+      },
+      "maxElevationM": {
+        "value": 1653,
+        "sources": [
+          "mn-16MN07"
+        ],
+        "status": "extracted"
+      },
+      "difficulty": {
+        "value": "ușor",
+        "sources": [
+          "mn-16MN07"
+        ],
+        "status": "extracted"
+      },
+      "winter": {
+        "ro": "Nerecomandat iarna.",
+        "sources": [
+          "mn-16MN07"
+        ],
+        "status": "extracted"
+      },
+      "water": {
+        "ro": "Câteva izvoare pe parcurs.",
+        "sources": [
+          "mn-16MN07"
+        ],
+        "status": "extracted"
+      },
+      "status": "extracted",
+      "durationComputedCheck": {
+        "forwardMinutes": 70,
+        "residualVsPublishedPct": -22,
+        "sources": [
+          "computed-din33466"
+        ]
+      }
+    },
+    {
+      "id": "16MN08",
+      "osmRelation": 9718525,
+      "name": {
+        "ro": "DJ175B Transrarău – Valea Chilia – lângă Vf. Zmârzii (traseul PA)"
+      },
+      "blaze": {
+        "shape": "dot",
+        "color": "red",
+        "ro": "punct roșu",
+        "osmc": "red:white:red_dot",
+        "sources": [
+          "osm",
+          "mn-16MN08"
+        ],
+        "status": "extracted"
+      },
+      "from": "dj175b-chilia",
+      "to": "junction-zmarzii",
+      "waypointSequence": [
+        "dj175b-chilia",
+        "junction-zmarzii"
+      ],
+      "segments": [
+        "s17"
+      ],
+      "distanceKm": {
+        "value": 5.94,
+        "sources": [
+          "mn-16MN08"
+        ],
+        "status": "extracted"
+      },
+      "durationListed": {
+        "direction": "forward",
+        "minutes": 180,
+        "listed": "3:00",
+        "rangeMinutes": [
+          90,
+          180
+        ],
+        "sources": [
+          "mn-16MN08"
+        ],
+        "status": "extracted"
+      },
+      "durationReverse": {
+        "minutes": 160,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "ascentM": {
+        "value": 822,
+        "sources": [
+          "mn-16MN08"
+        ],
+        "status": "extracted"
+      },
+      "descentM": {
+        "value": 36,
+        "sources": [
+          "mn-16MN08"
+        ],
+        "status": "extracted"
+      },
+      "maxElevationM": {
+        "value": 1612,
+        "sources": [
+          "mn-16MN08"
+        ],
+        "status": "extracted"
+      },
+      "difficulty": {
+        "value": "mediu",
+        "sources": [
+          "mn-16MN08"
+        ],
+        "status": "extracted"
+      },
+      "winter": {
+        "ro": "Iarna, accesibil în funcție de cantitatea și calitatea zăpezii.",
+        "sources": [
+          "mn-16MN08"
+        ],
+        "status": "extracted"
+      },
+      "access": {
+        "ro": "Rețea complexă de drumuri forestiere — atenție la marcaje.",
+        "sources": [
+          "mn-16MN08"
+        ],
+        "status": "extracted"
+      },
+      "status": "extracted",
+      "pantofarConcerns": [
+        "Orientare dificilă (drumuri forestiere multe) — nepotrivit ca traseu de sine stătător pentru începători."
+      ],
+      "durationComputedCheck": {
+        "forwardMinutes": 225,
+        "residualVsPublishedPct": 25,
+        "sources": [
+          "computed-din33466"
+        ]
+      }
+    },
+    {
+      "id": "16MN09",
+      "osmRelation": 9718542,
+      "name": {
+        "ro": "Popas Zugreni – Valea Colbului – Șaua Fundul Colbului – Pojorâta"
+      },
+      "blaze": {
+        "shape": "cross",
+        "color": "yellow",
+        "ro": "cruce galbenă",
+        "osmc": "yellow:white:yellow_cross",
+        "sources": [
+          "osm",
+          "mn-16MN09"
+        ],
+        "status": "extracted"
+      },
+      "from": "popas-zugreni",
+      "to": "sat-pojorata",
+      "waypointSequence": [
+        "popas-zugreni",
+        "saua-fundul-colbului",
+        "sat-pojorata"
+      ],
+      "segments": [
+        "s18",
+        "s19"
+      ],
+      "distanceKm": {
+        "value": 18.69,
+        "sources": [
+          "mn-16MN09"
+        ],
+        "status": "extracted"
+      },
+      "durationListed": {
+        "direction": "forward",
+        "minutes": 480,
+        "listed": "8:00",
+        "rangeMinutes": [
+          360,
+          480
+        ],
+        "sources": [
+          "mn-16MN09"
+        ],
+        "status": "extracted"
+      },
+      "durationReverse": {
+        "minutes": 395,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "ascentM": {
+        "value": 700,
+        "sources": [
+          "mn-16MN09"
+        ],
+        "status": "extracted"
+      },
+      "descentM": {
+        "value": 761,
+        "sources": [
+          "mn-16MN09"
+        ],
+        "status": "extracted"
+      },
+      "maxElevationM": {
+        "value": 1285,
+        "sources": [
+          "mn-16MN09"
+        ],
+        "status": "extracted"
+      },
+      "difficulty": {
+        "value": "mediu",
+        "sources": [
+          "mn-16MN09"
+        ],
+        "status": "extracted"
+      },
+      "winter": {
+        "ro": "DJ175B/Transrarău este deszăpezit tot anul — reper sigur.",
+        "sources": [
+          "mn-16MN09"
+        ],
+        "status": "extracted"
+      },
+      "access": {
+        "ro": "Marcaje rare și șterse pe porțiunea inițială.",
+        "sources": [
+          "mn-16MN09"
+        ],
+        "status": "extracted"
+      },
+      "status": "extracted",
+      "durationComputedCheck": {
+        "forwardMinutes": 395,
+        "residualVsPublishedPct": -18,
+        "sources": [
+          "computed-din33466"
+        ]
+      }
+    },
+    {
+      "id": "16MN10",
+      "osmRelation": 9718593,
+      "name": {
+        "ro": "Popas Zugreni – Valea Colbului – Hotel Rarău"
+      },
+      "blaze": {
+        "shape": "triangle",
+        "color": "red",
+        "ro": "triunghi roșu",
+        "osmc": "red:white:red_triangle",
+        "sources": [
+          "osm",
+          "mn-16MN10"
+        ],
+        "status": "extracted"
+      },
+      "from": "popas-zugreni",
+      "to": "hotel-rarau",
+      "waypointSequence": [
+        "popas-zugreni",
+        "hotel-rarau"
+      ],
+      "segments": [
+        "s20"
+      ],
+      "distanceKm": {
+        "value": 8.02,
+        "sources": [
+          "mn-16MN10"
+        ],
+        "status": "extracted"
+      },
+      "durationListed": {
+        "direction": "forward",
+        "minutes": 240,
+        "listed": "4:00",
+        "rangeMinutes": [
+          150,
+          240
+        ],
+        "sources": [
+          "mn-16MN10"
+        ],
+        "status": "extracted"
+      },
+      "durationReverse": {
+        "minutes": 175,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "ascentM": {
+        "value": 830,
+        "sources": [
+          "mn-16MN10"
+        ],
+        "status": "extracted"
+      },
+      "descentM": {
+        "value": 78,
+        "sources": [
+          "mn-16MN10"
+        ],
+        "status": "extracted"
+      },
+      "maxElevationM": {
+        "value": 1509,
+        "sources": [
+          "mn-16MN10"
+        ],
+        "status": "extracted"
+      },
+      "difficulty": {
+        "value": "mediu",
+        "sources": [
+          "mn-16MN10"
+        ],
+        "status": "extracted"
+      },
+      "winter": {
+        "ro": "Iarna, accesibil în funcție de cantitatea și calitatea zăpezii.",
+        "sources": [
+          "mn-16MN10"
+        ],
+        "status": "extracted"
+      },
+      "water": {
+        "ro": "Pârâul Colbu pe vale.",
+        "sources": [
+          "mn-16MN10"
+        ],
+        "status": "extracted"
+      },
+      "status": "extracted",
+      "durationComputedCheck": {
+        "forwardMinutes": 225,
+        "residualVsPublishedPct": -6,
+        "sources": [
+          "computed-din33466"
+        ]
+      }
+    },
+    {
+      "id": "16MN11",
+      "osmRelation": 9718621,
+      "name": {
+        "ro": "Chiril – DJ175A Transrarău – Hotel Rarău"
+      },
+      "blaze": {
+        "shape": "dot",
+        "color": "blue",
+        "ro": "punct albastru",
+        "osmc": "blue:white:blue_dot",
+        "sources": [
+          "osm",
+          "mn-16MN11"
+        ],
+        "status": "extracted"
+      },
+      "from": "sat-chiril",
+      "to": "hotel-rarau",
+      "waypointSequence": [
+        "sat-chiril",
+        "hotel-rarau"
+      ],
+      "segments": [
+        "s21"
+      ],
+      "distanceKm": {
+        "value": 11.35,
+        "sources": [
+          "mn-16MN11"
+        ],
+        "status": "extracted"
+      },
+      "durationListed": {
+        "direction": "forward",
+        "minutes": 240,
+        "listed": "4:00",
+        "rangeMinutes": [
+          150,
+          240
+        ],
+        "sources": [
+          "mn-16MN11"
+        ],
+        "status": "extracted"
+      },
+      "durationReverse": {
+        "minutes": 230,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "ascentM": {
+        "value": 867,
+        "sources": [
+          "mn-16MN11"
+        ],
+        "status": "extracted"
+      },
+      "descentM": {
+        "value": 87,
+        "sources": [
+          "mn-16MN11"
+        ],
+        "status": "extracted"
+      },
+      "maxElevationM": {
+        "value": 1509,
+        "sources": [
+          "mn-16MN11"
+        ],
+        "status": "extracted"
+      },
+      "difficulty": {
+        "value": "ușor",
+        "sources": [
+          "mn-16MN11"
+        ],
+        "status": "extracted"
+      },
+      "winter": {
+        "ro": "Transrarăul este singurul drum alpin din România deszăpezit și întreținut tot anul — acces de iarnă de încredere.",
+        "sources": [
+          "mn-16MN11"
+        ],
+        "status": "extracted"
+      },
+      "access": {
+        "ro": "Marcaje foarte rare, dar traseul urmează drumul asfaltat cu scurtături prin serpentine.",
+        "sources": [
+          "mn-16MN11"
+        ],
+        "status": "extracted"
+      },
+      "status": "extracted",
+      "durationComputedCheck": {
+        "forwardMinutes": 265,
+        "residualVsPublishedPct": 10,
+        "sources": [
+          "computed-din33466"
+        ]
+      }
+    },
+    {
+      "id": "16MN12",
+      "osmRelation": 9718640,
+      "name": {
+        "ro": "Schitul Rarău – Hotel Rarău"
+      },
+      "blaze": {
+        "shape": "triangle",
+        "color": "yellow",
+        "ro": "triunghi galben",
+        "osmc": "yellow:white:yellow_triangle",
+        "sources": [
+          "osm",
+          "mn-16MN12"
+        ],
+        "status": "extracted"
+      },
+      "from": "schitul-rarau",
+      "to": "hotel-rarau",
+      "waypointSequence": [
+        "schitul-rarau",
+        "hotel-rarau"
+      ],
+      "segments": [
+        "s22"
+      ],
+      "distanceKm": {
+        "value": 4.3,
+        "sources": [
+          "mn-16MN12"
+        ],
+        "status": "extracted"
+      },
+      "durationListed": {
+        "direction": "forward",
+        "minutes": 150,
+        "listed": "2:30",
+        "rangeMinutes": [
+          90,
+          150
+        ],
+        "sources": [
+          "mn-16MN12"
+        ],
+        "status": "extracted"
+      },
+      "durationReverse": {
+        "minutes": 125,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "ascentM": {
+        "value": 551,
+        "sources": [
+          "mn-16MN12"
+        ],
+        "status": "extracted"
+      },
+      "descentM": {
+        "value": 110,
+        "sources": [
+          "mn-16MN12"
+        ],
+        "status": "extracted"
+      },
+      "maxElevationM": {
+        "value": 1601,
+        "sources": [
+          "mn-16MN12"
+        ],
+        "status": "extracted"
+      },
+      "difficulty": {
+        "value": "mediu",
+        "sources": [
+          "mn-16MN12"
+        ],
+        "status": "extracted"
+      },
+      "winter": {
+        "ro": "Iarna, accesibil în funcție de cantitatea și calitatea zăpezii.",
+        "sources": [
+          "mn-16MN12"
+        ],
+        "status": "extracted"
+      },
+      "access": {
+        "ro": "Până la schit se poate ajunge vara cu mașina: DJ175A + ~800 m drum nepavat.",
+        "sources": [
+          "mn-16MN12"
+        ],
+        "status": "extracted"
+      },
+      "status": "extracted",
+      "durationComputedCheck": {
+        "forwardMinutes": 160,
+        "residualVsPublishedPct": 7,
+        "sources": [
+          "computed-din33466"
+        ]
+      }
+    },
+    {
+      "id": "16MN13",
+      "osmRelation": 9719020,
+      "name": {
+        "ro": "Pojorâta – Vf. Obcina Flocească (traseul BA)"
+      },
+      "blaze": {
+        "shape": "dot",
+        "color": "red",
+        "ro": "punct roșu",
+        "osmc": "red:white:red_dot",
+        "sources": [
+          "osm",
+          "mn-16MN13"
+        ],
+        "status": "extracted"
+      },
+      "from": "sat-pojorata",
+      "to": "junction-13x14",
+      "waypointSequence": [
+        "sat-pojorata",
+        "junction-13x14"
+      ],
+      "segments": [
+        "s30"
+      ],
+      "distanceKm": {
+        "value": 5.1,
+        "sources": [
+          "mn-16MN13"
+        ],
+        "status": "extracted"
+      },
+      "durationListed": {
+        "direction": "forward",
+        "minutes": 150,
+        "listed": "2:30",
+        "rangeMinutes": [
+          90,
+          150
+        ],
+        "sources": [
+          "mn-16MN13"
+        ],
+        "status": "extracted"
+      },
+      "durationReverse": {
+        "minutes": 125,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "ascentM": {
+        "value": 581,
+        "sources": [
+          "mn-16MN13"
+        ],
+        "status": "extracted"
+      },
+      "descentM": {
+        "value": 104,
+        "sources": [
+          "mn-16MN13"
+        ],
+        "status": "extracted"
+      },
+      "maxElevationM": {
+        "value": 1259,
+        "sources": [
+          "mn-16MN13"
+        ],
+        "status": "extracted"
+      },
+      "difficulty": {
+        "value": "mediu",
+        "sources": [
+          "mn-16MN13"
+        ],
+        "status": "extracted"
+      },
+      "winter": {
+        "ro": "Iarna, accesibil în funcție de cantitatea și calitatea zăpezii.",
+        "sources": [
+          "mn-16MN13"
+        ],
+        "status": "extracted"
+      },
+      "access": {
+        "ro": "Fără indicator în Pojorâta — intrarea în traseu e greu de găsit.",
+        "sources": [
+          "mn-16MN13"
+        ],
+        "status": "extracted"
+      },
+      "status": "extracted",
+      "durationComputedCheck": {
+        "forwardMinutes": 165,
+        "residualVsPublishedPct": 10,
+        "sources": [
+          "computed-din33466"
+        ]
+      }
+    },
+    {
+      "id": "16MN14",
+      "osmRelation": 9719114,
+      "name": {
+        "ro": "Câmpulung Moldovenesc – Culmea Munceii Rarăului – Hotel Rarău"
+      },
+      "blaze": {
+        "shape": "stripe",
+        "color": "blue",
+        "ro": "bandă albastră",
+        "osmc": "blue:white:blue_stripe",
+        "sources": [
+          "osm",
+          "mn-16MN14"
+        ],
+        "status": "extracted"
+      },
+      "from": "th-campulung-sirenei",
+      "to": "hotel-rarau",
+      "waypointSequence": [
+        "th-campulung-sirenei",
+        "junction-13x14",
+        "hotel-rarau"
+      ],
+      "segments": [
+        "s28",
+        "s29"
+      ],
+      "distanceKm": {
+        "value": 14.06,
+        "sources": [
+          "mn-16MN14"
+        ],
+        "status": "extracted"
+      },
+      "durationListed": {
+        "direction": "forward",
+        "minutes": 360,
+        "listed": "6:00",
+        "rangeMinutes": [
+          270,
+          360
+        ],
+        "sources": [
+          "mn-16MN14"
+        ],
+        "status": "extracted"
+      },
+      "durationReverse": {
+        "minutes": 320,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "ascentM": {
+        "value": 1102,
+        "sources": [
+          "mn-16MN14"
+        ],
+        "status": "extracted"
+      },
+      "descentM": {
+        "value": 313,
+        "sources": [
+          "mn-16MN14"
+        ],
+        "status": "extracted"
+      },
+      "maxElevationM": {
+        "value": 1465,
+        "sources": [
+          "mn-16MN14"
+        ],
+        "status": "extracted"
+      },
+      "difficulty": {
+        "value": "mediu",
+        "sources": [
+          "mn-16MN14"
+        ],
+        "status": "extracted"
+      },
+      "winter": {
+        "ro": "Iarna, accesibil în funcție de cantitatea și calitatea zăpezii.",
+        "sources": [
+          "mn-16MN14"
+        ],
+        "status": "extracted"
+      },
+      "water": {
+        "ro": "Pârâul Mesteacăn la început; izvor pe porțiunea de DJ175B.",
+        "sources": [
+          "mn-16MN14"
+        ],
+        "status": "extracted"
+      },
+      "access": {
+        "ro": "Din oraș: str. Sirenei pe lângă stadion și spital, apoi str. Pârâul Mesteacăn.",
+        "sources": [
+          "mn-16MN14"
+        ],
+        "status": "extracted"
+      },
+      "status": "extracted",
+      "issues": [
+        "Trecerea prin/pe lângă Vf. Obcina Flocească e dedusă din descrierea 16MN13 — de verificat pe geometrie."
+      ],
+      "durationComputedCheck": {
+        "forwardMinutes": 365,
+        "residualVsPublishedPct": 1,
+        "sources": [
+          "computed-din33466"
+        ]
+      }
+    },
+    {
+      "id": "16MN15",
+      "osmRelation": 9719142,
+      "name": {
+        "ro": "Câmpulung Moldovenesc – Valea Seacă – Poiana lui Mândrilă"
+      },
+      "blaze": {
+        "shape": "triangle",
+        "color": "blue",
+        "ro": "triunghi albastru",
+        "osmc": "blue:white:blue_triangle",
+        "sources": [
+          "osm",
+          "mn-16MN15"
+        ],
+        "status": "extracted"
+      },
+      "from": "th-campulung-valea-seaca",
+      "to": "poiana-mandrila",
+      "waypointSequence": [
+        "th-campulung-valea-seaca",
+        "poiana-mandrila"
+      ],
+      "segments": [
+        "s31"
+      ],
+      "distanceKm": {
+        "value": 6.32,
+        "sources": [
+          "mn-16MN15"
+        ],
+        "status": "extracted"
+      },
+      "durationListed": {
+        "direction": "forward",
+        "minutes": 180,
+        "listed": "3:00",
+        "rangeMinutes": [
+          60,
+          180
+        ],
+        "sources": [
+          "mn-16MN15"
+        ],
+        "status": "extracted"
+      },
+      "durationReverse": {
+        "minutes": 115,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "ascentM": {
+        "value": 274,
+        "sources": [
+          "mn-16MN15"
+        ],
+        "status": "extracted"
+      },
+      "descentM": {
+        "value": 30,
+        "sources": [
+          "mn-16MN15"
+        ],
+        "status": "extracted"
+      },
+      "maxElevationM": {
+        "value": 893,
+        "sources": [
+          "mn-16MN15"
+        ],
+        "status": "extracted"
+      },
+      "difficulty": {
+        "value": "mediu",
+        "sources": [
+          "mn-16MN15"
+        ],
+        "status": "extracted"
+      },
+      "safety": {
+        "ro": "NERECOMANDAT de Salvamont; marcaje vechi și șterse.",
+        "sources": [
+          "mn-16MN15"
+        ],
+        "status": "extracted"
+      },
+      "access": {
+        "ro": "Start pe str. Rândunicii (vizavi de Penny Market), apoi str. Valea Seacă.",
+        "sources": [
+          "mn-16MN15"
+        ],
+        "status": "extracted"
+      },
+      "status": "extracted",
+      "pantofarConcerns": [
+        "EXCLUS din generarea de itinerarii: nerecomandat de Salvamont."
+      ],
+      "issues": [
+        "Ancorarea startului la gara Câmpulung Est e aproximativă — de verificat."
+      ],
+      "durationComputedCheck": {
+        "forwardMinutes": 125,
+        "residualVsPublishedPct": -31,
+        "sources": [
+          "computed-din33466"
+        ]
+      }
+    },
+    {
+      "id": "16MN16",
+      "osmRelation": 9721233,
+      "name": {
+        "ro": "Câmpulung Moldovenesc – Muntele Bodea – Poiana lui Mândrilă – Mănăstirea Sihăstria Rarăului"
+      },
+      "blaze": {
+        "shape": "triangle",
+        "color": "yellow",
+        "ro": "triunghi galben",
+        "osmc": "yellow:white:yellow_triangle",
+        "sources": [
+          "osm",
+          "mn-16MN16-search"
+        ],
+        "status": "extracted"
+      },
+      "from": "th-campulung-valea-seaca",
+      "to": "man-sihastria",
+      "waypointSequence": [
+        "th-campulung-valea-seaca",
+        "vf-bodea",
+        "poiana-mandrila",
+        "man-sihastria"
+      ],
+      "segments": [
+        "s32",
+        "s33",
+        "s34"
+      ],
+      "distanceKm": {
+        "value": 7.36,
+        "sources": [
+          "mn-16MN16-search"
+        ],
+        "status": "extracted",
+        "confidence": "medium"
+      },
+      "durationListed": {
+        "direction": "forward",
+        "minutes": 240,
+        "listed": "4:00",
+        "rangeMinutes": [
+          120,
+          240
+        ],
+        "sources": [
+          "mn-16MN16-search"
+        ],
+        "status": "extracted",
+        "confidence": "medium"
+      },
+      "durationReverse": {
+        "minutes": 160,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "ascentM": {
+        "value": null,
+        "sources": [],
+        "status": "missing",
+        "note": "pagina 16MN16 nu a fost accesată direct — de completat"
+      },
+      "descentM": {
+        "value": null,
+        "sources": [],
+        "status": "missing"
+      },
+      "maxElevationM": {
+        "value": null,
+        "sources": [],
+        "status": "missing"
+      },
+      "difficulty": {
+        "value": "mediu",
+        "sources": [
+          "mn-16MN16-search"
+        ],
+        "status": "extracted",
+        "confidence": "medium"
+      },
+      "access": {
+        "ro": "Pleacă din zona gării Câmpulung Est, din capătul străzii Valea Seacă; urcare abruptă pe versantul nordic al Bodei.",
+        "sources": [
+          "mn-16MN16-search"
+        ],
+        "status": "extracted",
+        "confidence": "medium"
+      },
+      "status": "extracted",
+      "issues": [
+        "Sursă doar din fragmente de căutare — pagina de detaliu de regăsit și refăcut extragerea."
+      ],
+      "durationComputedCheck": {
+        "forwardMinutes": 175,
+        "residualVsPublishedPct": -27,
+        "sources": [
+          "computed-din33466"
+        ]
+      }
+    },
+    {
+      "id": "16MN17",
+      "osmRelation": 9721291,
+      "name": {
+        "ro": "Câmpulung Moldovenesc – Mănăstirea Sihăstria Rarăului – Hotel Rarău"
+      },
+      "blaze": {
+        "shape": "dot",
+        "color": "red",
+        "ro": "punct roșu",
+        "osmc": "red:white:red_dot",
+        "sources": [
+          "osm",
+          "mn-16MN17"
+        ],
+        "status": "extracted"
+      },
+      "from": "gara-campulung-est",
+      "to": "hotel-rarau",
+      "waypointSequence": [
+        "gara-campulung-est",
+        "junction-17pr-limpedea",
+        "man-sihastria",
+        "hotel-rarau"
+      ],
+      "segments": [
+        "s35",
+        "s47",
+        "s36"
+      ],
+      "distanceKm": {
+        "value": 11.82,
+        "sources": [
+          "mn-16MN17"
+        ],
+        "status": "extracted"
+      },
+      "durationListed": {
+        "direction": "forward",
+        "minutes": 300,
+        "listed": "5:00",
+        "rangeMinutes": [
+          210,
+          300
+        ],
+        "sources": [
+          "mn-16MN17"
+        ],
+        "status": "extracted"
+      },
+      "durationReverse": {
+        "minutes": 240,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "ascentM": {
+        "value": 929,
+        "sources": [
+          "mn-16MN17"
+        ],
+        "status": "extracted"
+      },
+      "descentM": {
+        "value": 46,
+        "sources": [
+          "mn-16MN17"
+        ],
+        "status": "extracted"
+      },
+      "maxElevationM": {
+        "value": 1509,
+        "sources": [
+          "mn-16MN17"
+        ],
+        "status": "extracted"
+      },
+      "difficulty": {
+        "value": "ușor",
+        "sources": [
+          "mn-16MN17"
+        ],
+        "status": "extracted"
+      },
+      "winter": {
+        "ro": "Circulația auto interzisă pe porțiunile superioare; drum lat, ușor de urmărit.",
+        "sources": [
+          "mn-16MN17"
+        ],
+        "status": "extracted"
+      },
+      "water": {
+        "ro": "Izvor la Mănăstirea Sihăstria.",
+        "sources": [
+          "mn-16MN17"
+        ],
+        "status": "extracted"
+      },
+      "access": {
+        "ro": "Pe fostul drum auto de pe Valea Izvorul Alb (pe la Piatra Buhei); marcaje șterse înainte de mănăstire; scurtături prin serpentine.",
+        "sources": [
+          "mn-16MN17"
+        ],
+        "status": "extracted"
+      },
+      "status": "extracted",
+      "issues": [
+        "Ancorarea startului la gara Câmpulung Est e aproximativă — de verificat."
+      ],
+      "durationComputedCheck": {
+        "forwardMinutes": 300,
+        "residualVsPublishedPct": 0,
+        "sources": [
+          "computed-din33466"
+        ]
+      }
+    },
+    {
+      "id": "16MN18",
+      "osmRelation": 9721386,
+      "name": {
+        "ro": "Traseul PR – Valea Limpedea – Șaua Ciobanilor – Hotel Rarău"
+      },
+      "blaze": {
+        "shape": "cross",
+        "color": "yellow",
+        "ro": "cruce galbenă",
+        "osmc": "yellow:white:yellow_cross",
+        "sources": [
+          "osm",
+          "mn-16MN18"
+        ],
+        "status": "extracted"
+      },
+      "from": "junction-17pr-limpedea",
+      "to": "hotel-rarau",
+      "waypointSequence": [
+        "junction-17pr-limpedea",
+        "saua-ciobanilor",
+        "hotel-rarau"
+      ],
+      "segments": [
+        "s37",
+        "s05"
+      ],
+      "distanceKm": {
+        "value": 7.72,
+        "sources": [
+          "mn-16MN18"
+        ],
+        "status": "extracted"
+      },
+      "durationListed": {
+        "direction": "forward",
+        "minutes": 240,
+        "listed": "4:00",
+        "rangeMinutes": [
+          150,
+          240
+        ],
+        "sources": [
+          "mn-16MN18"
+        ],
+        "status": "extracted"
+      },
+      "durationReverse": {
+        "minutes": 200,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "ascentM": {
+        "value": 959,
+        "sources": [
+          "mn-16MN18"
+        ],
+        "status": "extracted"
+      },
+      "descentM": {
+        "value": 129,
+        "sources": [
+          "mn-16MN18"
+        ],
+        "status": "extracted"
+      },
+      "maxElevationM": {
+        "value": 1601,
+        "sources": [
+          "mn-16MN18"
+        ],
+        "status": "extracted"
+      },
+      "difficulty": {
+        "value": "mediu",
+        "sources": [
+          "mn-16MN18"
+        ],
+        "status": "extracted"
+      },
+      "winter": {
+        "ro": "Iarna, accesibil în funcție de cantitatea și calitatea zăpezii.",
+        "sources": [
+          "mn-16MN18"
+        ],
+        "status": "extracted"
+      },
+      "water": {
+        "ro": "Izvor rece și un șipot pe Valea Limpedea.",
+        "sources": [
+          "mn-16MN18"
+        ],
+        "status": "extracted"
+      },
+      "access": {
+        "ro": "Primii ~2 km pe drum accesibil auto (de preferat mașină înaltă), prin zonă de case de vacanță și exploatare forestieră.",
+        "sources": [
+          "mn-16MN18"
+        ],
+        "status": "extracted"
+      },
+      "status": "extracted",
+      "durationComputedCheck": {
+        "forwardMinutes": 275,
+        "residualVsPublishedPct": 15,
+        "sources": [
+          "computed-din33466"
+        ]
+      }
+    },
+    {
+      "id": "16MN19",
+      "osmRelation": 9721697,
+      "name": {
+        "ro": "DN17 (est de Câmpulung) – Valea Caselor – Cheile Moara Dracului – Șaua Ciobanilor – Hotel Rarău"
+      },
+      "blaze": {
+        "shape": "cross",
+        "color": "red",
+        "ro": "cruce roșie",
+        "osmc": "red:white:red_cross",
+        "sources": [
+          "osm",
+          "mn-16MN19"
+        ],
+        "status": "extracted"
+      },
+      "from": "dn17-valea-caselor",
+      "to": "hotel-rarau",
+      "waypointSequence": [
+        "dn17-valea-caselor",
+        "cheile-moara-dracului",
+        "junction-23x19",
+        "popii-raraului",
+        "saua-ciobanilor",
+        "hotel-rarau"
+      ],
+      "segments": [
+        "s38",
+        "s39",
+        "s46",
+        "s40",
+        "s05"
+      ],
+      "distanceKm": {
+        "value": 12.12,
+        "sources": [
+          "mn-16MN19"
+        ],
+        "status": "extracted"
+      },
+      "durationListed": {
+        "direction": "forward",
+        "minutes": 360,
+        "listed": "6:00",
+        "rangeMinutes": [
+          240,
+          360
+        ],
+        "sources": [
+          "mn-16MN19"
+        ],
+        "status": "extracted"
+      },
+      "durationReverse": {
+        "minutes": 285,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "ascentM": {
+        "value": 1112,
+        "sources": [
+          "mn-16MN19"
+        ],
+        "status": "extracted"
+      },
+      "descentM": {
+        "value": 209,
+        "sources": [
+          "mn-16MN19"
+        ],
+        "status": "extracted"
+      },
+      "maxElevationM": {
+        "value": 1601,
+        "sources": [
+          "mn-16MN19"
+        ],
+        "status": "extracted"
+      },
+      "difficulty": {
+        "value": "mediu",
+        "sources": [
+          "mn-16MN19"
+        ],
+        "status": "extracted"
+      },
+      "winter": {
+        "ro": "Iarna, accesibil în funcție de cantitatea și calitatea zăpezii.",
+        "sources": [
+          "mn-16MN19"
+        ],
+        "status": "extracted"
+      },
+      "water": {
+        "ro": "Pârâul Valea Caselor pe primul tronson; pârâu și în zona cheilor.",
+        "sources": [
+          "mn-16MN19"
+        ],
+        "status": "extracted"
+      },
+      "access": {
+        "ro": "Primii 4,4 km accesibili auto până la o parcare cu loc de popas.",
+        "sources": [
+          "mn-16MN19"
+        ],
+        "status": "extracted"
+      },
+      "status": "extracted",
+      "durationComputedCheck": {
+        "forwardMinutes": 355,
+        "residualVsPublishedPct": -1,
+        "sources": [
+          "computed-din33466"
+        ]
+      }
+    },
+    {
+      "id": "16MN20",
+      "osmRelation": 9721771,
+      "name": {
+        "ro": "Circuitul Pietrelor Doamnei + urcare la Platoul Belvedere"
+      },
+      "blaze": {
+        "shape": "cross",
+        "color": "blue",
+        "ro": "cruce albastră",
+        "osmc": "blue:white:blue_cross",
+        "sources": [
+          "osm",
+          "mn-16MN20"
+        ],
+        "status": "extracted"
+      },
+      "from": "hotel-rarau",
+      "to": "hotel-rarau",
+      "roundtrip": true,
+      "waypointSequence": [
+        "hotel-rarau",
+        "pietrele-doamnei",
+        "junction-20x22",
+        "hotel-rarau"
+      ],
+      "segments": [
+        "s52",
+        "s53",
+        "s54"
+      ],
+      "distanceKm": {
+        "value": 1.37,
+        "sources": [
+          "mn-16MN20"
+        ],
+        "status": "extracted"
+      },
+      "durationListed": {
+        "direction": "roundtrip",
+        "minutes": 120,
+        "listed": "2:00",
+        "rangeMinutes": [
+          120,
+          120
+        ],
+        "sources": [
+          "mn-16MN20"
+        ],
+        "status": "extracted"
+      },
+      "durationReverse": {
+        "minutes": null,
+        "status": "not-applicable"
+      },
+      "ascentM": {
+        "value": 101,
+        "sources": [
+          "mn-16MN20"
+        ],
+        "status": "extracted"
+      },
+      "descentM": {
+        "value": 101,
+        "sources": [
+          "mn-16MN20"
+        ],
+        "status": "extracted"
+      },
+      "maxElevationM": {
+        "value": 1597,
+        "sources": [
+          "mn-16MN20"
+        ],
+        "status": "extracted"
+      },
+      "difficulty": {
+        "value": "dificil",
+        "sources": [
+          "mn-16MN20"
+        ],
+        "status": "extracted"
+      },
+      "winter": {
+        "ro": "Nerecomandat iarna. Piatra lustruită devine alunecoasă; porțiune abruptă cu lanțuri spre Belvedere.",
+        "sources": [
+          "mn-16MN20"
+        ],
+        "status": "extracted"
+      },
+      "status": "extracted",
+      "pantofarConcerns": [
+        "Scurt, dar «dificil» + lanțuri: de prezentat cu avertisment. Din 0.2.0 circuitul e împărțit în laturi (s52–s54); varianta fără Belvedere devine planificabilă după localizarea lanțurilor pe teren."
+      ]
+    },
+    {
+      "id": "16MN21",
+      "osmRelation": 9721966,
+      "name": {
+        "ro": "Hotel Rarău – Vârful Rarău"
+      },
+      "blaze": {
+        "shape": "dot",
+        "color": "blue",
+        "ro": "punct albastru",
+        "osmc": "blue:white:blue_dot",
+        "sources": [
+          "osm",
+          "mn-16MN21"
+        ],
+        "status": "extracted"
+      },
+      "from": "hotel-rarau",
+      "to": "vf-rarau",
+      "waypointSequence": [
+        "hotel-rarau",
+        "punct-salvamont",
+        "cabana-pastorala",
+        "vf-rarau"
+      ],
+      "segments": [
+        "s41",
+        "s42",
+        "s43"
+      ],
+      "distanceKm": {
+        "value": 1.5,
+        "sources": [
+          "mn-16MN21"
+        ],
+        "status": "extracted"
+      },
+      "durationListed": {
+        "direction": "forward",
+        "minutes": 60,
+        "listed": "1:00",
+        "rangeMinutes": [
+          30,
+          60
+        ],
+        "sources": [
+          "mn-16MN21"
+        ],
+        "status": "extracted"
+      },
+      "durationReverse": {
+        "minutes": 30,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "ascentM": {
+        "value": 146,
+        "sources": [
+          "mn-16MN21"
+        ],
+        "status": "extracted"
+      },
+      "descentM": {
+        "value": 6,
+        "sources": [
+          "mn-16MN21"
+        ],
+        "status": "extracted"
+      },
+      "maxElevationM": {
+        "value": 1651,
+        "sources": [
+          "mn-16MN21"
+        ],
+        "status": "extracted"
+      },
+      "difficulty": {
+        "value": "ușor",
+        "sources": [
+          "mn-16MN21"
+        ],
+        "status": "extracted"
+      },
+      "access": {
+        "ro": "Start dintr-o curbă a drumului de acces, la ~175 m sub hotel.",
+        "sources": [
+          "mn-16MN21"
+        ],
+        "status": "extracted"
+      },
+      "status": "extracted",
+      "durationComputedCheck": {
+        "forwardMinutes": 40,
+        "residualVsPublishedPct": -33,
+        "sources": [
+          "computed-din33466"
+        ]
+      }
+    },
+    {
+      "id": "16MN22",
+      "osmRelation": 9721968,
+      "name": {
+        "ro": "Traseul CA (Pietrele Doamnei) – Vârful Rarău"
+      },
+      "blaze": {
+        "shape": "dot",
+        "color": "blue",
+        "ro": "punct albastru",
+        "osmc": "blue:white:blue_dot",
+        "sources": [
+          "osm",
+          "mn-16MN22"
+        ],
+        "status": "extracted"
+      },
+      "from": "junction-20x22",
+      "to": "vf-rarau",
+      "waypointSequence": [
+        "junction-20x22",
+        "vf-rarau"
+      ],
+      "segments": [
+        "s45"
+      ],
+      "distanceKm": {
+        "value": 1.1,
+        "sources": [
+          "mn-16MN22"
+        ],
+        "status": "extracted"
+      },
+      "durationListed": {
+        "direction": "forward",
+        "minutes": 60,
+        "listed": "1:00",
+        "rangeMinutes": [
+          30,
+          60
+        ],
+        "sources": [
+          "mn-16MN22"
+        ],
+        "status": "extracted"
+      },
+      "durationReverse": {
+        "minutes": 30,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "ascentM": {
+        "value": 97,
+        "sources": [
+          "mn-16MN22"
+        ],
+        "status": "extracted"
+      },
+      "descentM": {
+        "value": 46,
+        "sources": [
+          "mn-16MN22"
+        ],
+        "status": "extracted"
+      },
+      "maxElevationM": {
+        "value": 1651,
+        "sources": [
+          "mn-16MN22"
+        ],
+        "status": "extracted"
+      },
+      "difficulty": {
+        "value": "ușor",
+        "sources": [
+          "mn-16MN22"
+        ],
+        "status": "extracted"
+      },
+      "winter": {
+        "ro": "Iarna, accesibil în funcție de zăpadă; marcaj pe copaci doar în sensul urcării.",
+        "sources": [
+          "mn-16MN22"
+        ],
+        "status": "extracted"
+      },
+      "status": "extracted",
+      "durationComputedCheck": {
+        "forwardMinutes": 30,
+        "residualVsPublishedPct": -50,
+        "sources": [
+          "computed-din33466"
+        ]
+      }
+    },
+    {
+      "id": "16MN23",
+      "osmRelation": 9721969,
+      "name": {
+        "ro": "Slătioara – Pârâul Ursului – Pădurea Todirescu – traseul CR"
+      },
+      "blaze": {
+        "shape": "cross",
+        "color": "blue",
+        "ro": "cruce albastră",
+        "osmc": "blue:white:blue_cross",
+        "sources": [
+          "osm",
+          "mn-16MN23"
+        ],
+        "status": "extracted"
+      },
+      "from": "th-slatioara",
+      "to": "junction-23x19",
+      "waypointSequence": [
+        "th-slatioara",
+        "junction-23x19"
+      ],
+      "segments": [
+        "s25"
+      ],
+      "distanceKm": {
+        "value": 5.6,
+        "sources": [
+          "mn-16MN23"
+        ],
+        "status": "extracted"
+      },
+      "durationListed": {
+        "direction": "forward",
+        "minutes": 180,
+        "listed": "3:00",
+        "rangeMinutes": [
+          120,
+          180
+        ],
+        "sources": [
+          "mn-16MN23"
+        ],
+        "status": "extracted"
+      },
+      "durationReverse": {
+        "minutes": 145,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "ascentM": {
+        "value": 794,
+        "sources": [
+          "mn-16MN23"
+        ],
+        "status": "extracted"
+      },
+      "descentM": {
+        "value": 24,
+        "sources": [
+          "mn-16MN23"
+        ],
+        "status": "extracted"
+      },
+      "maxElevationM": {
+        "value": 1543,
+        "sources": [
+          "mn-16MN23"
+        ],
+        "status": "extracted"
+      },
+      "difficulty": {
+        "value": "mediu",
+        "sources": [
+          "mn-16MN23"
+        ],
+        "status": "extracted"
+      },
+      "winter": {
+        "ro": "Iarna, accesibil în funcție de cantitatea și calitatea zăpezii.",
+        "sources": [
+          "mn-16MN23"
+        ],
+        "status": "extracted"
+      },
+      "status": "extracted",
+      "issues": [
+        "Punctul final («în traseul CR») nelocalizat — vezi waypoint junction-23x19."
+      ],
+      "durationComputedCheck": {
+        "forwardMinutes": 210,
+        "residualVsPublishedPct": 17,
+        "sources": [
+          "computed-din33466"
+        ]
+      }
+    },
+    {
+      "id": "16MN24",
+      "osmRelation": 9722071,
+      "name": {
+        "ro": "Slătioara – Codrul Secular – Muntele Todirescu – Șaua Ciobanilor – Hotel Rarău"
+      },
+      "blaze": {
+        "shape": "triangle",
+        "color": "red",
+        "ro": "triunghi roșu",
+        "osmc": "red:white:red_triangle",
+        "sources": [
+          "osm",
+          "mn-16MN24"
+        ],
+        "status": "extracted"
+      },
+      "from": "th-slatioara",
+      "to": "hotel-rarau",
+      "waypointSequence": [
+        "th-slatioara",
+        "codrul-secular",
+        "muntele-todirescu",
+        "saua-ciobanilor",
+        "hotel-rarau"
+      ],
+      "segments": [
+        "s26",
+        "s27",
+        "s06",
+        "s05"
+      ],
+      "distanceKm": {
+        "value": 9.3,
+        "sources": [
+          "mn-16MN24"
+        ],
+        "status": "extracted"
+      },
+      "durationListed": {
+        "direction": "forward",
+        "minutes": 240,
+        "listed": "4:00",
+        "rangeMinutes": [
+          150,
+          240
+        ],
+        "sources": [
+          "mn-16MN24"
+        ],
+        "status": "extracted"
+      },
+      "durationReverse": {
+        "minutes": 230,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "ascentM": {
+        "value": 940,
+        "sources": [
+          "mn-16MN24"
+        ],
+        "status": "extracted"
+      },
+      "descentM": {
+        "value": 205,
+        "sources": [
+          "mn-16MN24"
+        ],
+        "status": "extracted"
+      },
+      "maxElevationM": {
+        "value": 1601,
+        "sources": [
+          "mn-16MN24"
+        ],
+        "status": "extracted"
+      },
+      "difficulty": {
+        "value": "mediu",
+        "sources": [
+          "mn-16MN24"
+        ],
+        "status": "extracted"
+      },
+      "winter": {
+        "ro": "Iarna, accesibil în funcție de cantitatea și calitatea zăpezii.",
+        "sources": [
+          "mn-16MN24"
+        ],
+        "status": "extracted"
+      },
+      "water": {
+        "ro": "Pâraiele Ursului și lui Ion la start (nedocumentate ca potabile).",
+        "sources": [
+          "mn-16MN24"
+        ],
+        "status": "extracted"
+      },
+      "status": "extracted",
+      "durationComputedCheck": {
+        "forwardMinutes": 285,
+        "residualVsPublishedPct": 19,
+        "sources": [
+          "computed-din33466"
+        ]
+      }
+    },
+    {
+      "id": "16MN25",
+      "osmRelation": 9722208,
+      "name": {
+        "ro": "Chiril – Curmătura Prislop – Gemenea"
+      },
+      "blaze": {
+        "shape": "dot",
+        "color": "yellow",
+        "ro": "punct galben",
+        "osmc": "yellow:white:yellow_dot",
+        "sources": [
+          "osm",
+          "mn-16MN25"
+        ],
+        "status": "extracted"
+      },
+      "from": "th-chiril-dj175a",
+      "to": "sat-gemenea",
+      "waypointSequence": [
+        "th-chiril-dj175a",
+        "curmatura-prislop",
+        "sat-gemenea"
+      ],
+      "segments": [
+        "s23",
+        "s24"
+      ],
+      "distanceKm": {
+        "value": 11.2,
+        "sources": [
+          "mn-16MN25"
+        ],
+        "status": "extracted"
+      },
+      "durationListed": {
+        "direction": "forward",
+        "minutes": 300,
+        "listed": "5:00",
+        "rangeMinutes": [
+          240,
+          300
+        ],
+        "sources": [
+          "mn-16MN25"
+        ],
+        "status": "extracted"
+      },
+      "durationReverse": {
+        "minutes": 245,
+        "status": "computed",
+        "method": "din33466-calibrated",
+        "calibration": 1.06,
+        "sources": [
+          "computed-din33466"
+        ],
+        "confidence": "medium"
+      },
+      "ascentM": {
+        "value": 479,
+        "sources": [
+          "mn-16MN25"
+        ],
+        "status": "extracted"
+      },
+      "descentM": {
+        "value": 570,
+        "sources": [
+          "mn-16MN25"
+        ],
+        "status": "extracted"
+      },
+      "maxElevationM": {
+        "value": 1220,
+        "sources": [
+          "mn-16MN25"
+        ],
+        "status": "extracted"
+      },
+      "difficulty": {
+        "value": "mediu",
+        "sources": [
+          "mn-16MN25"
+        ],
+        "status": "extracted"
+      },
+      "access": {
+        "ro": "Intrare la 2,8 km de DN17B pe DJ175A; marcaje vechi și șterse, prezente doar în pădure.",
+        "sources": [
+          "mn-16MN25"
+        ],
+        "status": "extracted"
+      },
+      "status": "extracted",
+      "pantofarConcerns": [
+        "Marcaje slabe — nepotrivit pentru începători fără validare pe teren."
+      ],
+      "durationComputedCheck": {
+        "forwardMinutes": 255,
+        "residualVsPublishedPct": -15,
+        "sources": [
+          "computed-din33466"
+        ]
+      }
+    }
+  ]
+}
