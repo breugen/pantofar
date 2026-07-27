@@ -6,6 +6,8 @@
   <p class="serif-note list-desc">{{ i18n.t(def.description) }}</p>
 }
 
+<div class="plate-frieze"><pm-vignette name="frieze" /></div>
+
 <div class="filters">
   <button class="chip" type="button" [class.on]="circuitOnly()" (click)="toggleCircuit()">
     <span class="knob"></span>{{ i18n.ui('list.circuitOnly') }}

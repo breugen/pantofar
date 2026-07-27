@@ -7,6 +7,7 @@ import { BlazePlate } from '../../shared/blaze-plate';
 import { DurationPipe } from '../../shared/duration-pipe';
 import { Icon, IconName } from '../../shared/icon';
 import { Appbar } from '../../shared/appbar';
+import { Vignette } from '../../shared/vignette';
 
 const TAG_ICON: Record<TrackTag, IconName> = {
   tren: 'train', parcare: 'car', apa: 'drop', cabana: 'hut', padure: 'tree'
@@ -20,7 +21,7 @@ const TAG_ICON: Record<TrackTag, IconName> = {
 @Component({
   selector: 'pm-trails',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [Appbar, BlazePlate, DurationPipe, Icon],
+  imports: [Appbar, BlazePlate, DurationPipe, Icon, Vignette],
   templateUrl: './trails.html',
   styleUrl: './trails.scss'
 })

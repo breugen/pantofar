@@ -1,5 +1,12 @@
 .list-desc { margin: 0 0 4px; max-width: 60ch; }
 
+/* Faded engraved frieze, like the plates of the old pocket guides. */
+.plate-frieze {
+  margin: 10px auto 0; max-width: 400px;
+  color: var(--ink-soft); opacity: .5;
+}
+.plate-frieze svg { display: block; width: 100%; height: auto; }
+
 /* ---- filter chips (ui-concept-v1) ----------------------------------------- */
 
 .filters { display: flex; gap: 8px; padding: 12px 0 2px; flex-wrap: wrap; align-items: center; }

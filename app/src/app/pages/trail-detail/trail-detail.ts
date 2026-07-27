@@ -10,6 +10,7 @@ import { ProseFact, WaypointType } from '../../core/model/db';
 import { BlazePlate } from '../../shared/blaze-plate';
 import { DurationPipe } from '../../shared/duration-pipe';
 import { Icon, IconName } from '../../shared/icon';
+import { Vignette } from '../../shared/vignette';
 
 /** Reserve/sight waypoints whose notes feed the "Floră și faună" section. */
 const NATURE_WAYPOINTS = ['codrul-secular', 'pietrele-doamnei', 'cheile-moara-dracului', 'muntele-todirescu'];
@@ -38,7 +39,7 @@ interface DayView {
 @Component({
   selector: 'pm-trail-detail',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [BlazePlate, DurationPipe, Icon, RouterLink],
+  imports: [BlazePlate, DurationPipe, Icon, RouterLink, Vignette],
   templateUrl: './trail-detail.html',
   styleUrl: './trail-detail.scss'
 })

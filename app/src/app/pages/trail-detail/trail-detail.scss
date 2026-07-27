@@ -87,6 +87,13 @@
 .mile.via-row .w-name { font-weight: 400; font-style: italic; color: var(--ink-soft); font-size: 13px; }
 .mile.via-row .what { padding-bottom: 12px; }
 
+/* Edelweiss spot ornament between the timeline and the prose, plate-style. */
+.spot-orn {
+  width: 40px; margin: 14px auto 2px;
+  color: var(--pine); opacity: .45;
+}
+.spot-orn svg { display: block; width: 100%; height: auto; }
+
 /* ---- prose sections -------------------------------------------------------- */
 
 .d-section { margin: 16px 0; padding-top: 6px; }
