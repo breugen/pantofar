@@ -8,6 +8,18 @@ const STORAGE_KEY = 'pm-lang';
 /** UI strings. Data-borne prose (route notes) is Romanian until validated; en appears where the DB has it. */
 const UI: Record<string, LocalizedText> = {
   'home.tagline': { ro: 'Trasee marcate pentru începători', en: 'Marked trails for beginners' },
+  'home.edition': { ro: 'Ghid de munte · Ediția I · Rarău', en: 'Mountain guide · First edition · Rarău' },
+  'home.contribTitle': { ro: 'Construim ghidul împreună', en: 'We build this guide together' },
+  'home.contribBody': {
+    ro: 'Cod deschis, date deschise. Adaugă masivul tău, corectează un timp, tradu o pagină.',
+    en: 'Open code, open data. Add your massif, fix a time, translate a page.'
+  },
+  'home.contribCta': { ro: 'Contribuie pe GitHub', en: 'Contribute on GitHub' },
+  'footer.github': { ro: 'Cod și date pe GitHub', en: 'Code & data on GitHub' },
+  'footer.motto': {
+    ro: 'Tipărit în aer liber, pentru prietenii muntelui.',
+    en: 'Printed in the open air, for friends of the mountains.'
+  },
   'home.yourRegion': { ro: 'Regiunea ta', en: 'Your region' },
   'home.regionSign': { ro: 'Rarău · Câmpulung Mold.', en: 'Rarău · Câmpulung Mold.' },
   'home.chooseType': { ro: 'Alege felul ieșirii', en: 'Pick your kind of outing' },

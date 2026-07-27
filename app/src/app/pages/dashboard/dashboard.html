@@ -1,13 +1,88 @@
-<span class="lang home-lang" role="group" aria-label="Limbă">
-  <button type="button" [class.on]="i18n.lang() === 'ro'" (click)="i18n.setLang('ro')">RO</button>
-  <button type="button" [class.on]="i18n.lang() === 'en'" (click)="i18n.setLang('en')">EN</button>
-</span>
+<header class="hero">
+  <svg class="scene" viewBox="0 0 780 330" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="pm-sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#F7F0DF" />
+        <stop offset=".72" stop-color="#F0E7CF" />
+        <stop offset="1" stop-color="#EDE4CE" />
+      </linearGradient>
+      <linearGradient id="pm-fade" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#EDE4CE" stop-opacity="0" />
+        <stop offset="1" stop-color="#EDE4CE" />
+      </linearGradient>
+    </defs>
 
-<header class="masthead">
-  <img class="logo-mark" src="logo.jpg"
-    alt="Prietenii Muntelui — bursucul cu halba, bocancul și munții" />
-  <h1>PRIETENII MUNTELUI</h1>
-  <p class="tagline">{{ i18n.ui('home.tagline') }}</p>
+    <rect width="780" height="330" fill="url(#pm-sky)" />
+
+    <!-- halftone sun, cropped poster-style into the corner -->
+    <g class="sun">
+      <circle cx="668" cy="70" r="56" fill="none" stroke="var(--ochre)" stroke-width="2.4" stroke-dasharray="0.1 10.5" stroke-linecap="round" opacity=".35" />
+      <circle cx="668" cy="70" r="46" fill="none" stroke="var(--ochre)" stroke-width="2.8" stroke-dasharray="0.1 9" stroke-linecap="round" opacity=".55" />
+      <circle cx="668" cy="70" r="36" fill="none" stroke="var(--ochre)" stroke-width="3.2" stroke-dasharray="0.1 7.5" stroke-linecap="round" opacity=".8" />
+      <circle cx="668" cy="70" r="26" fill="var(--ochre)" />
+      <circle cx="668" cy="70" r="19.5" fill="none" stroke="#F5EEDC" stroke-width="1.5" opacity=".55" />
+    </g>
+
+    <!-- birds -->
+    <g fill="none" stroke="var(--ink)" stroke-width="1.7" stroke-linecap="round" opacity=".5">
+      <path d="M256 98 q6 -6 12 0 q6 -6 12 0" />
+      <path d="M302 118 q5 -5 10 0 q5 -5 10 0" />
+      <path d="M226 126 q4 -4 8 0 q4 -4 8 0" />
+    </g>
+
+    <!-- far ridge -->
+    <path fill="var(--ink)" opacity=".13"
+      d="M0 238 L88 194 L152 216 L232 176 L306 208 L392 168 L470 202 L556 182 L640 206 L718 188 L780 208 V330 H0 Z" />
+
+    <rect class="mist mist-a" x="46" y="198" width="270" height="11" rx="5.5" fill="#F5EEDC" opacity=".55" />
+
+    <!-- mid ridge, with the two hikers on its shoulder -->
+    <path fill="var(--pine-hi)" opacity=".5"
+      d="M0 264 L72 232 L140 254 L214 212 L288 246 L378 208 L462 242 L544 218 L626 248 L706 228 L780 250 V330 H0 Z" />
+
+    <g class="hikers">
+      <g fill="none" stroke="var(--ink)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="196" cy="203.2" r="2.6" fill="var(--ink)" stroke="none" />
+        <rect x="190.9" y="206.4" width="3.6" height="6.4" rx="1.5" fill="var(--ink)" stroke="none" />
+        <path d="M196 206 V214.8 M196 208.6 l5.2 3.2 M202.6 207 l-1.8 13.6 M196 214.8 l-4.6 6.4 M196 214.8 l4.2 6.2" />
+      </g>
+      <g fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".92">
+        <circle cx="174" cy="216.8" r="2.4" fill="var(--ink)" stroke="none" />
+        <rect x="169.3" y="219.6" width="3.3" height="5.9" rx="1.4" fill="var(--ink)" stroke="none" />
+        <path d="M174 219.4 V227.4 M174 221.8 l4.8 3 M179.9 220.2 l-1.6 12.4 M174 227.4 l-4.2 6 M174 227.4 l3.9 5.8" />
+      </g>
+    </g>
+
+    <rect class="mist mist-b" x="440" y="238" width="230" height="10" rx="5" fill="#F5EEDC" opacity=".6" />
+
+    <!-- near ridge with its spruces -->
+    <g fill="var(--pine)">
+      <path d="M0 300 L58 268 L118 288 L188 246 L252 278 L330 252 L418 284 L502 256 L584 288 L664 266 L780 296 V330 H0 Z" />
+      <path d="M36 259 L30.6 271.2 L33.2 271.2 L28.6 281 L43.4 281 L38.8 271.2 L41.4 271.2 Z" />
+      <path d="M84 255 L78 268.4 L80.9 268.4 L75.9 277.5 L92.1 277.5 L87.1 268.4 L90 268.4 Z" />
+      <path d="M150 247 L144.2 259.6 L146.9 259.6 L142.2 269 L157.8 269 L153.1 259.6 L155.8 259.6 Z" />
+      <path d="M214 237 L208.6 249 L211.1 249 L206.7 259 L221.3 259 L216.9 249 L219.4 249 Z" />
+      <path d="M300 240 L294.4 252.4 L297 252.4 L292.4 262 L307.6 262 L303 252.4 L305.6 252.4 Z" />
+      <path d="M452 251 L446.6 263 L449.1 263 L444.7 273 L459.3 273 L454.9 263 L457.4 263 Z" />
+      <path d="M540 249 L534.4 261.4 L537 261.4 L532.4 271 L547.6 271 L543 261.4 L545.6 261.4 Z" />
+      <path d="M628 254 L622.6 266 L625.1 266 L620.7 276 L635.3 276 L630.9 266 L633.4 266 Z" />
+    </g>
+
+    <rect x="0" y="302" width="780" height="28" fill="url(#pm-fade)" />
+  </svg>
+
+  <span class="lang home-lang" role="group" aria-label="Limbă">
+    <button type="button" [class.on]="i18n.lang() === 'ro'" (click)="i18n.setLang('ro')">RO</button>
+    <button type="button" [class.on]="i18n.lang() === 'en'" (click)="i18n.setLang('en')">EN</button>
+  </span>
+
+  <div class="hero-copy">
+    <img class="seal" src="logo.jpg"
+      alt="Prietenii Muntelui — bursucul cu halba, bocancul și munții" />
+    <h1>PRIETENII MUNTELUI</h1>
+    <p class="tagline">{{ i18n.ui('home.tagline') }}</p>
+    <p class="edition">{{ i18n.ui('home.edition') }}</p>
+  </div>
 </header>
 
 <div class="signpost home-sign">
@@ -23,13 +98,27 @@
   @for (t of types; track t.type) {
     <a class="type-card" [routerLink]="['/trails', t.type]">
       <span class="medal"><pm-icon [name]="t.icon" [size]="26" /></span>
-      <span class="t-text">
-        <span class="t-name">{{ i18n.t(t.caption) }}</span>
+      <span class="t-main">
+        <span class="t-line">
+          <span class="t-num">{{ numerals[$index] }}.</span>
+          <span class="t-name">{{ i18n.t(t.caption) }}</span>
+          <span class="t-dots"></span>
+          <span class="t-dur">{{ i18n.t(t.dur) }}</span>
+        </span>
         <span class="t-sub">{{ i18n.t(t.sub) }}</span>
       </span>
-      <span class="t-dur">{{ i18n.t(t.dur) }}</span>
     </a>
   }
+
+  <a class="contrib" href="https://github.com/breugen/pantofar" target="_blank" rel="noopener">
+    <span class="stamp c-stamp">open source</span>
+    <span class="c-icon"><pm-icon name="peak" [size]="30" /></span>
+    <span class="c-main">
+      <span class="c-title">{{ i18n.ui('home.contribTitle') }}</span>
+      <span class="c-body">{{ i18n.ui('home.contribBody') }}</span>
+    </span>
+    <span class="c-cta btn-ghost">{{ i18n.ui('home.contribCta') }} ›</span>
+  </a>
 </div>
 
 <footer class="home-foot">

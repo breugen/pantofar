@@ -1,7 +1,10 @@
 /* ---- header (ui-concept-v1 d-head) ---------------------------------------- */
 
 .d-head { padding: 18px 0 0; display: flex; gap: 13px; align-items: flex-start; }
-.d-head h2 { margin: 0; font-size: 19.5px; font-weight: 600; line-height: 1.22; text-wrap: balance; }
+.d-head h2 {
+  margin: 0; font-family: var(--display); font-size: 22px; font-weight: 600;
+  letter-spacing: 0; line-height: 1.18; text-wrap: balance;
+}
 .d-titles { flex: 1; min-width: 0; }
 .d-head .plate { margin-left: auto; }
 
@@ -10,6 +13,7 @@
 .meta-card {
   margin: 18px 0 0; border: 1.5px solid var(--ink); border-radius: 10px; background: var(--paper-hi);
   padding: 12px 14px; position: relative; box-shadow: 2.5px 2.5px 0 rgba(38, 33, 25, .18);
+  outline: 1px dotted var(--rule); outline-offset: -5px;
 }
 .meta-card .stamp { position: absolute; top: -13px; right: 10px; transform: rotate(6deg); }
 .meta-grid { display: flex; text-align: center; }
@@ -22,6 +26,12 @@
 
 .profile { margin: 16px 0 0; }
 .profile svg { display: block; width: 100%; height: auto; color: var(--pine); }
+@media (prefers-reduced-motion: no-preference) {
+  .profile .pf-line { stroke-dasharray: 1; stroke-dashoffset: 1; animation: pm-draw 1.1s ease-out .1s forwards; }
+  .profile .pf-dot { opacity: 0; animation: pm-dot-in .25s ease-out 1s forwards; }
+  @keyframes pm-draw { to { stroke-dashoffset: 0; } }
+  @keyframes pm-dot-in { to { opacity: 1; } }
+}
 .pf-cap {
   display: flex; justify-content: space-between; font-size: 10px; letter-spacing: .1em;
   color: var(--ink-soft); font-variant-numeric: tabular-nums; margin-top: 3px;
@@ -64,10 +74,13 @@
 
 /* ---- prose sections -------------------------------------------------------- */
 
-.d-section { margin: 14px 0; border-top: 1px solid var(--rule); padding-top: 11px; }
+.d-section { margin: 16px 0; padding-top: 6px; }
 .d-section h3 {
-  margin: 0 0 6px; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-soft);
+  margin: 0 0 6px; display: flex; align-items: center; gap: 8px;
+  font-size: 11.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-soft);
 }
+.d-section h3::before { content: "◆"; color: var(--ochre-deep); font-size: 8px; letter-spacing: 0; }
+.d-section h3::after { content: ""; flex: 1; border-top: 1px solid var(--rule); }
 .d-section p { margin: 0 0 5px; font-family: var(--serif); font-size: 13.5px; line-height: 1.55; }
 .lead-in { font-weight: 700; font-family: var(--sans); font-size: 12px; letter-spacing: .04em; }
 
@@ -93,7 +106,9 @@
 .d-back {
   display: block; margin: 20px 0 4px; width: 100%; text-align: center;
   border: 1.5px solid var(--ink); border-radius: 999px; padding: 10px;
-  font-size: 13px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; color: var(--ink);
+  font-size: 13.5px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; color: var(--ink);
   background: var(--paper-hi); box-shadow: 2px 2px 0 rgba(38, 33, 25, .18);
   text-decoration: none;
 }
+.d-back:hover { background: #F8F2E2; }
+.d-back:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 rgba(38, 33, 25, .18); }

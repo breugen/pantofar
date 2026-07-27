@@ -5,9 +5,10 @@ import { I18nService } from '../../core/i18n.service';
 import { Icon } from '../../shared/icon';
 
 /**
- * The home screen from ui-concept-v1: masthead with the badger logo, the
- * signpost region marker, and the four outing-type cards. Picking a card
- * opens that category's track list (built by the graph engine).
+ * The home screen from ui-concept-v1, grown into a guidebook cover: a
+ * layered mountain-scene hero with the badger seal, the signpost region
+ * marker, and the four outing-type cards set like a table of contents.
+ * Picking a card opens that category's track list (built by the graph engine).
  */
 @Component({
   selector: 'pm-dashboard',
@@ -19,4 +20,5 @@ import { Icon } from '../../shared/icon';
 export class DashboardPage {
   protected readonly i18n = inject(I18nService);
   protected readonly types = TRAIL_TYPES;
+  protected readonly numerals = ['I', 'II', 'III', 'IV'];
 }

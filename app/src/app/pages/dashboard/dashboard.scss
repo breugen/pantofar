@@ -1,67 +1,140 @@
 :host { display: block; position: relative; }
 
-.home-lang { position: absolute; top: 14px; right: 0; }
+/* ---- hero: the guidebook cover plate -------------------------------------- */
 
-/* ---- masthead: the guidebook cover ---------------------------------------- */
+.hero {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  overflow: clip;
+  padding: 20px 16px 152px;
+  text-align: center;
+}
+.scene {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  display: block;
+}
 
-.masthead { padding: 26px 24px 6px; text-align: center; }
-.logo-mark {
-  display: block; width: 252px; max-width: 82%; margin: 0 auto 6px;
-  aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 58%;
+.home-lang { position: absolute; top: 14px; right: 14px; z-index: 2; }
+
+.hero-copy { position: relative; z-index: 1; }
+
+.seal {
+  display: block; width: 74px; height: 74px; margin: 0 auto 10px;
+  border-radius: 50%; object-fit: cover; object-position: 50% 58%;
+  border: 2px solid var(--ink); box-shadow: 0 0 0 4px var(--paper-hi), 2px 2px 0 4px rgba(38, 33, 25, .18);
   mix-blend-mode: multiply;
 }
-.masthead h1 {
-  margin: 0; font-size: 23px; font-weight: 600;
-  letter-spacing: .18em; text-indent: .18em; color: var(--pine); white-space: nowrap;
-}
-.masthead .tagline {
-  margin: 2px 0 0; font-family: var(--serif); font-style: italic;
-  font-size: 14.5px; color: var(--ink-soft);
+
+.hero-copy h1 {
+  margin: 0; font-family: var(--display); font-weight: 900;
+  font-size: clamp(25px, 6.4vw, 36px);
+  letter-spacing: .09em; text-indent: .09em; color: var(--pine); white-space: nowrap;
 }
 
-/* ---- signpost region marker ----------------------------------------------- */
+.tagline {
+  margin: 3px 0 0; font-family: var(--serif); font-style: italic;
+  font-size: 15px; color: var(--ink-soft);
+}
 
-.home-sign { margin: 18px 0 20px; display: flex; width: fit-content; text-transform: none; }
+.edition {
+  margin: 10px 0 0; display: flex; align-items: center; justify-content: center; gap: 10px;
+  font-size: 11px; letter-spacing: .28em; text-indent: .28em; text-transform: uppercase;
+  color: var(--ochre-deep); font-weight: 600;
+}
+.edition::before, .edition::after { content: ""; width: 34px; border-top: 1px solid var(--ochre-deep); opacity: .55; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .mist-a { animation: pm-drift 16s ease-in-out infinite alternate; }
+  .mist-b { animation: pm-drift 21s ease-in-out infinite alternate-reverse; }
+  @keyframes pm-drift {
+    from { transform: translateX(-14px); }
+    to { transform: translateX(16px); }
+  }
+}
+
+/* ---- signpost region marker, planted into the scene ------------------------ */
+
+.home-sign {
+  margin: -34px 0 22px; display: flex; width: fit-content;
+  text-transform: none; position: relative; z-index: 2; transform: rotate(-1.4deg);
+}
 .home-sign .sign-text { display: flex; flex-direction: column; }
-.home-sign .where { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; opacity: .75; font-weight: 600; }
-.home-sign .place { font-size: 15.5px; font-weight: 600; letter-spacing: .02em; }
+.home-sign .where { font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; opacity: .75; font-weight: 600; }
+.home-sign .place { font-size: 16px; font-weight: 600; letter-spacing: .02em; }
 
-/* ---- the four outing types ------------------------------------------------ */
+/* ---- the four outing types, set like a table of contents ------------------- */
 
 .s-label {
-  font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--ink-soft);
+  font-size: 11.5px; letter-spacing: .24em; text-transform: uppercase; color: var(--ink-soft);
   display: flex; align-items: center; gap: 10px; margin: 0 0 10px;
 }
+.s-label::before { content: "◆"; color: var(--ochre-deep); font-size: 8px; letter-spacing: 0; }
 .s-label::after { content: ""; flex: 1; border-top: 1px solid var(--rule); }
 
 .type-card {
   width: 100%; display: flex; align-items: center; gap: 14px; text-align: left;
   background: var(--paper-hi); border: 1.5px solid var(--ink); border-radius: 10px;
-  padding: 13px 14px; margin-bottom: 12px; color: var(--ink); text-decoration: none;
+  padding: 13px 16px 13px 14px; margin-bottom: 12px; color: var(--ink); text-decoration: none;
   box-shadow: 2.5px 2.5px 0 rgba(38, 33, 25, .18);
 }
 @media (prefers-reduced-motion: no-preference) {
   .type-card { transition: transform .15s ease, box-shadow .15s ease; }
   .type-card:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 rgba(38, 33, 25, .22); }
+  .medal { transition: background .2s ease; }
 }
+.type-card:hover .medal { background: var(--ochre-deep); }
+
 .medal {
   width: 46px; height: 46px; flex: none; border-radius: 50%;
   background: var(--pine); color: var(--paper);
   display: flex; align-items: center; justify-content: center;
+  box-shadow: inset 0 0 0 2px rgba(245, 238, 220, .35);
 }
-.t-text { min-width: 0; }
-.t-name { display: block; font-size: 16.5px; font-weight: 600; letter-spacing: .03em; }
-.t-sub { display: block; font-family: var(--serif); font-size: 13px; color: var(--ink-soft); margin-top: 1px; }
+
+.t-main { flex: 1; min-width: 0; }
+.t-line { display: flex; align-items: baseline; min-width: 0; }
+.t-num {
+  flex: none; width: 26px; margin-right: 2px;
+  font-family: var(--display); font-style: italic; font-weight: 600;
+  font-size: 15px; color: var(--ochre-deep);
+}
+.t-name { font-size: 17.5px; font-weight: 600; letter-spacing: .02em; white-space: nowrap; }
+.t-dots {
+  flex: 1; min-width: 16px; margin: 0 8px;
+  border-bottom: 2px dotted var(--rule); transform: translateY(-4px);
+}
 .t-dur {
-  margin-left: auto; flex: none; text-align: right;
-  font-size: 12px; letter-spacing: .06em; color: var(--ochre-deep); font-weight: 600;
+  flex: none; font-size: 14px; letter-spacing: .05em; color: var(--ochre-deep); font-weight: 600;
   font-variant-numeric: tabular-nums; white-space: nowrap;
 }
+.t-sub {
+  display: block; font-family: var(--serif); font-style: italic;
+  font-size: 13px; color: var(--ink-soft); margin: 2px 0 0 28px;
+}
 
-/* ---- foot ----------------------------------------------------------------- */
+/* ---- contributor call ------------------------------------------------------ */
+
+.contrib {
+  position: relative;
+  display: flex; align-items: center; flex-wrap: wrap; gap: 12px 14px;
+  margin-top: 26px; padding: 16px;
+  border: 2px dashed var(--ink); border-radius: 10px;
+  background: var(--paper-hi); color: var(--ink); text-decoration: none;
+}
+.contrib:hover { background: #F8F2E2; }
+.c-stamp { position: absolute; top: -13px; right: 12px; transform: rotate(4deg); }
+.c-icon { flex: none; color: var(--pine); display: flex; }
+.c-main { flex: 1; min-width: 180px; }
+.c-title { display: block; font-family: var(--display); font-weight: 600; font-size: 17.5px; }
+.c-body { display: block; font-family: var(--serif); font-size: 13.5px; color: var(--ink-soft); margin-top: 2px; max-width: 46ch; }
+.c-cta { flex: none; color: var(--pine); }
+
+/* ---- foot ------------------------------------------------------------------ */
 
 .home-foot {
-  padding: 10px 24px 10px; text-align: center;
+  padding: 22px 24px 6px; text-align: center;
   font-family: var(--serif); font-style: italic; font-size: 12.5px; color: var(--ink-soft);
 }
 .home-foot .ridge { display: block; margin: 0 auto 4px; color: var(--pine); opacity: .8; }

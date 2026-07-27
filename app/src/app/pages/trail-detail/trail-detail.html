@@ -36,10 +36,12 @@
   @if (profile(); as pf) {
     <div class="profile" aria-label="Profil de urcare (schiță)">
       <svg viewBox="0 0 340 64">
+        <path d="M0 16 H340 M0 32 H340 M0 48 H340" stroke="currentColor" stroke-width="1"
+          stroke-dasharray="1 5" opacity=".16" />
         <path [attr.d]="pf.area" fill="currentColor" opacity=".1" />
-        <path [attr.d]="pf.line" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
-        <circle [attr.cx]="pf.x0" [attr.cy]="pf.y0" r="3.4" fill="currentColor" />
-        <circle [attr.cx]="pf.x1" [attr.cy]="pf.y1" r="3.4" fill="currentColor" />
+        <path class="pf-line" pathLength="1" [attr.d]="pf.line" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+        <circle class="pf-dot" [attr.cx]="pf.x0" [attr.cy]="pf.y0" r="3.4" fill="currentColor" />
+        <circle class="pf-dot" [attr.cx]="pf.x1" [attr.cy]="pf.y1" r="3.4" fill="currentColor" />
       </svg>
       <div class="pf-cap"><span>{{ pf.startCap }}</span><span>{{ pf.endCap }}</span></div>
     </div>

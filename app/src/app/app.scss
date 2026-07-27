@@ -1,2 +1,24 @@
-.foot { border-top: 2px solid var(--ink); margin-top: 32px; background: var(--paper-lo); }
-.foot .page { padding-top: 10px; padding-bottom: 18px; }
+.foot { margin-top: 40px; }
+.foot-ridge { display: block; width: 100%; height: 44px; }
+
+.foot-inner { background: var(--pine-night); color: rgba(237, 228, 206, .78); }
+
+.foot-grid {
+  display: flex; gap: 22px; align-items: flex-start;
+  padding-top: 2px; padding-bottom: 28px;
+}
+.camp { flex: none; width: 132px; height: 74px; margin-top: 8px; }
+
+.foot-text { flex: 1; font-family: var(--serif); font-style: italic; font-size: 12.5px; }
+.foot-text p { margin: 0 0 6px; max-width: 68ch; }
+.motto { color: #EDE4CE; font-size: 14px; }
+
+.foot-git {
+  margin-top: 8px; color: var(--ochre); font-style: normal;
+}
+.foot-git:hover { background: rgba(201, 146, 46, .12); }
+
+@media (max-width: 560px) {
+  .foot-grid { flex-direction: column; align-items: center; text-align: center; }
+  .foot-text p { max-width: none; }
+}
