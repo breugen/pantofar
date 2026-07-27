@@ -71,14 +71,14 @@
     <rect x="0" y="302" width="780" height="28" fill="url(#pm-fade)" />
   </svg>
 
+  <img class="sky-mark" src="logo.jpg" alt="" aria-hidden="true" />
+
   <span class="lang home-lang" role="group" aria-label="Limbă">
     <button type="button" [class.on]="i18n.lang() === 'ro'" (click)="i18n.setLang('ro')">RO</button>
     <button type="button" [class.on]="i18n.lang() === 'en'" (click)="i18n.setLang('en')">EN</button>
   </span>
 
   <div class="hero-copy">
-    <img class="seal" src="logo.jpg"
-      alt="Prietenii Muntelui — bursucul cu halba, bocancul și munții" />
     <h1>PRIETENII MUNTELUI</h1>
     <p class="tagline">{{ i18n.ui('home.tagline') }}</p>
     <p class="edition">{{ i18n.ui('home.edition') }}</p>
